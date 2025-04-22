@@ -1,0 +1,45 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+// - UI
+import ContactCards from '../components/blocks/contact/ContactCards.astro'
+import LottieAnimation from 'astro-integration-lottie/Lottie.astro'
+
+// Content
+// - Data
+import CardData from '../data/json-files/contactCardsData.json'
+const contactCardsData = {
+	title: 'Have a Special Request? We’re Here to <strong>Help!</strong>',
+	text: "Choose from one of the options below to get the specific help you need. Whether it's customer support, sales inquiries, feature requests, or general feedback, we're here to provide you with the best assistance possible."
+}
+// - SEO
+const SEO = {
+	title: 'Oops! Astro Starter Lost the Trail - Page Not Found',
+	description:
+		" Looks like we chased our tail and lost the page. Don't worry, let's get you back on the Astro Starter trail!"
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section classes="bg-neutral-50 dark:bg-neutral-900">
+		<Row>
+			<Col span="2" />
+			<Col span="8" classes="text-center flex flex-col">
+				<h1>
+					Oops! I think I'm lost <span class="highlight"> <br /> Page not found </span>
+				</h1>
+				<div class="mx-auto mb-12 h-48 w-48 lg:h-[26rem] lg:w-96">
+					<LottieAnimation src="/animations/404.json" autoplay="visible" />
+				</div>
+			</Col>
+			<Col span="2" />
+		</Row>
+	</Section>
+	<ContactCards title={contactCardsData.title} text={contactCardsData.text} cardData={CardData} />
+</Layout>
+
+<style></style>

@@ -1,0 +1,87 @@
+---
+// Activity Feed
+// ------------
+// Description: A component that displays a feed list with icons and descriptions.
+// Properties:
+// - data: An array of feed items with title, date, description, icon, and progress properties.
+// - classes: Additional classes to be added to the feed
+// Reference: https://wind-ui.com/components/feeds/
+
+// Components
+// - UI
+import { Icon } from 'astro-icon/components'
+
+// Props
+type Props = {
+	data: Array<{
+		title: string
+		date?: string
+		description?: string
+		icon?: string
+		progress?: string
+	}>
+	classes?: string
+}
+const { data, classes } = Astro.props
+---
+
+<ul
+	aria-label="Activity feed"
+	role="feed"
+	class:list={['activity-feed', { [`${classes}`]: classes }]}
+>
+	{
+		data.map((item, index) => (
+			<li role="article" class="activity-feed__item">
+				{index % 2 !== 0 && (
+					<div class="activity-feed__content">
+						<h4 class="activity-feed__title">
+							{item.title} <span class="activity-feed__date"> {item.date}</span>
+						</h4>
+
+						<p class="activity-feed__description">{item.description}</p>
+					</div>
+				)}
+				<span
+					class:list={[
+						'activity-feed__icon-container',
+						{ ['activity-feed__icon-container--' + `${item.progress}`]: item.progress }
+					]}
+				>
+					<Icon name={item.icon} class="activity-feed__icon" />
+				</span>
+				{index % 2 === 0 && (
+					<div class="activity-feed__content">
+						<h4 class="activity-feed__title">
+							{item.title}
+							<span class="activity-feed__date"> {item.date}</span>
+						</h4>
+
+						<p class="activity-feed__description">{item.description}</p>
+					</div>
+				)}
+			</li>
+		))
+	}
+</ul>
+
+<style>
+	.activity-feed {
+		@apply relative flex w-full flex-col py-12 before:absolute before:left-6 before:top-0 before:z-[-1] before:h-full before:-translate-x-px before:border before:border-dashed before:border-neutral-100 lg:grid-cols-[1fr_3rem_1fr] lg:before:left-1/2 dark:before:border-neutral-800;
+	}
+	.activity-feed__item {
+		@apply relative z-[2] grid w-full grid-cols-[3rem_1fr] gap-6 pb-24 before:absolute before:left-6 before:top-0 before:z-[-1] before:h-full before:-translate-x-px before:border before:border-neutral-100 lg:grid-cols-[1fr_3rem_1fr] lg:before:left-1/2 dark:before:border-neutral-800;
+	}
+	.activity-feed__icon-container {
+		@apply relative order-1 flex size-12 items-center justify-center rounded-full bg-primary-500 text-white before:absolute before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-full lg:order-2 lg:col-start-2 [&.activity-feed\_\_icon-container--completed:before]:bg-emerald-500/50 [&.activity-feed\_\_icon-container--completed]:bg-emerald-500 [&.activity-feed\_\_icon-container--completed]:shadow-xl [&.activity-feed\_\_icon-container--completed]:shadow-emerald-500/50 [&.activity-feed\_\_icon-container--ongoing:before]:bg-sky-500/50 [&.activity-feed\_\_icon-container--ongoing]:bg-sky-500 [&.activity-feed\_\_icon-container--ongoing]:shadow-xl [&.activity-feed\_\_icon-container--ongoing]:shadow-sky-500/50 [&.activity-feed\_\_icon-container--rejected:before]:bg-pink-500/50 [&.activity-feed\_\_icon-container--rejected]:bg-pink-500 [&.activity-feed\_\_icon-container--rejected]:shadow-xl [&.activity-feed\_\_icon-container--rejected]:shadow-pink-500/50 [&.activity-feed\_\_icon-container--upcoming:before]:bg-amber-500/50 [&.activity-feed\_\_icon-container--upcoming]:bg-amber-500 [&.activity-feed\_\_icon-container--upcoming]:shadow-xl [&.activity-feed\_\_icon-container--upcoming]:shadow-amber-500/50 [.activity-feed\_\_item:hover_&:before]:animate-ping;
+	}
+	.activity-feed__content {
+		@apply relative order-2 rounded border border-neutral-100 bg-white p-6 text-neutral-500 shadow-lg shadow-neutral-700/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/50 lg:[.activity-feed:even_&]:order-1;
+	}
+	.activity-feed__title {
+		@apply mb-6 items-baseline gap-2 text-lg lg:flex;
+	}
+	.activity-feed__date {
+		@apply block text-sm font-normal text-neutral-400;
+	}
+</style>

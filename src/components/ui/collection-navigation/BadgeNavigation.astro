@@ -1,0 +1,70 @@
+---
+// Badge Navigation
+// ------------
+// Description: A navigation component for the blog and eGuides pages that displays the tags or categories of the blog posts. The BadgeNavigation component is used for the Blog and eGuide pages
+// - Blog: The blog tags page.
+// - eGuides: The eGuides categories page.
+// Properties:
+// - collection: The name of the collection (blog or eguides)
+// - classes: Additional classes to be added to the navigation
+
+// Components
+// - UI
+import Badge from '../Badge.astro'
+
+// - Data
+import type { ContentEntryMap } from 'astro:content'
+import { getCollection } from 'astro:content'
+
+// Define the structure of each item in the collection
+type CollectionItem = {
+	id: string
+	data: {
+		badges: string[]
+	}
+}
+
+// - Props
+type Props = {
+	collection: string
+	classes?: string
+}
+const { collection, classes } = Astro.props
+
+// - Collection data
+const collectionData = (await getCollection(
+	collection as keyof ContentEntryMap,
+	(entry: CollectionItem) => entry.id
+)) as CollectionItem[]
+
+const badges = [...new Set(collectionData.map((entry) => entry.data.badges).flat())]
+const currentPath = new URL(Astro.request.url).pathname
+const pathSegments = currentPath.split('/').filter((segment) => segment.length > 0)
+const currentBadge = pathSegments[pathSegments.length - 1] || ''
+const decodedCurrentBadge = decodeURIComponent(currentBadge)
+---
+
+<div class:list={['badge-nav', { [`${classes}`]: classes }]}>
+	<Badge
+		link={`/${collection}/`}
+		name="All"
+		type={`${decodedCurrentBadge === collection ? 'primary' : 'neutral'}`}
+	/>
+	{
+		badges.map((badge) => (
+			<>
+				<Badge
+					link={`/${collection}/${collection === 'eguides' ? 'categories' : 'tags'}/${badge}`}
+					name={badge}
+					type={`${decodedCurrentBadge === badge ? 'primary' : 'neutral'}`}
+				/>
+			</>
+		))
+	}
+</div>
+
+<style>
+	.badge-nav {
+		@apply mb-6 flex flex-row flex-wrap items-center justify-start gap-2 capitalize;
+	}
+</style>

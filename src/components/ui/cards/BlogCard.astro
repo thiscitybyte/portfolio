@@ -1,0 +1,93 @@
+---
+// Blog Card
+// ------------
+// Description: The blog card component
+// Properties:
+// - Title: the title of the card
+// - Image: the main image of the card
+// - Icon: the icon of the card
+// - Link: The link to the blog post
+// - classes: extra classes
+// - Badges: the tags or categories of the blog post
+// - Author: the author of the blog post
+// - Date: the date of the blog post
+// Reference: https://wind-ui.com/components/cards/
+
+// Components
+// - UI
+import { Image } from 'astro:assets'
+import Card from './partials/Card.astro'
+import CardBody from './partials/CardBody.astro'
+import Badge from '../Badge.astro'
+
+// Content
+// - Props
+type Props = {
+	title?: string
+	image?: any
+	link?: string
+	classes?: string
+	badges?: string[]
+	author?: string
+	date?: string
+}
+const {
+	title = '',
+	image,
+	link,
+	classes = '!shadow-none border border-neutral-100 dark:border-neutral-800',
+	badges,
+	author,
+	date
+} = Astro.props
+
+// Const function to format author name
+const formatAuthorName = (author: string): string => {
+	return author
+		.split('-')
+		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+		.join(' ')
+}
+---
+
+<Card classes={classes}>
+	{image && <Image src={image} alt={title} width={600} height={400} class="w-full" />}
+	<CardBody>
+		<h3 class="post-title">
+			<a href={link}>{title}</a>
+		</h3>
+		{
+			author ? (
+				<h4 class="post-subtitle">
+					By <a href={`/blog/authors/${author}`}>{formatAuthorName(author)} </a>
+					{date && 'On' + ' ' + date}
+				</h4>
+			) : (
+				<h4 class="post-subtitle">On {date}</h4>
+			)
+		}
+		<slot />
+	</CardBody>
+
+	{
+		badges && (
+			<div class="post-badges">
+				{badges.map((badge: string) => (
+					<Badge name={badge} link={`/blog/tags/` + badge} classes="capitalize" />
+				))}
+			</div>
+		)
+	}
+</Card>
+
+<style>
+	.post-title {
+		@apply mb-0 text-xl [&_a]:text-inherit;
+	}
+	.post-subtitle {
+		@apply mb-6 text-sm font-normal capitalize text-neutral-400 dark:text-neutral-400 [&_a]:text-neutral-500 [&_a]:dark:text-neutral-300;
+	}
+	.post-badges {
+		@apply flex gap-2 border-t border-neutral-100 px-6 py-4 dark:border-neutral-800;
+	}
+</style>

@@ -1,0 +1,75 @@
+{
+	"footerAbout": {
+		"title": "Astro Starter.",
+		"aboutText": "Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.",
+		"logo": {
+			"src": "/logo.svg",
+			"alt": "The tailwind astro theme",
+			"text": "Astro Starter."
+		}
+	},
+	"footerColumns": [
+		{
+			"category": "Product",
+			"subCategories": [
+				{
+					"subCategory": "Features",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "FAQ",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "Pricing",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "Changelog",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "Terms",
+					"subCategoryLink": "/#"
+				}
+			]
+		},
+		{
+			"category": "About us",
+			"subCategories": [
+				{
+					"subCategory": "About us",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "News",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "Careers",
+					"subCategoryLink": "/#"
+				}
+			]
+		},
+		{
+			"category": "Get in touch",
+			"subCategories": [
+				{
+					"subCategory": "Contact",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "Support",
+					"subCategoryLink": "/#"
+				},
+				{
+					"subCategory": "Join us",
+					"subCategoryLink": "/#"
+				}
+			]
+		}
+	],
+	"subFooter": {
+		"copywriteText": "© Astro Starter 2025."
+	}
+}

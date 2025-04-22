@@ -1,0 +1,27 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Astro Starter | Your Productivity Toolkit',
+	description:
+		'Astro Starter is a powerful productivity toolkit designed to enhance your workflow and boost your productivity. With features like analytics, security, and integrations, Astro Starter is the perfect solution for your business.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section>
+		<Row>
+			<Col>
+				<p>Hello world!</p>
+			</Col>
+		</Row>
+	</Section>
+</Layout>

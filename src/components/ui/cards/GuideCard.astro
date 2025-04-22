@@ -1,0 +1,107 @@
+---
+// Blog Card
+// ------------
+// Description: The blog card component
+// Properties:
+// - Title: the title of the card
+// - Subtitle: the subtitle of the card
+// - Image: the main image of the card
+// - Icon: the icon of the card
+// - Link: The link to the blog post
+// - classes: extra classes
+// - Tags: the tags of the blog post
+// Reference: https://wind-ui.com/components/cards/
+
+// Components
+// - UI
+import { Image } from 'astro:assets'
+import Card from './partials/Card.astro'
+import CardBody from './partials/CardBody.astro'
+import Badge from '../Badge.astro'
+
+// Props
+type Props = {
+	title?: string
+	image?: any
+	link?: string
+	classes?: string
+	readTime?: string
+	badges?: string[]
+	type?: string
+}
+const {
+	title = '',
+	readTime,
+	image,
+	link,
+	classes = '!shadow-none border border-neutral-100 dark:border-neutral-800 relative',
+	badges,
+	type
+} = Astro.props
+---
+
+<Card classes=`${classes} ${type === 'featured' ? 'lg:!grid lg:!grid-cols-2' : ''}`>
+	{
+		readTime && (
+			<span class="read-time">
+				<Badge
+					size="sm"
+					name={readTime}
+					classes="capitalize"
+					type="primary"
+					classes="!rounded-full"
+				/>
+			</span>
+		)
+	}
+	{
+		image && (
+			<Image src={image} alt={title} width={800} height={400} class="h-full w-full object-cover" />
+		)
+	}
+	<CardBody classes=`${type === 'featured' ? 'lg:!p-12' : ''}`>
+		<h3
+			class:list={[
+				'eguide-header',
+				{ ['max-w-64']: !image },
+				{ ['lg:!text-2xl']: type === 'featured' }
+			]}
+		>
+			<a href={link} class="eguide-header__title">{title}</a>
+			{
+				badges && (
+					<div class="eguide-header__categories">
+						{badges.map((badge: string, index: number) => (
+							<a href={`/eguides/categories/` + badge}>
+								{badge}
+								{index < badges.length - 1 && ', '}
+							</a>
+						))}
+					</div>
+				)
+			}
+		</h3>
+		<div
+			class:list={[
+				{ ['line-clamp-2 lg:line-clamp-none lg:!text-lg lg:leading-relaxed']: type === 'featured' }
+			]}
+		>
+			<slot />
+		</div>
+	</CardBody>
+</Card>
+
+<style>
+	.eguide-header {
+		@apply mb-6 flex flex-col items-start justify-between gap-1 text-xl;
+	}
+	.eguide-header__title {
+		@apply w-full text-inherit transition-colors hover:text-primary-600;
+	}
+	.read-time {
+		@apply absolute right-6 top-6 inline-flex justify-end text-nowrap pt-1 text-sm font-normal capitalize text-neutral-400 dark:text-neutral-400;
+	}
+	.eguide-header__categories {
+		@apply flex flex-row flex-wrap gap-1 text-sm font-normal capitalize [&_a]:text-neutral-500 [&_a]:transition-colors hover:[&_a]:text-neutral-600 [&_a]:dark:text-neutral-400 hover:[&_a]:dark:text-neutral-300;
+	}
+</style>

@@ -1,0 +1,69 @@
+{
+	"logo": {
+		"src": "/logo.svg",
+		"alt": "The tailwind astro theme",
+		"text": "Astro Starter Pro."
+	},
+	"navItems": [
+		{
+			"name": "Home",
+			"link": "#",
+			"submenu": [
+				{
+					"links": [
+						{ "name": "Video Popup", "link": "/#", "badge": "new!" },
+						{ "name": "Animated Hero", "link": "/#" },
+						{ "name": "Slider", "link": "/#" },
+						{ "name": "Split Image", "link": "/#", "badge": "new!" },
+						{ "name": "App image", "link": "/#" }
+					]
+				}
+			]
+		},
+		{
+			"name": "Pricing",
+			"link": "/#"
+		},
+		{
+			"name": "Features",
+			"link": "/#"
+		},
+		{
+			"name": "Pages",
+			"link": "#",
+			"align": "center",
+			"submenu": [
+				{
+					"name": "Services",
+					"links": [
+						{ "name": "Features", "link": "/#" },
+						{ "name": "Features - Cards", "link": "/#", "badge": "new!" },
+						{ "name": "Features - List", "link": "/#" },
+						{ "name": "Integrations", "link": "/#" },
+						{ "name": "Pricing compare", "link": "/#", "badge": "new!" },
+						{ "name": "Pricing classic", "link": "/#" }
+					]
+				},
+				{
+					"name": "Resources",
+					"links": [
+						{ "name": "Blog", "link": "/#" },
+						{ "name": "eGuides", "link": "/#", "badge": "new!" },
+						{ "name": "Changelog", "link": "/#" },
+						{ "name": "Roadmap", "link": "/#", "badge": "new!" },
+						{ "name": "FAQ", "link": "/fa" }
+					]
+				},
+				{
+					"name": "Misc",
+					"links": [
+						{ "name": "Signup", "link": "/#" },
+						{ "name": "Terms", "link": "/#" }
+					]
+				}
+			]
+		},
+		{ "name": "Contact", "link": "/#" }
+	],
+	"navActions": [{ "name": "Try it now", "style": "primary", "size": "lg", "modal": "signup" }]
+}

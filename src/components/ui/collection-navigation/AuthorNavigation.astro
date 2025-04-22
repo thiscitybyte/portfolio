@@ -1,0 +1,56 @@
+---
+// Author Navigation
+// ------------
+// Description: A navigation component for the blog pages that displays the authors of the blog posts.
+// Properties:
+// - classes: Additional classes to be added to the navigation
+
+// Components
+// - UI
+import Badge from '../Badge.astro'
+
+// Content
+import { getCollection } from 'astro:content'
+
+// - Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+
+// - Collection data
+const posts = await getCollection('blog')
+const authors = [...new Set(posts.map((post) => post.data.author).flat())]
+const currentPath = new URL(Astro.request.url).pathname
+const pathSegments = currentPath.split('/').filter((segment) => segment.length > 0)
+const currentAuthor = pathSegments[pathSegments.length - 1] || ''
+
+// Const function to format author name
+const formatAuthorName = (author: string): string => {
+	return author
+		.split('-')
+		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+		.join(' ')
+}
+---
+
+<div class:list={['badge-nav', { [`${classes}`]: classes }]}>
+	<Badge link={`/blog`} name="All" type={`${currentAuthor === 'blog' ? 'primary' : 'neutral'}`} />
+	{
+		authors.map((author) => (
+			<>
+				<Badge
+					link={`/blog/authors/${author}`}
+					name={formatAuthorName(author)}
+					type={`${currentAuthor === author ? 'primary' : 'neutral'}`}
+				/>
+			</>
+		))
+	}
+</div>
+
+<style>
+	.badge-nav {
+		@apply mb-6 flex flex-row flex-wrap items-center justify-start gap-2 capitalize;
+	}
+</style>

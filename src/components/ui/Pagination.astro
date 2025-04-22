@@ -1,0 +1,113 @@
+---
+// Pagination
+// ------------
+// Description: The primary basic pagination component.
+// Properties:
+// - first: The url of the first page
+// - prev: The url of the previous page
+// - next: The url of the next page
+// - last: The url of the last page
+// - current: The current page
+// - length: The number of pages
+// - size: The number of items per page
+// - total: The total number of items
+// - collection: The name of the collection (blog or eguides)
+// Reference: https://wind-ui.com/components/pagination/
+
+// Components
+// - UI
+import { Icon } from 'astro-icon/components'
+
+// Content
+// - Props
+type Props = {
+	first: string
+	prev: string
+	next: string
+	last: string
+	current: string
+	length: number
+	size: number
+	total: number
+	collection?: string
+}
+const { first, prev, next, last, current, length, size, total, collection = 'blog' } = Astro.props
+---
+
+<nav class="pagination" role="navigation" aria-label="Pagination Navigation">
+	<p class="pagination__helper-text">
+		Showing {' '}
+		{size}
+		{' '}
+		of {' '}
+		{total}
+		{' '}
+		results
+	</p>
+
+	<ul class="pagination__list">
+		<li>
+			<a href={first} aria-label="Goto Page 1" class="pagination__nav-arrows">
+				<span class="sr-only">First</span>
+				<Icon name="chevron-double-left" class="-mx-1 h-4 w-4" />
+			</a>
+		</li>
+		<li>
+			<a href={prev} aria-label="Got to previous page" class="pagination__nav-arrows">
+				<span class="order-2 md:sr-only">Prev</span>
+				<Icon name="chevron-left" class="-mx-1 h-4 w-4" />
+			</a>
+		</li>
+		{
+			Array.from({ length: length }).map((_, index) => {
+				const pageNumber = index + 1
+				const pageUrl = pageNumber === 1 ? `/${collection}` : `/${collection}/${pageNumber}`
+
+				return (
+					<li>
+						<a
+							href={pageUrl}
+							aria-label={`Goto Page ${pageNumber}`}
+							class={`pagination__item-link ${pageUrl === current ? 'pagination__item-link--active' : ''}`}
+						>
+							{pageNumber}
+						</a>
+					</li>
+				)
+			})
+		}
+		<li>
+			<a href={next} aria-label={`Goto Page ${current + 1}`} class="pagination__nav-arrows">
+				<span class="md:sr-only">Next</span>
+				<Icon name="chevron-right" class="-mx-1 h-4 w-4" />
+			</a>
+		</li>
+		<li>
+			<a href={last} aria-label={`Goto Page ${size}`} class="pagination__nav-arrows">
+				<span class="sr-only">Last</span>
+				<Icon name="chevron-double-right" class="-mx-1 h-4 w-4" />
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<style>
+	.pagination {
+		@apply flex w-full flex-col items-center gap-2 md:flex-row;
+	}
+	.pagination__helper-text {
+		@apply m-0 w-full flex-1 p-0 text-center text-sm font-medium text-neutral-500 md:text-left dark:text-neutral-300;
+	}
+	.pagination__list {
+		@apply flex list-none items-center justify-center text-sm text-neutral-700 md:gap-1 dark:text-neutral-50;
+	}
+	.pagination__nav-arrows {
+		@apply inline-flex h-10 items-center justify-center gap-4 rounded stroke-neutral-700 px-4 text-sm font-medium text-neutral-700 transition duration-300 hover:bg-primary-50 hover:stroke-primary-500 hover:text-primary-500 focus:bg-primary-50 focus:stroke-primary-600 focus:text-primary-600 focus-visible:outline-none dark:text-neutral-50 dark:hover:bg-primary-400/15 dark:hover:text-primary-600;
+	}
+	.pagination__item-link {
+		@apply hidden h-10 items-center justify-center gap-4 rounded stroke-neutral-700 px-4 text-sm font-medium text-neutral-700 transition duration-300 hover:bg-primary-50 hover:stroke-primary-500 hover:text-primary-500 focus:bg-primary-50 focus:stroke-primary-600 focus:text-primary-600 focus-visible:outline-none md:inline-flex dark:text-neutral-50 dark:hover:bg-primary-400/15 dark:hover:text-primary-600;
+	}
+	.pagination__item-link--active {
+		@apply bg-primary-600 text-primary-50 hover:bg-primary-700 hover:stroke-primary-500 hover:text-primary-50 focus:bg-primary-800 focus:text-primary-50;
+	}
+</style>
