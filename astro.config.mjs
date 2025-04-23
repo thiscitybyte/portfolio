@@ -14,10 +14,6 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   site: "https://oxygenna.com/",
-  i18n: {
-    defaultLocale: "en",
-    locales: ["es", "en"],
-  },
   integrations: [
     tailwind(),
     icon(),
