@@ -1,1 +1,1 @@
-# Astro Starter Pro - Astro Theme
+# Milo Pro - Astro Theme

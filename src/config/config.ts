@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Astro Starter. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'Milo. Tailwind CSS Milo Kit by Oxygenna',
 	siteDescription:
-		'Astro Starter is a design and development agency that specializes in creating beautiful and functional websites.',
+		'Milo is a design and development agency that specializes in creating beautiful and functional websites.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/logo.svg',
-		alt: 'Astro Starter. logo'
+		alt: 'Milo. logo'
 	},
 	canonical: true,
 	noindex: false,
