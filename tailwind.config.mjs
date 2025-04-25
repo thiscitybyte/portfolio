@@ -20,7 +20,8 @@ export default {
     },
     // Font weights
     {
-      pattern: /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
+      pattern:
+        /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
     },
     // Alignments
     {
@@ -32,17 +33,17 @@ export default {
       colors: {
         transparent: "transparent",
         primary: {
-          50: "#fdf2f8",
-          100: "#fce7f3",
-          200: "#fbcfe8",
-          300: "#f9a8d4",
-          400: "#f472b6",
-          500: "#E2187D",
-          600: "#db2777",
-          700: "#be185d",
-          800: "#9d174d",
-          900: "#831843",
-          950: "#500724",
+          50: "#f5f2ff",
+          100: "#ede8ff",
+          200: "#ddd4ff",
+          300: "#c4b2ff",
+          400: "#a684ff",
+          500: "#8c55fd",
+          600: "#7f32f5",
+          700: "#7020e1",
+          800: "#5e1abd",
+          900: "#4e189a",
+          950: "#2f0c69",
         },
         neutral: {
           50: "#f8fafc",
@@ -62,8 +63,8 @@ export default {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
-        headings: ["Outfit Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["IBM Plex Sans", ...defaultTheme.fontFamily.sans],
+        headings: ["IBM Plex Mono", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         dropdown: {
@@ -71,16 +72,28 @@ export default {
           "100%": { marginTop: "0", opacity: 1 },
         },
         fadeInShadowLight: {
-          "100%": { boxShadow: "0 20px 25px -5px rgba(15, 23, 42, .025), 0 8px 10px -6px rgba(15, 23, 42, .025);" },
+          "100%": {
+            boxShadow:
+              "0 20px 25px -5px rgba(15, 23, 42, .025), 0 8px 10px -6px rgba(15, 23, 42, .025);",
+          },
         },
         fadeInShadowDark: {
-          "100%": { boxShadow: "0 20px 25px -5px rgba(2, 6, 23, .25), 0 8px 10px -6px rgba(2, 6, 23, .25);" },
+          "100%": {
+            boxShadow:
+              "0 20px 25px -5px rgba(2, 6, 23, .25), 0 8px 10px -6px rgba(2, 6, 23, .25);",
+          },
         },
         fadeInColorTransparentLight: {
-          "100%": { backdropFilter: "blur(4px)", background: "rgba(255, 255, 255, .9)" },
+          "100%": {
+            backdropFilter: "blur(4px)",
+            background: "rgba(255, 255, 255, .9)",
+          },
         },
         fadeInColorTransparentDark: {
-          "100%": { backdropFilter: "blur(4px)", background: "rgba(15, 23, 42, 0.9)" },
+          "100%": {
+            backdropFilter: "blur(4px)",
+            background: "rgba(15, 23, 42, 0.9)",
+          },
         },
         marquee: {
           "0%": { transform: "translateX(0%)" },
@@ -95,8 +108,10 @@ export default {
         dropdown: "dropdown 300ms ease-in-out forwards",
         fadeInShadowLight: "fadeInShadowLight 500ms ease-in-out forwards",
         fadeInShadowDark: "fadeInShadowDark 500ms ease-in-out forwards",
-        fadeInColorTransparentLight: "fadeInColorTransparentLight 500ms ease-in-out forwards",
-        fadeInColorTransparentDark: "fadeInColorTransparentDark 500ms ease-in-out forwards",
+        fadeInColorTransparentLight:
+          "fadeInColorTransparentLight 500ms ease-in-out forwards",
+        fadeInColorTransparentDark:
+          "fadeInColorTransparentDark 500ms ease-in-out forwards",
         marquee: "marquee 48s linear infinite",
         marqueefollowup: "marqueefollowup 48s linear infinite",
       },
