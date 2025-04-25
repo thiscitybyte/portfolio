@@ -27,11 +27,9 @@ type Props = {
 	figcaption: string
 	cite?: string
 	link?: string
-	avatar?: any
 	size?: string
 	mobileSize?: string
 	align?: 'left' | 'center'
-	rating?: 0 | 1 | 2 | 3 | 4 | 5
 	quoteSize?: number
 	classes?: string
 }
@@ -39,10 +37,8 @@ const {
 	blockquote,
 	figcaption,
 	cite,
-	avatar,
 	size = 'base',
 	mobileSize = size,
-	rating,
 	align = 'left',
 	link,
 	classes,
@@ -71,18 +67,7 @@ const {
 				</p>
 			</blockquote>
 			<figcaption class="testimonial__figcaption">
-				{rating && <Rating rating={rating} />}
 				<div class="testimonial__figcaption-container">
-					{
-						avatar && (
-							<Avatar
-								size="lg"
-								image={avatar}
-								radius="rounded-full"
-								classes="cursor-default max-w-full shrink-0"
-							/>
-						)
-					}
 					<div class="testimonial__figcaption-cite-container">
 						<span class="testimonial__figcaption--credit">{figcaption}</span>
 						{
@@ -108,36 +93,36 @@ const {
 
 <style>
 	.testimonial {
-		@apply overflow-hidden leading-relaxed;
+		@apply overflow-visible leading-relaxed;
 	}
 	.testimonial--center {
-		@apply text-center [&_.testimonial\_\_figcaption:has(.avatar)_.testimonial\_\_figcaption-cite-container]:text-left [&_.testimonial\_\_figcaption]:justify-center;
+		@apply text-center [&_.testimonial\_\_figcaption]:justify-center;
 	}
 	.testimonial--quote {
-		@apply absolute left-6 top-6 z-0 text-neutral-50 dark:text-neutral-50/15 [.light_&]:text-neutral-50;
+		@apply absolute -left-4 -top-8 z-0 text-primary-400;
 	}
 	.testimonial__container {
-		@apply relative p-6;
+		@apply relative px-20;
 	}
 	.testimonial__figure {
 		@apply relative z-10;
 	}
 	.testimonial__blockquote {
-		@apply p-6 [&>p]:text-neutral-500 dark:[&>p]:text-neutral-300 [.light_&>p]:text-neutral-500;
+		@apply pb-6 font-headings text-3xl leading-[3.75rem] [&>p]:text-neutral-500 dark:[&>p]:text-neutral-300 [.light_&>p]:text-neutral-500;
 	}
 	.testimonial__figcaption {
-		@apply flex flex-col items-center gap-4 p-6 pt-2 text-sm leading-normal text-neutral-700 dark:text-neutral-50 [.light_&]:text-neutral-700;
+		@apply flex flex-col gap-4 text-sm leading-normal text-neutral-700 dark:text-neutral-50 [.light_&]:text-neutral-700;
 	}
 	.testimonial__figcaption-container {
-		@apply flex items-center gap-4 pt-4 text-sm;
+		@apply flex items-center gap-4 text-sm;
 	}
 	.testimonial__figcaption-cite-container {
 		@apply flex flex-col gap-1;
 	}
 	.testimonial__figcaption--credit {
-		@apply font-bold uppercase;
+		@apply font-semibold;
 	}
 	.testimonial__figcaption--cite {
-		@apply not-italic;
+		@apply font-semibold not-italic text-neutral-500;
 	}
 </style>
