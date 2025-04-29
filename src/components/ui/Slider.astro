@@ -24,7 +24,7 @@ import '../../styles/swiper.css'
 
 // Props
 type Props = {
-	imageList: Array<any>
+	imageList?: Array<any>
 	delay?: number
 	effect?: string
 	slidesPerView?: number
@@ -56,12 +56,14 @@ const {
 <div class:list={['swiper', { [`swiper-${id}`]: id }, classes]}>
 	<div class="swiper-wrapper">
 		{
-			imageList.map((image) => (
-				<div class:list={['swiper-slide', slideClasses]}>
-					<Image src={image} alt="Slider Image" />
-				</div>
-			))
+			imageList &&
+				imageList.map((image) => (
+					<div class:list={['swiper-slide', slideClasses]}>
+						<Image src={image} alt="Slider Image" />
+					</div>
+				))
 		}
+		<slot />
 	</div>
 	{showPagination && <div class="swiper-pagination" />}
 	{

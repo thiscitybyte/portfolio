@@ -680,5 +680,5 @@ button.swiper-pagination-bullet {
 	@apply !opacity-20;
 }
 .swiper-pagination-bullet {
-	@apply !mx-3 !size-3 !bg-neutral-900/20 !opacity-100 [&.swiper-pagination-bullet-active]:!bg-primary-500;
+	@apply !mx-3 !size-3 !bg-primary-50 !opacity-100 [&.swiper-pagination-bullet-active]:!bg-primary-500;
 }
