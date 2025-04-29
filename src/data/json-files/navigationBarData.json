@@ -2,27 +2,27 @@
 	"navItems": [
 		{
 			"name": "About me",
-			"link": "#about"
+			"link": "/#about"
 		},
 		{
 			"name": "Experience",
-			"link": "#experience"
+			"link": "/#experience"
 		},
 		{
 			"name": "Skills & Tools",
-			"link": "#skills-tools"
+			"link": "/#skills-tools"
 		},
 		{
 			"name": "Feedback",
-			"link": "#feedback"
+			"link": "/#feedback"
 		},
 		{
 			"name": "Case Studies",
-			"link": "#case-studies"
+			"link": "/case-studies"
 		},
 		{
 			"name": "Contact",
-			"link": "#contact"
+			"link": "/#contact"
 		}
 	]
 }

@@ -12,7 +12,6 @@
 // Components
 import NavigationBar from '../components/ui/NavigationBar.astro'
 import Main from '../components/ui/Main.astro'
-import Footer from '../components/ui/Footer.astro'
 import Header from '../components/blocks/head/Header.astro'
 // Scripts
 import Scriprs from '../components/scripts/ThemeScripts.astro'
@@ -59,7 +58,6 @@ const {
 		<Main>
 			<slot />
 		</Main>
-		{footer !== 'none' && <Footer />}
 		<Scriprs />
 	</body>
 </html>
