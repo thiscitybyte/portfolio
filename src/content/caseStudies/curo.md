@@ -2,8 +2,8 @@
 title: Curo – Landing Page
 description: >-
   Created a conversion-focused landing page template for a B2B SaaS startup, including responsive components.
-cardImage: /caseStudies/curo-image.jpg
-heroImage: /caseStudies/case-study-02.jpg
+cardImage: /caseStudies/case-study-02.jpg
+heroImage: /caseStudies/case-study-02-image.jpg
 roles:
   - design-and-front-end
 ---
