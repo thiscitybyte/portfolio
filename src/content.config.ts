@@ -7,7 +7,8 @@ const caseStudies = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string(),
-			image: z.string(),
+			cardImage: z.string(),
+			heroImage: z.string(),
 			roles: z.array(z.string())
 		})
 })
