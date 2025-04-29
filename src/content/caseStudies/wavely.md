@@ -2,7 +2,7 @@
 title: Wavely – Music Discovery Platform
 description: >-
   A clean, responsive web app that helps users discover new music based on mood, genre, and activity.
-image: /blog/en/advanced-reporting-analytics/image.png
+image: /caseStudies/wavely-image.jpg
 roles:
   - front-end-dev-and-ui-design
 ---
