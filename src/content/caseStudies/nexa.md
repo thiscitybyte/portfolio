@@ -2,8 +2,8 @@
 title: Nexa Health – Website Redesign
 description: >-
   Led the redesign of a healthcare tech company's website to improve UX, responsiveness, and lead generation.
-cardImage: /caseStudies/case-study-01.jpg
-heroImage: /caseStudies/case-study-01-image.jpg
+cardImage: /caseStudies/case-study-05.jpg
+heroImage: /caseStudies/case-study-05-image.jpg
 roles:
   - ux-design
 ---

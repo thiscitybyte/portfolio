@@ -2,8 +2,8 @@
 title: Arvo CRM – SaaS Dashboard
 description: >-
   Designed and developed a clean, responsive SaaS dashboard for a CRM platform, enhancing usability and visual clarity.
-cardImage: /caseStudies/case-study-03.jpg
-heroImage: /caseStudies/case-study-03-image.jpg
+cardImage: /caseStudies/case-study-04.jpg
+heroImage: /caseStudies/case-study-04-image.jpg
 roles:
   - system-architecture
 ---

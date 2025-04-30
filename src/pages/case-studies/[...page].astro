@@ -1,0 +1,74 @@
+---
+// Case Studies Page
+// ------------
+// Description: The case studies page is a page that displays all the case studies.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Row from '../../components/ui/Row.astro'
+import Col from '../../components/ui/Col.astro'
+// - UI
+import CaseStudies from '../../components/blocks/caseStudies/CaseStudies.astro'
+
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths({ paginate }: any) {
+	const allCaseStudies = await getCollection('caseStudies', ({ id }) => {
+		return id
+	})
+	// Generate pages from our array of case studies, with 6 to a page
+	return paginate(allCaseStudies, { pageSize: 6 })
+}
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props as any
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Milo | Case Studies',
+	description:
+		"Explore Milo's latest news designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Milo today!"
+}
+// - Page Header
+const header = {
+	title: 'The <strong>Milo</strong> Case Studies',
+	text: "Explore Milo's latest case studies."
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section id="intro" padding="top" classes="!overflow-visible">
+		<Row>
+			<Col span="12" classes="max-w-3xl self-center justify-self-center ">
+				<div class="relative text-left">
+					<span class="absolute -left-24 -top-32 h-48 w-48 rounded-full bg-primary-500"></span>
+					<h1 class="text-center text-5xl opacity-80">Case Studies</h1>
+					<p class="text-center text-lg opacity-80">
+						Over the years, I have had the privilege of working on a wide range of projects, from
+						designing and developing websites for small businesses to creating complex web
+						applications for large enterprises.
+					</p>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+	<CaseStudies
+		data={page.data}
+		{...page.lastPage === 1
+			? {}
+			: {
+					pagination: {
+						first: page.url.first,
+						current: page.url.current,
+						length: page.lastPage,
+						prev: page.url.prev,
+						next: page.url.next,
+						last: page.url.last,
+						size: page.size,
+						total: page.total
+					}
+				}}
+	/>
+</Layout>
