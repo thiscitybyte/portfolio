@@ -35,7 +35,7 @@ const formatRoleName = (role: string): string => {
 			<Col span="12" classes="max-w-3xl self-center justify-self-center ">
 				<div class="relative z-10 text-left">
 					<span class="absolute -left-24 -top-32 h-48 w-48 rounded-full bg-primary-500"></span>
-					<h1 class="text-center text-5xl opacity-80">
+					<h1 class="text-center text-3xl opacity-80 md:text-5xl">
 						{frontmatter.title}
 					</h1>
 					<p class="text-center text-lg opacity-80">
@@ -44,13 +44,13 @@ const formatRoleName = (role: string): string => {
 					<img
 						src={frontmatter.heroImage}
 						alt={frontmatter.title}
-						class="-mb-20 w-full border border-neutral-200 md:-mb-32 lg:-mb-60 dark:border-neutral-500"
+						class="-mb-28 w-full border border-neutral-200 md:-mb-40 lg:-mb-60 dark:border-neutral-500"
 					/>
 				</div>
 			</Col>
 		</Row>
 	</Section>
-	<div class="collection-body basic-text basic-text--lg mt-10 md:mt-20">
+	<div class="collection-body basic-text basic-text--lg mt-12 md:mt-28">
 		<slot />
 		<div class="mt-12 flex flex-row justify-between">
 			<Button link="/#contact" type="link" variation="link" size="lg">

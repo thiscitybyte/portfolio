@@ -37,7 +37,7 @@ const sortedCaseStudies = allCaseStudies.sort((a: any, b: any) => {
 					focus on clean design, thoughtful UX, and modern front-end development.
 				</p>
 			</Col>
-			<Col span="5" classes="self-end justify-self-end">
+			<Col span="5" classes="lg:self-end lg:justify-self-end">
 				<Button link="/case-studies" type="link" variation="link">
 					more <Icon name="long-arrow-right" />
 				</Button>
@@ -46,7 +46,7 @@ const sortedCaseStudies = allCaseStudies.sort((a: any, b: any) => {
 		<Row>
 			<Col span="2" />
 			<Col span="10">
-				<div class="grid grid-cols-3 gap-4">
+				<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
 					{
 						sortedCaseStudies.slice(0, 3).map((caseStudy: any) => (
 							<CaseStudyCard
