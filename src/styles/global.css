@@ -61,9 +61,6 @@ h5 {
 h6 {
 	@apply text-base lg:text-lg;
 }
-.ul-list {
-	@apply pl-3 [&_li]:mb-2 [&_li]:ml-4 [&_li]:list-disc [&_li]:marker:text-white;
-}
 main a {
 	@apply text-primary-500 hover:text-primary-600;
 }
