@@ -6,58 +6,20 @@
 // - Id: the id of the section
 // - FullWidth: whether the section is will expand to full width or not
 // - StickyCol: specifies wether the section can contain a sticky column or not
-// - Mode:  use that to override the light/dark mode for a specific section. Useful if you have a section that might contain a dark background
 // - Padding: by default each section has a vertical padding. The padding property defines where the padding is applied (top, bottom, both, none), default is both
-// - Bg: the background image of the section
-// - BgPosition: the position of the background (center, top, bottom)
-// - BgHeight: the height of the background
+// - VAlign: aligns the content of the section vertically (top, center, bottom)
 // - classes: additional classes
 
 // Props
-type BgProps = {
-	src: string
-	width: number
-	height: number
-	format: string
-}
 type Props = {
 	id?: string
 	fullWidth?: boolean
 	stickyCol?: boolean
-	mode?: 'dark' | 'light'
 	padding?: 'both' | 'top' | 'bottom' | 'none'
 	vAlign?: string
-	bg?: BgProps
-	bgPosition?: string
-	bgHeight?: string
-	bgSize?: string
 	classes?: string
 }
-const {
-	id,
-	fullWidth,
-	stickyCol = false,
-	mode,
-	padding = 'both',
-	vAlign,
-	bg,
-	bgPosition = 'center',
-	bgHeight = '100%',
-	bgSize = 'cover',
-	classes
-} = Astro.props
-
-const bgStyle = bg
-	? {
-			backgroundImage: `url(${bg.src})`,
-			height: bgHeight,
-			backgroundPosition: bgPosition,
-			backgroundSize: bgSize,
-			backgroundRepeat: 'no-repeat'
-		}
-	: {
-			height: bgHeight
-		}
+const { id, fullWidth, stickyCol = false, padding = 'both', vAlign, classes } = Astro.props
 ---
 
 <section
@@ -71,11 +33,9 @@ const bgStyle = bg
 		{ 'section--padded-b': padding === 'bottom' },
 		{ [`section--v-allign-${vAlign}`]: vAlign },
 		{ 'section--fullwidth': fullWidth },
-		{ [`${mode}`]: mode },
 		{ [`${classes}`]: classes }
 	]}
 >
-	<div class="section__bg" style={bgStyle}></div>
 	<div class="container">
 		<slot />
 	</div>
@@ -83,7 +43,7 @@ const bgStyle = bg
 
 <style>
 	.section {
-		@apply relative text-neutral-500 dark:text-neutral-400 [&.dark:not([class*='bg-'])]:bg-neutral-950 [&.dark]:text-neutral-400 [&.light:not([class*='bg-'])]:bg-white [&.light]:bg-white [&.light]:text-neutral-500 [&.section--sticky-col_.container]:h-full [&:not(.section--sticky-col)]:overflow-hidden;
+		@apply relative text-neutral-400 [&.section--sticky-col_.container]:h-full [&:not(.section--sticky-col)]:overflow-hidden;
 	}
 	.section--padded {
 		@apply py-12 lg:py-24;
@@ -102,9 +62,6 @@ const bgStyle = bg
 	}
 	.section--v-allign-bottom {
 		@apply flex flex-col justify-end;
-	}
-	.section__bg {
-		@apply absolute inset-0 bg-cover;
 	}
 	.container {
 		@apply relative z-[1] mx-auto px-6 [.section--fullwidth_&]:max-w-full [.section--fullwidth_&]:md:px-0;

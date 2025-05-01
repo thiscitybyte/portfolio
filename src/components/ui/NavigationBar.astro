@@ -8,10 +8,6 @@
 // - Theme Switcher: the mode (light/dark) switcher of the website
 // Reference: https://wind-ui.com/components/navbars/
 
-// Components
-// - UI
-import Switcher from './ModeSwitcher.astro'
-
 // Content
 // - Props
 type Props = {
@@ -64,56 +60,9 @@ function isActivePath(currentPath: string): boolean {
 					))
 				}
 			</ul>
-			{/* Theme Switcher */}
-			<Switcher />
 		</nav>
 	</div>
 </header>
-
-<script>
-	// Function to close all menus
-	function closeAllMenus() {
-		// Remove 'open' class from all menu items
-		document.querySelectorAll('.header__menu-item').forEach((item) => {
-			item.classList.remove('open')
-		})
-		// Close mobile menu if open
-		const menu = document.querySelector('.header__menu')
-		const toggle = document.getElementById('header-toggle')
-		if (menu && toggle && menu.classList.contains('header__menu--open')) {
-			menu.classList.remove('header__menu--open')
-			toggle.classList.remove('header__toggle--open')
-			toggle.setAttribute('aria-expanded', 'false')
-		}
-	}
-
-	// Function to initialize menu handlers
-	function initMenuHandlers() {
-		// Close all menus initially
-		closeAllMenus()
-
-		// Handle menu item clicks
-		document.querySelectorAll('.header__menu-link').forEach((link) => {
-			link.addEventListener('click', closeAllMenus)
-		})
-	}
-
-	// Initialize on page load
-	initMenuHandlers()
-
-	// Re-initialize when Astro updates the page
-	document.addEventListener('astro:after-swap', initMenuHandlers)
-
-	// Handle hash changes
-	window.addEventListener('hashchange', closeAllMenus)
-
-	// Cleanup when component is destroyed
-	document.addEventListener('astro:before-swap', () => {
-		document.querySelectorAll('.header__menu-link').forEach((link) => {
-			link.removeEventListener('click', closeAllMenus)
-		})
-	})
-</script>
 
 <style>
 	.header {
@@ -126,10 +75,10 @@ function isActivePath(currentPath: string): boolean {
 		@apply relative mx-auto px-6;
 	}
 	.header__nav {
-		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-700 dark:text-neutral-50;
+		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300 dark:bg-neutral-950/90;
+		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-neutral-950/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 backdrop-blur-sm;
@@ -147,7 +96,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply absolute left-1/2 top-1/2 w-6 -translate-x-1/2 -translate-y-1/2 transform;
 	}
 	.header__toggle-inner span {
-		@apply absolute block h-0.5 transform rounded-full bg-neutral-900 transition-all duration-300 dark:bg-white;
+		@apply absolute block h-0.5 transform rounded-full bg-white transition-all duration-300;
 	}
 	.header__toggle-inner span:nth-child(1) {
 		@apply w-9/12 -translate-y-2 [.header\_\_toggle--open_&]:w-6 [.header\_\_toggle--open_&]:translate-y-0 [.header\_\_toggle--open_&]:rotate-45;

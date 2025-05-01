@@ -41,7 +41,7 @@ const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.prop
 
 <style>
 	.list li {
-		@apply mb-2 ml-4 list-disc text-neutral-500 dark:text-neutral-400;
+		@apply mb-2 ml-4 list-disc text-neutral-400;
 	}
 	.list--none {
 		@apply [&_li]:list-none;
@@ -53,6 +53,6 @@ const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.prop
 		@apply [&.list--checklist_svg]:text-primary-500 [&_li]:marker:text-primary-500;
 	}
 	.list--neutral {
-		@apply [&.list--checklist_svg]:text-neutral-600 [&.list--checklist_svg]:dark:text-white [&_li]:marker:text-neutral-600 [&_li]:dark:marker:text-white;
+		@apply [&.list--checklist_svg]:text-white [&_li]:marker:text-white;
 	}
 </style>

@@ -27,10 +27,7 @@ const formatRoleName = (role: string): string => {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Section
-		id="intro"
-		classes="!overflow-visible border-neutral-200 dark:border-neutral-500 border-b"
-	>
+	<Section id="intro" classes="!overflow-visible border-neutral-500 border-b">
 		<Row>
 			<Col span="12" classes="max-w-3xl self-center justify-self-center ">
 				<div class="relative z-10 text-left">
@@ -44,7 +41,7 @@ const formatRoleName = (role: string): string => {
 					<img
 						src={frontmatter.heroImage}
 						alt={frontmatter.title}
-						class="-mb-28 w-full border border-neutral-200 md:-mb-40 lg:-mb-60 dark:border-neutral-500"
+						class="-mb-28 w-full border border-neutral-500 md:-mb-40 lg:-mb-60"
 					/>
 				</div>
 			</Col>
