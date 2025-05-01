@@ -37,39 +37,51 @@
 				headerMenu.classList.toggle('header__menu--open')
 			})
 		}
+	})
+</script>
 
-		// Modals
-		function openModal(modal) {
-			if (modal && modal.classList.contains('modal')) {
-				modal.classList.add('open')
-			}
-		}
-		function closeModal(modal) {
-			if (modal && modal.classList.contains('modal')) {
-				modal.classList.remove('open')
-			}
-		}
-		const modalButtons = document.querySelectorAll('[data-modal]')
-
-		modalButtons.forEach(function (button) {
-			button.addEventListener('click', function (event) {
-				event.preventDefault()
-				const modalId = button.getAttribute('data-modal')
-				const modal = document.getElementById(modalId)
-				openModal(modal)
-			})
+<!-- Menu Close -->
+<script>
+	// Function to close all menus
+	function closeAllMenus() {
+		// Remove 'open' class from all menu items
+		document.querySelectorAll('.header__menu-item').forEach((item) => {
+			item.classList.remove('open')
 		})
-		document.querySelectorAll('.modal').forEach(function (modal) {
-			modal.addEventListener('click', function (event) {
-				if (event.target === modal) {
-					closeModal(modal)
-				}
-			})
-			const close = modal.querySelector('.modal__close')
-			close.addEventListener('click', function (event) {
-				event.stopPropagation()
-				closeModal(modal)
-			})
+		// Close mobile menu if open
+		const menu = document.querySelector('.header__menu')
+		const toggle = document.getElementById('header-toggle')
+		if (menu && toggle && menu.classList.contains('header__menu--open')) {
+			menu.classList.remove('header__menu--open')
+			toggle.classList.remove('header__toggle--open')
+			toggle.setAttribute('aria-expanded', 'false')
+		}
+	}
+
+	// Function to initialize menu handlers
+	function initMenuHandlers() {
+		// Close all menus initially
+		closeAllMenus()
+
+		// Handle menu item clicks
+		document.querySelectorAll('.header__menu-link').forEach((link) => {
+			link.addEventListener('click', closeAllMenus)
+		})
+	}
+
+	// Initialize on page load
+	initMenuHandlers()
+
+	// Re-initialize when Astro updates the page
+	document.addEventListener('astro:after-swap', initMenuHandlers)
+
+	// Handle hash changes
+	window.addEventListener('hashchange', closeAllMenus)
+
+	// Cleanup when component is destroyed
+	document.addEventListener('astro:before-swap', () => {
+		document.querySelectorAll('.header__menu-link').forEach((link) => {
+			link.removeEventListener('click', closeAllMenus)
 		})
 	})
 </script>
@@ -103,50 +115,4 @@
 	document.addEventListener('astro:after-swap', () => {
 		initializeObserver()
 	})
-</script>
-
-<!-- Light/Dark mode  -->
-<script>
-	if (document.documentElement.classList.contains('mode-auto')) {
-		const applyTheme = () => {
-			if (
-				localStorage.theme === 'dark' ||
-				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				document.documentElement.classList.add('dark')
-			} else {
-				document.documentElement.classList.remove('dark')
-			}
-		}
-		const setupThemeSwitcher = () => {
-			const themeSwitcher = document.getElementById('theme-selector')
-			if (themeSwitcher) {
-				themeSwitcher.addEventListener('click', () => {
-					if (localStorage.theme === 'dark') {
-						localStorage.theme = 'light'
-						document.documentElement.classList.remove('dark')
-					} else {
-						localStorage.theme = 'dark'
-						document.documentElement.classList.add('dark')
-					}
-				})
-			}
-		}
-		document.addEventListener('DOMContentLoaded', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
-		document.addEventListener('astro:page-loaded', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
-		document.addEventListener('astro:after-swap', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
-	} else if (document.documentElement.classList.contains('mode-dark')) {
-		document.documentElement.classList.add('dark')
-	} else if (document.documentElement.classList.contains('mode-light')) {
-		document.documentElement.classList.remove('dark')
-	}
 </script>
