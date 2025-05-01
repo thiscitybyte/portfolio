@@ -17,9 +17,9 @@ type Props = {
 	type?: 'basic' | 'checklist' | 'none'
 	listItems: Array<any>
 	classes?: string
-	listColor?: 'primary' | 'neutral' | 'white'
+	listColor?: 'primary' | 'neutral'
 }
-const { type = 'basic', listColor = 'primary', listItems, classes } = Astro.props
+const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.props
 ---
 
 <ul
@@ -41,7 +41,7 @@ const { type = 'basic', listColor = 'primary', listItems, classes } = Astro.prop
 
 <style>
 	.list li {
-		@apply mb-2 ml-4 list-disc text-neutral-700 dark:text-neutral-50;
+		@apply mb-2 ml-4 list-disc text-neutral-500 dark:text-neutral-50;
 	}
 	.list--none {
 		@apply [&_li]:list-none;
@@ -52,10 +52,7 @@ const { type = 'basic', listColor = 'primary', listItems, classes } = Astro.prop
 	.list--primary {
 		@apply [&.list--checklist_svg]:text-primary-500 [&_li]:marker:text-primary-500;
 	}
-	.list--white {
-		@apply [&.list--checklist_svg]:text-white [&_li]:marker:text-white;
-	}
 	.list--neutral {
-		@apply [&.list--checklist_svg]:text-neutral-500 [&_li]:marker:text-neutral-500;
+		@apply [&.list--checklist_svg]:text-neutral-600 [&.list--checklist_svg]:dark:text-white [&_li]:marker:text-neutral-600 [&_li]:dark:marker:text-white;
 	}
 </style>
