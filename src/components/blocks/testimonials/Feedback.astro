@@ -1,0 +1,54 @@
+---
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Testimonial from '../../ui/Testimonial.astro'
+import Slider from '../../ui/Slider.astro'
+
+// Content
+// - Data
+import testimonials from '../../../data/json-files/testimonialData.json'
+
+// - Props
+type Props = {
+	title: string
+	id?: string
+	classes?: string
+}
+const { title, id, classes } = Astro.props
+---
+
+<Section id && id={id} classes={classes}>
+	<Row>
+		<Col span="2">
+			<h2 class="text-2xl">{title}</h2>
+		</Col>
+		<Col span="10">
+			<Slider
+				slidesPerView={1}
+				id="feedback"
+				delay={3500}
+				showNavigation={false}
+				centeredSlides={true}
+				initialSlide={0}
+				slideClasses="overflow-visible"
+			>
+				{
+					testimonials.map((item) => (
+						<div class="swiper-slide">
+							<Testimonial
+								blockquote={item.blockquote}
+								figcaption={item.figcaption}
+								cite={item.cite}
+								align="left"
+							/>
+						</div>
+					))
+				}
+			</Slider>
+		</Col>
+	</Row>
+</Section>

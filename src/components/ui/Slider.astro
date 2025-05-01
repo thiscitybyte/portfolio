@@ -101,7 +101,10 @@ const {
 				loop: true,
 				pagination: {
 					el: pagination,
-					clickable: true
+					clickable: true,
+					renderBullet: function (index, className) {
+						return `<span class="${className} custom-pagination-bullet">${String(index + 1).padStart(2, '0')}</span>`
+					}
 				},
 				navigation: {
 					nextEl: next,
