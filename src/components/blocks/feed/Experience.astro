@@ -1,0 +1,35 @@
+---
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Feed from '../../ui/Feeds/ExperienceFeed.astro'
+
+// Content
+// - Props
+// Props
+type Props = {
+	data: Array<{
+		title: string
+		date?: string
+		company?: string
+		location?: string
+		text?: string
+	}>
+	classes?: string
+}
+const { data, classes } = Astro.props
+---
+
+<Section id="experience">
+	<Row>
+		<Col span="2">
+			<h2 class="text-2xl">Experience</h2>
+		</Col>
+		<Col span="10">
+			<Feed data={data} classes={classes} />
+		</Col>
+	</Row>
+</Section>
