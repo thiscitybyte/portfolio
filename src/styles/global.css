@@ -3,7 +3,15 @@ html {
 	@apply scroll-smooth antialiased;
 }
 body {
-	@apply bg-neutral-950 font-sans text-neutral-400 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto;
+	@apply font-sans text-neutral-400 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto;
+
+	background:
+		radial-gradient(
+			circle at 50% 100%,
+			theme('colors.primary.950') 0%,
+			theme('colors.neutral.950') 10%
+		),
+		theme('colors.neutral.950');
 }
 
 /* Main typography */
