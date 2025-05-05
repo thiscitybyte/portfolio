@@ -47,12 +47,13 @@ function isActivePath(currentPath: string): boolean {
 			{/* Navigation links */}
 			<ul role="menubar" aria-label="Select page" class="header__menu">
 				{
-					navItems.map((item) => (
+					navItems.map((item, index) => (
 						<li role="none" class="header__menu-item">
 							<a
 								href={item.link}
 								role="menuitem"
 								class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
+								style={{ '--index': index }}
 							>
 								{item.name}
 							</a>
@@ -81,13 +82,16 @@ function isActivePath(currentPath: string): boolean {
 		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-neutral-950/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300;
 	}
 	.header__menu--open {
-		@apply visible opacity-100 backdrop-blur-sm;
+		@apply [&_.header\_\_menu-link]:animate-fadeIn visible opacity-100 backdrop-blur-sm;
+	}
+	.header__menu--open .header__menu-link {
+		animation-delay: calc(0.1s + var(--index) * 0.05s);
 	}
 	.header__menu-item {
 		@apply relative flex cursor-pointer flex-col items-stretch;
 	}
 	.header__menu-link {
-		@apply relative flex items-center gap-1 py-4 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center [&.active]:text-primary-500;
+		@apply relative flex translate-y-[0.625rem] items-center gap-1 py-4 font-headings opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center lg:text-5xl lg:leading-[80px] [&.active]:text-primary-500;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-10 w-10 self-center [&--open]:visible [&--open]:opacity-100;

@@ -79,14 +79,15 @@ export default {
             transform: "scaleX(1)",
           },
         },
-        marqueefollowup: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(0%)" },
+        fadeIn: {
+          "0%": { opacity: 0, transform: "translateY(10px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
       animation: {
         dropdown: "dropdown 300ms ease-in-out forwards",
-        growLine: "growLine 0.3s ease forwards",
+        growLine: "growLine 300ms ease forwards",
+        fadeIn: "fadeIn 300ms ease forwards",
       },
     },
   },
