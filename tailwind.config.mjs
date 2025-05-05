@@ -71,33 +71,13 @@ export default {
           "0%": { marginTop: "-1rem", opacity: 0 },
           "100%": { marginTop: "0", opacity: 1 },
         },
-        fadeInShadowLight: {
-          "100%": {
-            boxShadow:
-              "0 20px 25px -5px rgba(15, 23, 42, .025), 0 8px 10px -6px rgba(15, 23, 42, .025);",
+        growLine: {
+          "0%": {
+            transform: "scaleX(0)",
           },
-        },
-        fadeInShadowDark: {
           "100%": {
-            boxShadow:
-              "0 20px 25px -5px rgba(2, 6, 23, .25), 0 8px 10px -6px rgba(2, 6, 23, .25);",
+            transform: "scaleX(1)",
           },
-        },
-        fadeInColorTransparentLight: {
-          "100%": {
-            backdropFilter: "blur(4px)",
-            background: "rgba(255, 255, 255, .9)",
-          },
-        },
-        fadeInColorTransparentDark: {
-          "100%": {
-            backdropFilter: "blur(4px)",
-            background: "rgba(15, 23, 42, 0.9)",
-          },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
         },
         marqueefollowup: {
           "0%": { transform: "translateX(100%)" },
@@ -106,14 +86,7 @@ export default {
       },
       animation: {
         dropdown: "dropdown 300ms ease-in-out forwards",
-        fadeInShadowLight: "fadeInShadowLight 500ms ease-in-out forwards",
-        fadeInShadowDark: "fadeInShadowDark 500ms ease-in-out forwards",
-        fadeInColorTransparentLight:
-          "fadeInColorTransparentLight 500ms ease-in-out forwards",
-        fadeInColorTransparentDark:
-          "fadeInColorTransparentDark 500ms ease-in-out forwards",
-        marquee: "marquee 48s linear infinite",
-        marqueefollowup: "marqueefollowup 48s linear infinite",
+        growLine: "growLine 0.3s ease forwards",
       },
     },
   },
