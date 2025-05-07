@@ -31,13 +31,13 @@ const formatRoleName = (role: string): string => {
 		<Row>
 			<Col span="12" classes="max-w-3xl self-center justify-self-center ">
 				<div class="relative z-10 text-left">
-					<span class="absolute -left-24 -top-32 h-48 w-48 rounded-full bg-primary-500"></span>
+					<span class="block pb-4 text-center text-lg opacity-80">
+						{formatRoleName(frontmatter.roles.join(', '))}
+					</span>
 					<h1 class="text-center text-3xl opacity-80 md:text-5xl">
 						{frontmatter.title}
 					</h1>
-					<p class="text-center text-lg opacity-80">
-						{formatRoleName(frontmatter.roles.join(', '))}
-					</p>
+
 					<img
 						src={frontmatter.heroImage}
 						alt={frontmatter.title}

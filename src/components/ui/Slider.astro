@@ -3,7 +3,6 @@
 // ------------
 // Description: the slider component is a ui element that allows users to browse through a series of images or content.
 // Properties:
-// - imageList: An array of images
 // - delay: The delay of the slider
 // - effect: The effect of the slider
 // - slidesPerView: The number of slides per view
@@ -24,7 +23,6 @@ import '../../styles/swiper.css'
 
 // Props
 type Props = {
-	imageList?: Array<any>
 	delay?: number
 	effect?: string
 	slidesPerView?: number
@@ -38,7 +36,6 @@ type Props = {
 	slideClasses?: string
 }
 const {
-	imageList,
 	delay,
 	effect = 'slide',
 	slidesPerView = 1,
@@ -55,14 +52,6 @@ const {
 
 <div class:list={['swiper', { [`swiper-${id}`]: id }, classes]}>
 	<div class="swiper-wrapper">
-		{
-			imageList &&
-				imageList.map((image) => (
-					<div class:list={['swiper-slide', slideClasses]}>
-						<Image src={image} alt="Slider Image" />
-					</div>
-				))
-		}
 		<slot />
 	</div>
 	{showPagination && <div class="swiper-pagination" />}
