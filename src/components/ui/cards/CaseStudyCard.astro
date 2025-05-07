@@ -23,6 +23,7 @@ import CardBody from './partials/CardBody.astro'
 type Props = {
 	title?: string
 	image?: any
+	greyImage?: any
 	link?: string
 	classes?: string
 	roles?: string[]
@@ -30,6 +31,7 @@ type Props = {
 const {
 	title = '',
 	image,
+	greyImage,
 	link,
 	classes = '!shadow-none !bg-transparent !border-none',
 	roles
@@ -44,16 +46,19 @@ const formatRoleName = (role: string): string => {
 }
 ---
 
-<Card classes={classes + ' [&_img]:hover:grayscale-0'}>
+<Card classes={classes + ' [&_.grey-image]:hover:opacity-0'}>
 	{
 		image && (
-			<Image
-				src={image}
-				alt={title}
-				width={600}
-				height={400}
-				class="w-full grayscale-[0.8] transition-all duration-300"
-			/>
+			<div class="relative">
+				<Image src={image} alt={title} width={600} height={400} class="w-full" />
+				<Image
+					src={greyImage}
+					alt={title}
+					width={600}
+					height={400}
+					class="grey-image absolute left-0 top-0 w-full opacity-100 transition-opacity duration-300"
+				/>
+			</div>
 		)
 	}
 	<CardBody classes="!px-0 !pb-4 text-neutral-400 text-base">

@@ -3,6 +3,7 @@ title: Kindora
 description: >-
   Designed and built a Shopify-powered site for a boutique wellness brand, focusing on soft & strong visuals.
 cardImage: /caseStudies/case-study-03.jpg
+greyImage: /caseStudies/case-study-03-grey.jpg
 heroImage: /caseStudies/case-study-03-image.jpg
 roles:
   - web-designer
