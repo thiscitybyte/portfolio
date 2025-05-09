@@ -14,7 +14,7 @@ import { Icon } from 'astro-icon/components'
 
 // Props
 type Props = {
-	type?: 'basic' | 'checklist' | 'none'
+	type?: 'basic' | 'none'
 	listItems: Array<any>
 	classes?: string
 	listColor?: 'primary' | 'neutral'
@@ -30,13 +30,7 @@ const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.prop
 		{ [`${classes}`]: classes }
 	]}
 >
-	{
-		listItems.map((item) => (
-			<li>
-				{type === 'checklist' && <Icon name="check-circle" />} {item.listItem}
-			</li>
-		))
-	}
+	{listItems.map((item) => <li>{item.listItem}</li>)}
 </ul>
 
 <style>
@@ -46,13 +40,10 @@ const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.prop
 	.list--none {
 		@apply [&_li]:list-none;
 	}
-	.list--checklist {
-		@apply [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_svg]:h-6 [&_svg]:w-6 [&_svg]:shrink-0 [&_svg]:p-1 [&_svg]:text-primary-500;
-	}
 	.list--primary {
-		@apply [&.list--checklist_svg]:text-primary-500 [&_li]:marker:text-primary-500;
+		@apply [&_li]:marker:text-primary-500;
 	}
 	.list--neutral {
-		@apply [&.list--checklist_svg]:text-white [&_li]:marker:text-white;
+		@apply [&_li]:marker:text-white;
 	}
 </style>
