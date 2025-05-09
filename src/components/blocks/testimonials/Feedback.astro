@@ -9,16 +9,14 @@ import Testimonial from '../../ui/Testimonial.astro'
 import Slider from '../../ui/Slider.astro'
 
 // Content
-// - Data
-import testimonials from '../../../data/json-files/testimonialData.json'
-
 // - Props
 type Props = {
+	data: any
 	title: string
 	id?: string
 	classes?: string
 }
-const { title, id, classes } = Astro.props
+const { data, title, id, classes } = Astro.props
 ---
 
 <Section id && id={id} classes={classes}>
@@ -36,7 +34,7 @@ const { title, id, classes } = Astro.props
 				initialSlide={0}
 			>
 				{
-					testimonials.map((item) => (
+					data.map((item: any) => (
 						<div class="swiper-slide">
 							<Testimonial
 								blockquote={item.blockquote}

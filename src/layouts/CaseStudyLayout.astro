@@ -2,13 +2,19 @@
 // Imports
 const { frontmatter } = Astro.props
 
-//Layout Components
+// Components
+// - Layout
 import Layout from './Layout.astro'
 import Col from '../components/ui/Col.astro'
 import Row from '../components/ui/Row.astro'
 import Section from '../components/ui/Section.astro'
+// - Blocks
+import TitleText from '../components/blocks/titleText/TitleText.astro'
+import Feedback from '../components/blocks/testimonials/Feedback.astro'
+// - UI
 import Button from '../components/ui/Button.astro'
 import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 
 // Content
 // - SEO
@@ -24,38 +30,73 @@ const formatRoleName = (role: string): string => {
 		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
 		.join(' ')
 }
+console.log(frontmatter.id)
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Section id="intro" classes="!overflow-visible border-neutral-500 border-b">
+	<Section id="intro" classes="!overflow-visible">
 		<Row>
-			<Col span="12" classes="max-w-3xl self-center justify-self-center ">
-				<div class="relative z-10 text-left">
-					<span class="block pb-4 text-center text-lg opacity-80">
-						{formatRoleName(frontmatter.roles.join(', '))}
-					</span>
-					<h1 class="text-center text-3xl opacity-80 md:text-5xl">
+			<Col span="2" />
+			<Col span="10">
+				<div>
+					<h1 class="lg:text-9xl">
 						{frontmatter.title}
 					</h1>
-
-					<img
-						src={frontmatter.heroImage}
-						alt={frontmatter.title}
-						class="-mb-28 w-full border border-neutral-500 md:-mb-40 lg:-mb-60"
-					/>
 				</div>
 			</Col>
 		</Row>
 	</Section>
-	<div class="collection-body basic-text basic-text--lg mt-12 md:mt-28">
-		<slot />
-		<div class="mt-12 flex flex-row justify-between">
-			<Button link="/case-studies" type="link" variation="link" size="lg">
-				View more Case Studies <Icon name="short-arrow-right" size="20" />
-			</Button>
-			<Button link="/" type="link" variation="link" size="lg"> Back to homepage </Button>
-		</div>
-	</div>
+	<Section padding="none">
+		<Row>
+			<Col span="12">
+				<Image
+					src={frontmatter.heroImage}
+					alt={frontmatter.title}
+					width={1460}
+					height={700}
+					class="w-full border border-neutral-500"
+				/>
+			</Col>
+		</Row>
+	</Section>
+	<TitleText
+		title="About the project"
+		id="about-project"
+		classes="collection-body basic-text basic-text--lg"
+	>
+		<div slot="firstColumn" set:html={frontmatter.aboutProject.leftCol} />
+		<div slot="secondColumn" set:html={frontmatter.aboutProject.rightCol} />
+	</TitleText>
+	<TitleText
+		title="What we did"
+		id="what-we-did"
+		classes="collection-body basic-text basic-text--lg"
+	>
+		<div slot="firstColumn" set:html={frontmatter.whatWeDid.leftCol} />
+		<div slot="secondColumn" set:html={frontmatter.whatWeDid.rightCol} />
+	</TitleText>
+	{
+		frontmatter.images && (
+			<Section padding="bottom" id="images">
+				<Row>
+					<Col span="2" classes="row-span-2" />
+
+					{frontmatter.images.map((image: string) => (
+						<Col span="5">
+							<Image
+								src={image}
+								alt={frontmatter.title}
+								width={600}
+								height={400}
+								class="w-full border border-neutral-500"
+							/>
+						</Col>
+					))}
+				</Row>
+			</Section>
+		)
+	}
+	<Feedback title="Client feedback" id="client-feedback" data={frontmatter.clientFeedback} />
 </Layout>
 
 <style>

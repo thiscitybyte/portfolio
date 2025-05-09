@@ -1,30 +1,59 @@
 ---
-title: Wavely – Music Discovery Platform
+title: Wavely - Music
 description: >-
-  A clean, responsive web app that helps users discover new music based on mood, genre, and activity.
-cardImage: /caseStudies/case-study-01.jpg
-greyImage: /caseStudies/case-study-01-grey.jpg
-heroImage: /caseStudies/case-study-01-image.jpg
+  A clean, user-focused platform for discovering new music, combining modern design with seamless user experience.
+cardImage: /caseStudies/case-study-06.jpg
+greyImage: /caseStudies/case-study-06-grey.jpg
+heroImage: /caseStudies/case-study-06-image.jpg
 roles:
-  - front-end-dev-and-ui-design
+  - full-stack-development
+introduction: >
+  <p>Designed and developed a music discovery platform, Wavely, to help users discover and share new music.
+  The platform leverages modern design to create a seamless and engaging experience for music lovers.</p>
+  <ul>
+    <li>Designed the user interface for easy navigation</li>
+    <li>Integrated with various music APIs</li>
+    <li>Optimized for mobile-first usage</li>
+  </ul>
+aboutProject:
+  leftCol: >
+    <p>The goal of Wavely was to provide users with a quick, intuitive way to discover new music, share playlists, and connect with others.</p>
+    <ul>
+      <li>Built for music enthusiasts</li>
+      <li>Designed to encourage social sharing</li>
+    </ul>
+  rightCol: >
+    <p>We created an experience that was simple to use but still full of features, including personalized playlists and recommendations.</p>
+    <ul>
+      <li>Integrated user feedback</li>
+      <li>Streamlined social sharing options</li>
+    </ul>
+whatWeDid:
+  leftCol: >
+    <p>Built with the user in mind, Wavely was optimized for both ease of use and performance.</p>
+    <ul>
+      <li>Mobile-first design with fast performance</li>
+      <li>Implemented modern web technologies for scalability</li>
+    </ul>
+  rightCol: >
+    <p>The platform saw high engagement, thanks to its intuitive design and social sharing features.</p>
+    <ul>
+      <li>Increased engagement by 50%</li>
+      <li>Added playlist sharing and playlist collaborations</li>
+    </ul>
+images:
+  - /caseStudies/assets/case-study-image-01.jpg
+  - /caseStudies/assets/case-study-image-04.jpg
+  - /caseStudies/assets/case-study-image-08.jpg
+  - /caseStudies/assets/case-study-image-11.jpg
+clientFeedback:
+  - blockquote: "Wavely has transformed how we discover music. It's user-friendly and visually appealing."
+    figcaption: Product Manager
+    cite: Wavely
+  - blockquote: 'Our users are more engaged, and they love sharing playlists with their friends.'
+    figcaption: UX Designer
+    cite: Wavely
+  - blockquote: 'We’ve seen a sharp increase in user retention thanks to the clean design and social features.'
+    figcaption: CTO
+    cite: Wavely
 ---
-
-I was responsible for designing and developing the landing page template for Wavely, a music discovery platform. As a Front-End Developer and UI Designer, I worked closely with the product team to create a visually appealing and responsive template that effectively communicated the value of the product to potential customers.
-
-The template included a range of responsive components such as hero sections, feature blocks, testimonials, and calls-to-action. I used a modern design approach to ensure that the template was visually appealing and easy to use. The result was a high-quality template that effectively converted visitors into customers.
-
-### Tasks
-
-- Designed and developed the landing page template
-- Worked closely with the product team to ensure that the template effectively communicated the value of the product to potential customers
-- Created a range of responsive components such as hero sections, feature blocks, testimonials, and calls-to-action
-- Used a modern design approach to ensure that the template was visually appealing and easy to use
-- Tested and refined the template to ensure that it was high-quality and effective at converting visitors into customers
-
-### Achievements
-
-- Successfully launched the landing page template, which resulted in a 25% increase in conversions
-
-### Conclusion
-
-In conclusion, I successfully designed and developed a visually appealing and responsive landing page template for Wavely. The template included a range of responsive components and was visually appealing and easy to use. The result was a high-quality template that effectively converted visitors into customers. I worked closely with the product team to ensure that the template met the needs of the product and the customer, and used modern web development techniques to ensure that the template was fast and responsive.

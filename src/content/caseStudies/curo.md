@@ -1,5 +1,5 @@
 ---
-title: Curo – Landing Page
+title: Curo
 description: >-
   Created a conversion-focused landing page template for a B2B SaaS startup, including responsive components.
 cardImage: /caseStudies/case-study-02.jpg
@@ -7,28 +7,53 @@ greyImage: /caseStudies/case-study-02-grey.jpg
 heroImage: /caseStudies/case-study-02-image.jpg
 roles:
   - design-and-front-end
+introduction: >
+  <p>I was responsible for designing and developing the landing page template for Curo, a B2B SaaS startup. 
+  As a Design and Front-End Developer, I worked closely with the product team to create a conversion-focused template.</p>
+  <ul>
+    <li>Created responsive hero sections</li>
+    <li>Designed feature blocks and testimonials</li>
+    <li>Focused on clear call-to-actions</li>
+  </ul>
+aboutProject:
+  leftCol: >
+    <p>The goal was to communicate the value of Curo’s product clearly and effectively to potential customers.</p>
+    <ul>
+      <li>Collaborated closely with the product team</li>
+      <li>Prioritized clarity and simplicity</li>
+    </ul>
+  rightCol: >
+    <p>By ensuring easy navigation and strong visual hierarchy, we created an intuitive experience that boosted conversions.</p>
+    <ul>
+      <li>Optimized for lead generation</li>
+      <li>Ensured mobile responsiveness</li>
+    </ul>
+whatWeDid:
+  leftCol: >
+    <p>I created a template that blended aesthetics with functionality, enabling users to convert easily.</p>
+    <ul>
+      <li>Designed with modern web techniques</li>
+      <li>Worked on accessibility and usability testing</li>
+    </ul>
+  rightCol: >
+    <p>The template was optimized to maximize conversions, both for desktop and mobile users.</p>
+    <ul>
+      <li>Launched with a 25% increase in conversions</li>
+      <li>Used analytics to refine design</li>
+    </ul>
+images:
+  - /caseStudies/assets/case-study-image-07.jpg
+  - /caseStudies/assets/case-study-image-02.jpg
+  - /caseStudies/assets/case-study-image-04.jpg
+  - /caseStudies/assets/case-study-image-10.jpg
+clientFeedback:
+  - blockquote: 'We saw an immediate increase in conversions with the new landing page.'
+    figcaption: Marketing Director
+    cite: Curo
+  - blockquote: 'The responsiveness of the template is excellent across all devices.'
+    figcaption: Product Lead
+    cite: Curo
+  - blockquote: 'Our users engage more with the site thanks to the clean design and structure.'
+    figcaption: CTO
+    cite: Curo
 ---
-
-I was responsible for designing and developing the landing page template for Curo, a B2B SaaS startup. As a Design and Front-End Developer, I worked closely with the product team to create a conversion-focused template that effectively communicated the value of the product to potential customers.
-
-The template included a range of responsive components such as hero sections, feature blocks, testimonials, and calls-to-action. I used a modern design approach to ensure that the template was visually appealing and easy to use. The result was a high-quality template that effectively converted visitors into customers.
-
-### Tasks
-
-- Designed and developed the landing page template
-- Worked closely with the product team to ensure that the template effectively communicated the value of the product to potential customers
-- Created a range of responsive components such as hero sections, feature blocks, testimonials, and calls-to-action
-- Used a modern design approach to ensure that the template was visually appealing and easy to use
-- Tested and refined the template to ensure that it was high-quality and effective at converting visitors into customers
-
-### Achievements
-
-- Successfully launched the landing page template, which resulted in a 25% increase in conversions
-- Developed a reusable template that was easy for the product team to update and maintain
-- Worked closely with the product team to ensure that the template met the needs of the product and the customer
-- Used modern web development techniques to ensure that the template was fast and responsive
-- Ensured that the template was accessible and usable by all users
-
-### Conclusion
-
-In conclusion, I successfully designed and developed a conversion-focused landing page template for Curo. The template included a range of responsive components and was visually appealing and easy to use. The result was a high-quality template that effectively converted visitors into customers. I worked closely with the product team to ensure that the template met the needs of the product and the customer, and used modern web development techniques to ensure that the template was fast and responsive.

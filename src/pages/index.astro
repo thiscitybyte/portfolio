@@ -71,6 +71,7 @@ const skillsData = {
 	]
 }
 // - Feedback Data
+import testimonials from '../data/json-files/testimonialData.json'
 const feedbackData = {
 	title: 'Feedback',
 	id: 'feedback'
@@ -102,6 +103,6 @@ const feedbackData = {
 			<List type="basic" listItems={skillsData.secondColumn[0].listItems} classes="ml-4 " />
 		</div>
 	</TitleText>
-	<Feedback title={feedbackData.title} id={feedbackData.id} />
+	<Feedback title={feedbackData.title} id={feedbackData.id} data={testimonials} />
 	<CaseStudiesHomeSection data={allCaseStudies} />
 </Layout>
