@@ -50,12 +50,10 @@ const formatRoleName = (role: string): string => {
 	<div class="collection-body basic-text basic-text--lg mt-12 md:mt-28">
 		<slot />
 		<div class="mt-12 flex flex-row justify-between">
-			<Button link="/#contact" type="link" variation="link" size="lg">
-				Contact me <Icon name="short-arrow-right" size="20" />
-			</Button>
 			<Button link="/case-studies" type="link" variation="link" size="lg">
-				View more Case Studies
+				View more Case Studies <Icon name="short-arrow-right" size="20" />
 			</Button>
+			<Button link="/" type="link" variation="link" size="lg"> Back to homepage </Button>
 		</div>
 	</div>
 </Layout>
