@@ -1,0 +1,67 @@
+---
+// Components
+// - Blocks
+import TitleText from '../titleText/TitleText.astro'
+// - UI
+import { Icon } from 'astro-icon/components'
+
+const contactData = {
+	title: 'Contact me',
+	id: 'contact',
+	firstColumn: [
+		{
+			text: 'Got a project in mind, a question, or just want to say hello? I’m always open to new collaborations and interesting ideas. Feel free to reach out — I’d love to hear from you.'
+		}
+	],
+	secondColumn: [
+		{
+			type: 'link',
+			href: 'mailto:milo@studio.com',
+			icon: 'at-sign',
+			text: 'milo@studio.com'
+		},
+		{
+			type: 'link',
+			href: 'tel:+13235550198',
+			icon: 'phone',
+			text: '+1 (323) 555-0198'
+		},
+		{
+			type: 'text',
+			icon: 'check-circle',
+			text: 'Remote Friendly'
+		},
+		{
+			type: 'link',
+			href: '#',
+			icon: 'dribbble',
+			text: '@milo.design'
+		}
+	]
+}
+---
+
+<TitleText title={contactData.title} id={contactData.id}>
+	<p slot="firstColumn">
+		{contactData.firstColumn[0].text}
+	</p>
+	<div slot="secondColumn">
+		<div
+			class="text-basic flex flex-col gap-4 text-neutral-300 [&_a]:text-neutral-300 [&_a]:transition-colors [&_a]:duration-300"
+		>
+			{
+				contactData.secondColumn.map((item) =>
+					item.type === 'link' ? (
+						<a href={item.href} class="flex items-center gap-2">
+							<Icon name={item.icon} /> {item.text}
+						</a>
+					) : (
+						<span class="flex items-center gap-2">
+							<Icon name={item.icon} /> {item.text}
+						</span>
+					)
+				)
+			}
+		</div>
+	</div>
+</TitleText>

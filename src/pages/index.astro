@@ -75,26 +75,6 @@ const feedbackData = {
 	title: 'Feedback',
 	id: 'feedback'
 }
-// - Contact Data
-const contactData = {
-	title: 'Contact me',
-	id: 'contact',
-	firstColumn: [
-		{
-			text: 'Got a project in mind, a question, or just want to say hello? I’m always open to new collaborations and interesting ideas. Feel free to reach out — I’d love to hear from you.'
-		}
-	],
-	secondColumn: [
-		{
-			listItems: [
-				{ listItem: 'milo@studio.com' },
-				{ listItem: '+1 (323) 555-0198' },
-				{ listItem: 'Remote-friendly' },
-				{ listItem: '@milo.design' }
-			]
-		}
-	]
-}
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
@@ -124,12 +104,4 @@ const contactData = {
 	</TitleText>
 	<Feedback title={feedbackData.title} id={feedbackData.id} />
 	<CaseStudiesHomeSection data={allCaseStudies} />
-	<TitleText title={contactData.title} id={contactData.id}>
-		<p slot="firstColumn">
-			{contactData.firstColumn[0].text}
-		</p>
-		<div slot="secondColumn">
-			<List type="basic" listItems={contactData.secondColumn[0].listItems} />
-		</div>
-	</TitleText>
 </Layout>

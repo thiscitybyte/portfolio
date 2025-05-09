@@ -13,6 +13,7 @@
 import NavigationBar from '../components/ui/NavigationBar.astro'
 import Main from '../components/ui/Main.astro'
 import Header from '../components/blocks/head/Header.astro'
+import ContactMe from '../components/blocks/footer/ContactMe.astro'
 // Scripts
 import Scriprs from '../components/scripts/ThemeScripts.astro'
 import GoogleTagManager from '../components/scripts/googleTagManagerBody.astro'
@@ -49,6 +50,7 @@ const { title, description, ogImage, noindex, navigation = 'sticky' } = Astro.pr
 		{navigation !== 'none' && <NavigationBar type={navigation} />}
 		<Main>
 			<slot />
+			<ContactMe />
 		</Main>
 		<Scriprs />
 	</body>
