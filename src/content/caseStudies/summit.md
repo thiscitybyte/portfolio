@@ -2,9 +2,9 @@
 title: Summit HR
 description: >-
   Built a marketing-focused website for an HR consulting firm, emphasizing trust, authority, and lead generation.
-cardImage: /caseStudies/case-study-06.jpg
-greyImage: /caseStudies/case-study-06-grey.jpg
-heroImage: /caseStudies/case-study-06-image.jpg
+cardImage: /caseStudies/case-study-01.jpg
+greyImage: /caseStudies/case-study-01-grey.jpg
+heroImage: /caseStudies/case-study-01-image.jpg
 roles:
   - brand-strategy
 introduction: >
