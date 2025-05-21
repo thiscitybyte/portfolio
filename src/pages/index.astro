@@ -3,7 +3,7 @@
 // - Layout
 import Layout from '../layouts/Layout.astro'
 // - Blocks
-import HomeCTA from '../components/blocks/hero/HomeCTA.astro'
+import HomeVideoCTA from '../components/blocks/hero/HomeVideoCTA.astro'
 import TitleText from '../components/blocks/titleText/TitleText.astro'
 import Experience from '../components/blocks/feed/Experience.astro'
 import Feedback from '../components/blocks/testimonials/Feedback.astro'
@@ -27,6 +27,7 @@ const SEO = {
 	description:
 		'Milo is a platform for showcasing your skills and projects. It is a simple and easy-to-use platform for showcasing your skills and projects.'
 }
+
 // - About me Data
 const aboutMeData = {
 	title: 'About me',
@@ -79,7 +80,7 @@ const feedbackData = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<HomeCTA />
+	<HomeVideoCTA />
 	<TitleText title={aboutMeData.title} id={aboutMeData.id}>
 		<p slot="firstColumn">
 			{aboutMeData.firstColumn[0].text}
