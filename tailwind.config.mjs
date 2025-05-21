@@ -33,6 +33,19 @@ export default {
       colors: {
         transparent: "transparent",
         primary: {
+          50: "#fefde8",
+          100: "#fffdc2",
+          200: "#fff987",
+          300: "#ffee43",
+          400: "#ffdf20",
+          500: "#efc403",
+          600: "#ce9800",
+          700: "#a46c04",
+          800: "#88540b",
+          900: "#734510",
+          950: "#432405",
+        },
+        secondary: {
           50: "#f5f2ff",
           100: "#ede8ff",
           200: "#ddd4ff",
