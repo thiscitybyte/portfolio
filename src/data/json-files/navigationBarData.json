@@ -1,20 +1,28 @@
 {
 	"navItems": [
 		{
+			"name": "Home Video",
+			"link": "/"
+		},
+		{
+			"name": "Home Static",
+			"link": "/index-2"
+		},
+		{
 			"name": "About me",
-			"link": "/#about"
+			"link": "#about"
 		},
 		{
 			"name": "Experience",
-			"link": "/#experience"
+			"link": "#experience"
 		},
 		{
 			"name": "Skills & Tools",
-			"link": "/#skills"
+			"link": "#skills"
 		},
 		{
 			"name": "Feedback",
-			"link": "/#feedback"
+			"link": "#feedback"
 		},
 		{
 			"name": "Case Studies",
@@ -22,7 +30,7 @@
 		},
 		{
 			"name": "Contact",
-			"link": "/#contact"
+			"link": "#contact"
 		}
 	]
 }
