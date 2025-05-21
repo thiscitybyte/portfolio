@@ -4,7 +4,7 @@ html {
 }
 body {
 	--gradient-stop: 15%;
-	@apply font-bodyPrimary text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:text-neutral-400;
+	@apply font-bodyPrimary dark:font-bodySecondary text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:text-neutral-400;
 	background:
 		radial-gradient(
 			circle at 90% 0%,
@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-headingsPrimary text-neutral-900 last:mb-0 dark:text-neutral-50 [&>strong]:text-primary-500;
+	@apply font-headingsPrimary dark:font-headingsSecondary text-neutral-900 last:mb-0 dark:text-neutral-50 [&>strong]:text-primary-500;
 }
 h1 strong,
 h2 strong,
