@@ -76,8 +76,10 @@ export default {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },
       fontFamily: {
-        sans: ["IBM Plex Sans", ...defaultTheme.fontFamily.sans],
-        headings: ["IBM Plex Mono", ...defaultTheme.fontFamily.sans],
+        headingsPrimary: ["Playfair Display", ...defaultTheme.fontFamily.sans],
+        bodyPrimary: ["Nunito Sans", ...defaultTheme.fontFamily.sans],
+        headingsSecondary: ["Ubuntu", ...defaultTheme.fontFamily.sans],
+        bodySecondary: ["Roboto Mono", ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         dropdown: {
