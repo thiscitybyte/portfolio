@@ -1,4 +1,75 @@
 <!-- Theme Scripts -->
+<script>
+	if (document.documentElement.classList.contains('mode-auto')) {
+		const updateVideoSource = () => {
+			const video = document.getElementById('theme-video') as HTMLVideoElement | null
+			const source = document.getElementById('video-source') as HTMLSourceElement | null
+
+			if (!video || !source) return
+
+			const isDark = document.documentElement.classList.contains('dark')
+			source.src = `/videos/hero-video-${isDark ? 'secondary' : 'primary'}.mp4`
+			video.load()
+		}
+
+		const updateImageSource = () => {
+			const image = document.getElementById('theme-image') as HTMLImageElement | null
+			if (!image) return
+
+			const isDark = document.documentElement.classList.contains('dark')
+			image.src = `/hero/hero-image-${isDark ? 'secondary' : 'primary'}.png`
+		}
+
+		const applyTheme = () => {
+			if (
+				localStorage.theme === 'dark' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+			updateVideoSource()
+			updateImageSource()
+		}
+
+		const setupThemeSwitcher = () => {
+			const themeSwitcher = document.getElementById('theme-selector')
+			if (themeSwitcher) {
+				themeSwitcher.addEventListener('click', () => {
+					if (localStorage.theme === 'dark') {
+						localStorage.theme = 'light'
+						document.documentElement.classList.remove('dark')
+					} else {
+						localStorage.theme = 'dark'
+						document.documentElement.classList.add('dark')
+					}
+					updateVideoSource()
+					updateImageSource()
+				})
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			applyTheme()
+			setupThemeSwitcher()
+		})
+		document.addEventListener('astro:page-loaded', () => {
+			applyTheme()
+			setupThemeSwitcher()
+		})
+		document.addEventListener('astro:after-swap', () => {
+			applyTheme()
+			setupThemeSwitcher()
+		})
+	} else if (document.documentElement.classList.contains('mode-dark')) {
+		document.documentElement.classList.add('dark')
+	} else if (document.documentElement.classList.contains('mode-light')) {
+		document.documentElement.classList.remove('dark')
+	}
+</script>
+
+<!-- Menu Dropdown -->
 <script async defer>
 	document.addEventListener('astro:page-load', () => {
 		// Menu Dropdown

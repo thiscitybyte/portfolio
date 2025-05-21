@@ -35,15 +35,15 @@ const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.prop
 
 <style>
 	.list li {
-		@apply mb-2 ml-4 list-disc text-neutral-400;
+		@apply mb-2 ml-4 list-disc text-neutral-600 dark:text-neutral-400;
 	}
 	.list--none {
 		@apply [&_li]:list-none;
 	}
 	.list--primary {
-		@apply [&_li]:marker:text-primary-500;
+		@apply [&_li]:marker:text-primary-500 dark:[&_li]:marker:text-secondary-500;
 	}
 	.list--neutral {
-		@apply [&_li]:marker:text-white;
+		@apply [&_li]:marker:text-neutral-900 dark:[&_li]:marker:text-white;
 	}
 </style>

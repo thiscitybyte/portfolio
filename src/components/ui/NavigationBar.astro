@@ -9,6 +9,10 @@
 // Reference: https://wind-ui.com/components/navbars/
 
 // Content
+// - Components
+// - UI
+import ModeSwitcher from './ModeSwitcher.astro'
+
 // - Props
 type Props = {
 	type?: 'none' | 'sticky'
@@ -61,6 +65,8 @@ function isActivePath(currentPath: string): boolean {
 					))
 				}
 			</ul>
+			{/* Theme Switcher */}
+			<ModeSwitcher />
 		</nav>
 	</div>
 </header>
@@ -82,7 +88,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-neutral-950/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300;
 	}
 	.header__menu--open {
-		@apply [&_.header\_\_menu-link]:animate-fadeIn visible opacity-100 backdrop-blur-sm;
+		@apply visible opacity-100 backdrop-blur-sm [&_.header\_\_menu-link]:animate-fadeIn;
 	}
 	.header__menu--open .header__menu-link {
 		animation-delay: calc(0.1s + var(--index) * 0.05s);
@@ -91,7 +97,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply relative flex cursor-pointer flex-col items-stretch;
 	}
 	.header__menu-link {
-		@apply relative flex translate-y-[0.625rem] items-center gap-1 py-4 font-headings opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center lg:text-5xl lg:leading-[80px] [&.active]:text-primary-500;
+		@apply relative flex translate-y-[0.625rem] items-center gap-1 py-4 font-headings opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center lg:text-5xl lg:leading-[80px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-500 dark:[&.active]:text-secondary-500;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-10 w-10 self-center [&--open]:visible [&--open]:opacity-100;
@@ -100,7 +106,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply absolute left-1/2 top-1/2 w-6 -translate-x-1/2 -translate-y-1/2 transform;
 	}
 	.header__toggle-inner span {
-		@apply absolute block h-0.5 transform rounded-full bg-white transition-all duration-300;
+		@apply absolute block h-0.5 transform rounded-full bg-neutral-600 transition-all duration-300 dark:bg-white;
 	}
 	.header__toggle-inner span:nth-child(1) {
 		@apply w-9/12 -translate-y-2 [.header\_\_toggle--open_&]:w-6 [.header\_\_toggle--open_&]:translate-y-0 [.header\_\_toggle--open_&]:rotate-45;

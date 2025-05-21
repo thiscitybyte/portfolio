@@ -31,6 +31,6 @@ export const configData: Config = {
 	},
 	canonical: true,
 	noindex: false,
-	mode: 'dark',
+	mode: 'auto',
 	scrollAnimations: true
 }

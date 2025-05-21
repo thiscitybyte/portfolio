@@ -32,13 +32,14 @@ type Props = {
 	ogImage?: string
 	noindex?: boolean
 	navigation?: 'none' | 'sticky'
+	classes?: string
 }
 // Page Metadata
-const { title, description, ogImage, noindex, navigation = 'sticky' } = Astro.props
+const { title, description, ogImage, noindex, navigation = 'sticky', classes } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-animation">
+<html lang="en" class={`scroll-animation mode-auto ${classes}`}>
 	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
 	<body
 		class:list={[

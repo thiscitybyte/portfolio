@@ -97,7 +97,7 @@ const {
 		@apply text-center [&_.testimonial\_\_figcaption]:justify-center;
 	}
 	.testimonial--quote {
-		@apply absolute -top-1 left-0 z-0 size-8 text-primary-400 md:top-0 md:size-12;
+		@apply absolute -top-1 left-0 z-0 size-8 text-primary-400 md:top-0 md:size-12 dark:text-secondary-400;
 	}
 	.testimonial__container {
 		@apply relative px-6 pt-6 md:px-20 md:pt-0;
@@ -106,10 +106,10 @@ const {
 		@apply relative z-10;
 	}
 	.testimonial__blockquote {
-		@apply pb-6 font-headings text-xl leading-9 md:text-3xl md:leading-[3.75rem] [&>p]:text-neutral-300 [.light_&>p]:text-neutral-500;
+		@apply pb-6 font-headings text-xl leading-9 md:text-3xl md:leading-[3.75rem] [&>p]:text-neutral-600 dark:[&>p]:text-neutral-300;
 	}
 	.testimonial__figcaption {
-		@apply flex flex-col gap-4 text-sm leading-normal text-neutral-50 [.light_&]:text-neutral-700;
+		@apply flex flex-col gap-4 text-sm leading-normal text-neutral-600 dark:text-neutral-300;
 	}
 	.testimonial__figcaption-container {
 		@apply flex items-center gap-4 text-sm;
