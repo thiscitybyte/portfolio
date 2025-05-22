@@ -26,20 +26,20 @@ type Props = {
 const { data, classes } = Astro.props
 ---
 
-<ul aria-label="Exp feed" role="feed" class:list={['feed', { [`${classes}`]: classes }]}>
+<ul aria-label="Exp feed" class:list={['feed', { [`${classes}`]: classes }]}>
 	{
 		data.map((item) => (
-			<li role="article" class="feed__item">
+			<li class="feed__item">
 				<span class="feed__item-date_info">
 					{item.date}
 					<span class="feed__item-date_info-company">{item.company}</span>
 					<span class="feed__item-date_info-location">{item.location}</span>
 				</span>
 				<div class="feed__item-container">
-					<h4 class="feed__item-header">
+					<h3 class="feed__item-header">
 						{item.title}
 						<span> - {item.date}</span>
-					</h4>
+					</h3>
 					<div class="feed__item-text basic-text" set:html={item.text} />
 				</div>
 			</li>
