@@ -8,7 +8,27 @@ Modern Astro website theme with fully responsive, customizable TailwindCSS compo
 
 ## Introduction
 
+### About
+
 Milo is a modern, feature-rich Astro theme designed for developers and content creators. Built with TailwindCSS and integrated with Keystatic CMS, it provides a perfect balance of performance, flexibility, and ease of use.
+
+![just-the-basics](https://oxygenna-themes.b-cdn.net/milo-astro/pagespeedscore.svg)
+
+### Features
+
+- **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
+- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for desktop performance.
+- **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
+- **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
+- **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
+- **Easy Updates with JSON Files:** Simplify content management and updates using structured JSON files.
+- **Page Loading & Transition Animations:** Enhance user experience with smooth loading and transition effects.
+- **Clean Code & Folder Structure:** Maintain a well-organized codebase that’s easy to navigate and extend.
+- **Heroicons by Tailwind:** Access a wide range of high-quality icons to use across your site.
+- **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
+- **Modular Design:** The template is organized into reusable blocks enabling easy customization and expansion.
+- **Integrated Analytics:** Includes integrated Google Analytics and Google Tag Manager functionalities.
+- **Sitemap Included:** Includes a sitemap to enhance website navigation and search engine indexing.
 
 ## Getting Started
 
