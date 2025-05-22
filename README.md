@@ -6,11 +6,11 @@ Modern Astro website theme with fully responsive, customizable TailwindCSS compo
 
 [![View live Demo](https://oxygenna-themes.b-cdn.net/milo-astro/button-demo.svg)](https://milo-astro.netlify.app) [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/milo-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-milo-astro-netlify-app/noql4g17gc?form_factor=desktop)
 
-## 1. Introduction
+## Introduction
 
 Milo is a modern, feature-rich Astro theme designed for developers and content creators. Built with TailwindCSS and integrated with Keystatic CMS, it provides a perfect balance of performance, flexibility, and ease of use.
 
-## 2. Getting Started
+## Getting Started
 
 ### Commands
 
@@ -65,24 +65,59 @@ Inside Milo Astro project, you'll see the following folders and files:
 | `src/components/`        | Contains reusable components for your site. This directory is divided into `ui` for UI components and `blocks` for section blocks. |
 | `src/components/blocks/` | Contains Section blocks used throughout the site.                                                                                  |
 | `src/components/ui/`     | Contains individual UI components.                                                                                                 |
-| `src/config/`           | Contains configuration files for the project in typescript format.                                                                 |
-| `src/content/`          | Holds collection data, such as case studies.                                                                                       |
-| `src/data/`             | Contains JSON files with content data (like features, testimonials etc).                                                           |
-| `src/icons/`            | Contains all icons used in the project, sourced from [Heroicons](https://heroicons.com/).                                          |
-| `src/layouts/`          | Contains layout components that define the overall structure of your pages.                                                        |
-| `src/pages/`            | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                               |
-| `package.json`          | Lists dependencies and scripts for your project, including metadata and various package requirements.                              |
+| `src/config/`            | Contains configuration files for the project in typescript format.                                                                 |
+| `src/content/`           | Holds collection data, such as case studies.                                                                                       |
+| `src/data/`              | Contains JSON files with content data (like features, testimonials etc).                                                           |
+| `src/icons/`             | Contains all icons used in the project, sourced from [Heroicons](https://heroicons.com/).                                          |
+| `src/layouts/`           | Contains layout components that define the overall structure of your pages.                                                        |
+| `src/pages/`             | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                                |
+| `package.json`           | Lists dependencies and scripts for your project, including metadata and various package requirements.                              |
 
-## 3. Theme Configuration
+## Theme Configuration
 
 The configuration files are located in the `src/config` directory, written in TypeScript. They contain various settings for the theme, including:
 
-| Configuration Files      | Description                                                                                     |
-| ----------------------- | ----------------------------------------------------------------------------------------------- |
-| `src/config/config.ts`  | Basic configuration settings including SEO, mode, and scroll animations.                         |
-| `src/config/navigation.ts` | Menu TypeScript interface options and JSON files for navigation.                              |
+| Configuration Files        | Description                                                              |
+| -------------------------- | ------------------------------------------------------------------------ |
+| `src/config/config.ts`     | Basic configuration settings including SEO, mode, and scroll animations. |
+| `src/config/navigation.ts` | Menu TypeScript interface options and JSON files for navigation.         |
 
-## 4. Content Management
+## Theme Customization
+
+### Customize the Colors
+
+The theme uses two main colors: primary and neutral. These colors are defined in the Tailwind CSS configuration file. To personalize the color scheme of your project, you can easily modify these color values.
+
+To customize the colors, follow these steps:
+
+1. Open the `tailwind.config.js` file.
+2. Find the `theme` section within the file.
+3. Under `theme`, locate the `extend` property and then the `colors` object.
+4. Modify the color values for `primary` and `neutral` to suit your preferred color palette.
+
+You can use the [tailwind CSS colors](https://nodejs.org/en/download/) or create your [own palette](https://uicolors.app/create) .
+
+### Customize the Fonts
+
+To customize the fonts used in your project, follow these steps:
+
+1. **Update the Tailwind CSS Configuration**
+
+   Open the `tailwind.config.js` file. In the `theme` section, find the `extend` property and update the `fontFamily` object.
+
+2. **Ensure Font Packages are Installed**
+
+   Verify that the necessary font packages are included in your `package.json` file and also imported in the `src/layouts/Layout.astro` file.
+
+You can add your own fonts by following [this guide](https://docs.astro.build/en/guides/fonts/#using-fontsource)
+
+### Dark/Light Mode
+
+By default, the site uses an automatic mode switcher, allowing it users to switch between light and dark modes based on the user's system settings or by using the mode switcher in the navigation bar. This is achioeved by setting the `mode-auto` class in the `Layout.astro` file.
+
+If you need to enforce a specific theme, you can set the class above as **`mode-light`** or **`mode-dark`**. When **`mode-light`** is applied, the site will consistently display in light mode, and the switcher will not be functional. Similarly, **`mode-dark`** will force the site to dark mode, with the switcher rendered non-functional. These settings allow you to maintain a fixed appearance across the site regardless of user preferences or system settings.
+
+## Content Management
 
 Milo includes Keystatic CMS integration for Case Studies collection management. The configuration can be found in `keystatic.config.ts`, which defines:
 
@@ -105,7 +140,7 @@ cloud: {
 
 For more details, see [Keystatic's documentation](https://keystatic.com/docs/introduction).
 
-## 5. License
+## License
 
 Copyright 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
