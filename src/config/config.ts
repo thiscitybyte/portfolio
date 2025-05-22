@@ -21,9 +21,9 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Milo. Tailwind CSS Milo Kit by Oxygenna',
+	siteTitle: 'Milo – Personal Resume & Portfolio Theme Built with Astro by Oxygenna',
 	siteDescription:
-		'Milo is a design and development agency that specializes in creating beautiful and functional websites.',
+		'Milo is a fast, elegant, and accessible Astro theme built to showcase your resume, projects, and skills. Ideal for creating a personal portfolio or professional profile site.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/logo.svg',
