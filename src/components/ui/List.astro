@@ -1,18 +1,15 @@
 ---
 // List
 // ------------
-// Description: the list component is a ui element that displays a list of items in a vertical order.
+// Description: A component that displays a list of items in a vertical order.
 // Properties:
-// - Type: the type of the list (basic, checklist)
-// - ListItems: the list items of the list
-// - classes: additional classes
-// - listColor: the color of the marker (primary, neutral, white)
+// - type: Style of the list (optional, enum: 'basic' | 'none', default: 'basic')
+// - listItems: Array of items to display in the list. Each item should have a 'listItem' property (required, Array<any>)
+// - listColor: Color of the list markers (optional, enum: 'primary' | 'neutral', default: 'neutral')
+// - classes: Additional classes (optional, string)
 
-// Components
-// - UI
-import { Icon } from 'astro-icon/components'
-
-// Props
+// Content
+// - Props
 type Props = {
 	type?: 'basic' | 'none'
 	listItems: Array<any>

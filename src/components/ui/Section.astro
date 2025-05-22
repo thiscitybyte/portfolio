@@ -3,14 +3,15 @@
 // ------------
 // Description: a foundational component representing a section of content within page. The section component can contain any number of rows.
 // Properties:
-// - Id: the id of the section
-// - FullWidth: whether the section is will expand to full width or not
-// - StickyCol: specifies wether the section can contain a sticky column or not
-// - Padding: by default each section has a vertical padding. The padding property defines where the padding is applied (top, bottom, both, none), default is both
-// - VAlign: aligns the content of the section vertically (top, center, bottom)
-// - classes: additional classes
+// - id: The id of the section (optional, string)
+// - fullWidth: Whether the section will expand to full width or not (optional, boolean)
+// - stickyCol: Whether the section can contain a sticky column or not (optional, boolean, default: false)
+// - padding: Defines where the vertical padding is applied (optional, enum: 'both' | 'top' | 'bottom' | 'none', default: 'both')
+// - vAlign: Aligns the content of the section vertically (optional, string: 'top' | 'center' | 'bottom')
+// - classes: Additional classes (optional, string)
 
-// Props
+// Content
+// - Props
 type Props = {
 	id?: string
 	fullWidth?: boolean

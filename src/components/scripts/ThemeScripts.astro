@@ -1,6 +1,8 @@
 <!-- Theme Scripts -->
 <script>
+	// Handle automatic theme switching based on system preferences
 	if (document.documentElement.classList.contains('mode-auto')) {
+		// Updates video source based on current theme
 		const updateVideoSource = () => {
 			const video = document.getElementById('theme-video') as HTMLVideoElement | null
 			const source = document.getElementById('video-source') as HTMLSourceElement | null
@@ -12,6 +14,7 @@
 			video.load()
 		}
 
+		// Updates image source based on current theme
 		const updateImageSource = () => {
 			const image = document.getElementById('theme-image') as HTMLImageElement | null
 			if (!image) return
@@ -20,6 +23,7 @@
 			image.src = `/hero/hero-image-${isDark ? 'secondary' : 'primary'}.png`
 		}
 
+		// Applies theme based on localStorage or system preference
 		const applyTheme = () => {
 			if (
 				localStorage.theme === 'dark' ||
@@ -33,6 +37,7 @@
 			updateImageSource()
 		}
 
+		// Sets up theme toggle button functionality
 		const setupThemeSwitcher = () => {
 			const themeSwitcher = document.getElementById('theme-selector')
 			if (themeSwitcher) {
@@ -50,21 +55,30 @@
 			}
 		}
 
+		// Initialize theme on page load
 		document.addEventListener('DOMContentLoaded', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})
+
+		// Re-apply theme after Astro page transitions
 		document.addEventListener('astro:page-loaded', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})
+
+		// Re-apply theme after Astro view transitions
 		document.addEventListener('astro:after-swap', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})
-	} else if (document.documentElement.classList.contains('mode-dark')) {
+	}
+	// Handle forced dark mode
+	else if (document.documentElement.classList.contains('mode-dark')) {
 		document.documentElement.classList.add('dark')
-	} else if (document.documentElement.classList.contains('mode-light')) {
+	}
+	// Handle forced light mode
+	else if (document.documentElement.classList.contains('mode-light')) {
 		document.documentElement.classList.remove('dark')
 	}
 </script>

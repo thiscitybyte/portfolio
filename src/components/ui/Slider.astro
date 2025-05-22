@@ -1,24 +1,22 @@
 ---
 // Slider
 // ------------
-// Description: the slider component is a ui element that allows users to browse through a series of images or content.
+// Description: the slider component is a ui element that allows users to browse through a series of content.
 // Properties:
-// - delay: The delay of the slider
-// - effect: The effect of the slider
-// - slidesPerView: The number of slides per view
-// - showPagination: Whether to show the pagination
-// - showNavigation: Whether to show the navigation
-// - centeredSlides: Whether to center the slides
-// - spaceBetween: The space between the slides
-// - initialSlide: The initial slide
-// - id: The id of the slider
-// - classes: Additional classes to be added to the slider
-// - slideClasses: Additional classes to be added to the slide
+// - delay: The delay of the slider (optional, number)
+// - effect: The effect of the slider (optional, string, default: 'slide')
+// - slidesPerView: The number of slides per view (optional, number, default: 1)
+// - showPagination: Whether to show the pagination (optional, boolean, default: true)
+// - showNavigation: Whether to show the navigation (optional, boolean, default: true)
+// - centeredSlides: Whether to center the slides (optional, boolean, default: false)
+// - spaceBetween: The space between the slides in pixels (optional, number, default: 16)
+// - initialSlide: The initial slide index (optional, number, default: 0)
+// - id: The id of the slider (optional, string)
+// - classes: Additional classes to be added to the slider (optional, string)
 // Reference: https://swiperjs.com/swiper-api
 
 // Components
 // - UI
-import { Image } from 'astro:assets'
 import '../../styles/swiper.css'
 
 // Props
@@ -33,7 +31,6 @@ type Props = {
 	initialSlide?: number
 	id?: string
 	classes?: string
-	slideClasses?: string
 }
 const {
 	delay,
@@ -45,8 +42,7 @@ const {
 	spaceBetween = 16,
 	initialSlide = 0,
 	id,
-	classes = '',
-	slideClasses = ''
+	classes = ''
 } = Astro.props
 ---
 

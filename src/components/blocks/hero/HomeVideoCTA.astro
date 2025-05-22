@@ -1,19 +1,17 @@
 ---
 // Home page CTA Section
 // ------------
-// Description:
+// Description: The main hero section for the home page, featuring a large heading, contact information,
+// and a theme-aware video background that changes based on light/dark mode.
+//
+// Note: This component uses the theme-video and video-source IDs which are handled by ThemeScripts.astro
+// for dark/light mode video switching.
 
 // Components
 // - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-
-// Props
-type Props = {
-	video?: string
-}
-const { video = '/videos/hero-video-primary.mp4' } = Astro.props
 ---
 
 <Section id="intro" classes="!overflow-visible !pt-[240px]">
