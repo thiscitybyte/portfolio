@@ -82,10 +82,10 @@ function isActivePath(currentPath: string): boolean {
 		@apply relative mx-auto px-6;
 	}
 	.header__nav {
-		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-50;
+		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-700 dark:text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-neutral-950/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300;
+		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300 dark:bg-neutral-950/90;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 backdrop-blur-sm [&_.header\_\_menu-link]:animate-fadeIn;
@@ -97,7 +97,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply relative flex cursor-pointer flex-col items-stretch;
 	}
 	.header__menu-link {
-		@apply font-headingsPrimary relative flex translate-y-[0.625rem] items-center gap-1 py-4 opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center lg:text-4xl lg:leading-[60px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-500 dark:[&.active]:text-secondary-500;
+		@apply relative flex translate-y-[0.625rem] items-center gap-1 py-4 font-headingsPrimary opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center lg:text-4xl lg:leading-[60px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-500 dark:[&.active]:text-secondary-500;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-10 w-10 self-center [&--open]:visible [&--open]:opacity-100;
