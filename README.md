@@ -4,7 +4,7 @@ Modern Astro website theme with fully responsive, customizable TailwindCSS compo
 
 ![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo-theme.png)
 
-[![View live Demo](https://oxygenna-themes.b-cdn.net/milo-astro/button-demo.svg)](https://milo-astro.netlify.app) [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/milo-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-milo-theme-netlify-app/wutz5rlznj?form_factor=desktop)
+[![View live Demo](https://oxygenna-themes.b-cdn.net/milo-astro/button-demo.svg)](https://milo-theme.netlify.app/) [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/milo-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-milo-theme-netlify-app/wutz5rlznj?form_factor=desktop)
 
 ## Introduction
 
