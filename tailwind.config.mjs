@@ -76,10 +76,16 @@ export default {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },
       fontFamily: {
-        headingsPrimary: ["Playfair Display", ...defaultTheme.fontFamily.serif],
-        bodyPrimary: ["Nunito Sans", ...defaultTheme.fontFamily.sans],
+        headingsPrimary: [
+          "Playfair Display Variable",
+          ...defaultTheme.fontFamily.serif,
+        ],
+        bodyPrimary: ["Nunito Sans Variable", ...defaultTheme.fontFamily.sans],
         headingsSecondary: ["Ubuntu", ...defaultTheme.fontFamily.sans],
-        bodySecondary: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+        bodySecondary: [
+          "Roboto Mono Variable",
+          ...defaultTheme.fontFamily.mono,
+        ],
       },
       keyframes: {
         dropdown: {
