@@ -2,27 +2,6 @@
 <script>
 	// Handle automatic theme switching based on system preferences
 	if (document.documentElement.classList.contains('mode-auto')) {
-		// Updates video source based on current theme
-		const updateVideoSource = () => {
-			const video = document.getElementById('theme-video') as HTMLVideoElement | null
-			const source = document.getElementById('video-source') as HTMLSourceElement | null
-
-			if (!video || !source) return
-
-			const isDark = document.documentElement.classList.contains('dark')
-			source.src = `/videos/hero-video-${isDark ? 'secondary' : 'primary'}.mp4`
-			video.load()
-		}
-
-		// Updates image source based on current theme
-		const updateImageSource = () => {
-			const image = document.getElementById('theme-image') as HTMLImageElement | null
-			if (!image) return
-
-			const isDark = document.documentElement.classList.contains('dark')
-			image.src = `/hero/hero-image-${isDark ? 'secondary' : 'primary'}.png`
-		}
-
 		// Applies theme based on localStorage or system preference
 		const applyTheme = () => {
 			if (
@@ -33,10 +12,7 @@
 			} else {
 				document.documentElement.classList.remove('dark')
 			}
-			updateVideoSource()
-			updateImageSource()
 		}
-
 		// Sets up theme toggle button functionality
 		const setupThemeSwitcher = () => {
 			const themeSwitcher = document.getElementById('theme-selector')
@@ -49,24 +25,19 @@
 						localStorage.theme = 'dark'
 						document.documentElement.classList.add('dark')
 					}
-					updateVideoSource()
-					updateImageSource()
 				})
 			}
 		}
-
 		// Initialize theme on page load
 		document.addEventListener('DOMContentLoaded', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})
-
 		// Re-apply theme after Astro page transitions
 		document.addEventListener('astro:page-loaded', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})
-
 		// Re-apply theme after Astro view transitions
 		document.addEventListener('astro:after-swap', () => {
 			applyTheme()
@@ -145,12 +116,33 @@
 
 	// Function to initialize menu handlers
 	function initMenuHandlers() {
-		// Close all menus initially
+		// Close all menus when initializing
 		closeAllMenus()
 
-		// Handle menu item clicks
+		// Select all menu links
 		document.querySelectorAll('.header__menu-link').forEach((link) => {
-			link.addEventListener('click', closeAllMenus)
+			link.addEventListener('click', (event) => {
+				const href = link.getAttribute('href')
+
+				// Always close the mobile or dropdown menu when a link is clicked
+				closeAllMenus()
+
+				// If the link is empty or points to an anchor (e.g., #section), allow default behavior
+				if (!href || href.startsWith('#')) {
+					return
+				}
+
+				// Construct full URLs for current and target href
+				const currentURL = new URL(window.location.href)
+				const targetURL = new URL(href, window.location.origin)
+
+				// If the pathname is different (navigating to a new page), force a hard reload
+				if (currentURL.pathname !== targetURL.pathname) {
+					event.preventDefault() // Prevent Astro's SPA navigation
+					window.location.href = targetURL.href // Trigger a full page reload
+				}
+				// If the pathname is the same, let Astro handle it normally
+			})
 		})
 	}
 

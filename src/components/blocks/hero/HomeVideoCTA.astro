@@ -12,6 +12,13 @@
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
+
+// Content
+// - Props
+type Props = {
+	videoSource: string
+}
+const { videoSource } = Astro.props
 ---
 
 <Section id="intro" classes="!overflow-visible !pt-[240px]">
@@ -19,12 +26,11 @@ import Col from '../../ui/Col.astro'
 		<Col span="2" />
 		<Col span="10">
 			<video
-				id="theme-video"
 				autoplay
 				muted
 				class="absolute -left-40 -top-56 size-80 rounded-full object-cover md:-left-72 md:-top-48 md:size-[31.25rem]"
 			>
-				<source id="video-source" type="video/mp4" />
+				<source src={videoSource} type="video/mp4" />
 			</video>
 
 			<div class="relative z-10 text-left">

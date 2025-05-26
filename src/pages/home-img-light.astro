@@ -1,7 +1,7 @@
 ---
 // Components
 // - Layout
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/LayoutLight.astro'
 // - Blocks
 import HomeCTA from '../components/blocks/hero/HomeCTA.astro'
 import TitleText from '../components/blocks/titleText/TitleText.astro'
@@ -27,6 +27,9 @@ const SEO = {
 	description:
 		'Milo is a fast, elegant, and accessible Astro theme built to showcase your resume, projects, and skills. Ideal for creating a personal portfolio or professional profile site.'
 }
+
+// - Hero
+const imageSource = '/hero/hero-image-primary.png'
 
 // - About me Data
 const aboutMeData = {
@@ -79,8 +82,8 @@ const feedbackData = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description} classes="secondary-page">
-	<HomeCTA />
+<Layout title={SEO.title} description={SEO.description}>
+	<HomeCTA imageSource={imageSource} />
 	<TitleText title={aboutMeData.title} id={aboutMeData.id}>
 		<p slot="firstColumn">
 			{aboutMeData.firstColumn[0].text}

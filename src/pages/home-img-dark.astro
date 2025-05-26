@@ -1,9 +1,9 @@
 ---
 // Components
 // - Layout
-import Layout from '../layouts/LayoutLight.astro'
+import Layout from '../layouts/LayoutDark.astro'
 // - Blocks
-import HomeVideoCTA from '../components/blocks/hero/HomeVideoCTA.astro'
+import HomeCTA from '../components/blocks/hero/HomeCTA.astro'
 import TitleText from '../components/blocks/titleText/TitleText.astro'
 import Experience from '../components/blocks/feed/Experience.astro'
 import Feedback from '../components/blocks/testimonials/Feedback.astro'
@@ -29,7 +29,7 @@ const SEO = {
 }
 
 // - Hero
-const videoSource = '/videos/hero-video-primary.mp4'
+const imageSource = '/hero/hero-image-secondary.png'
 
 // - About me Data
 const aboutMeData = {
@@ -82,8 +82,8 @@ const feedbackData = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
-	<HomeVideoCTA videoSource={videoSource} />
+<Layout title={SEO.title} description={SEO.description} classes="secondary-page">
+	<HomeCTA imageSource={imageSource} />
 	<TitleText title={aboutMeData.title} id={aboutMeData.id}>
 		<p slot="firstColumn">
 			{aboutMeData.firstColumn[0].text}

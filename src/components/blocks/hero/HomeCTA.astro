@@ -13,6 +13,13 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
 import { Image } from 'astro:assets'
+
+// Content
+// - Props
+type Props = {
+	imageSource: string
+}
+const { imageSource } = Astro.props
 ---
 
 <Section id="intro" classes="!overflow-visible !pt-[240px]">
@@ -20,12 +27,11 @@ import { Image } from 'astro:assets'
 		<Col span="2" />
 		<Col span="10">
 			<Image
-				src="/hero/hero-image-primary.jpg"
+				src={imageSource}
 				alt="Milo Astro Theme"
 				width={500}
 				height={500}
 				class="absolute -left-40 -top-40 md:-left-60 md:-top-48"
-				id="theme-image"
 				format="webp"
 			/>
 			<div class="relative z-10 text-left">

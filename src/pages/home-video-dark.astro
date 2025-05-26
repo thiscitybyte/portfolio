@@ -1,7 +1,7 @@
 ---
 // Components
 // - Layout
-import Layout from '../layouts/LayoutLight.astro'
+import Layout from '../layouts/LayoutDark.astro'
 // - Blocks
 import HomeVideoCTA from '../components/blocks/hero/HomeVideoCTA.astro'
 import TitleText from '../components/blocks/titleText/TitleText.astro'
@@ -29,7 +29,7 @@ const SEO = {
 }
 
 // - Hero
-const videoSource = '/videos/hero-video-primary.mp4'
+const videoSource = '/videos/hero-video-secondary.mp4'
 
 // - About me Data
 const aboutMeData = {
@@ -82,7 +82,7 @@ const feedbackData = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} classes="secondary-page">
 	<HomeVideoCTA videoSource={videoSource} />
 	<TitleText title={aboutMeData.title} id={aboutMeData.id}>
 		<p slot="firstColumn">

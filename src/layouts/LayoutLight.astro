@@ -15,15 +15,13 @@ import Main from '../components/ui/Main.astro'
 import Header from '../components/blocks/head/Header.astro'
 import ContactMe from '../components/blocks/footer/ContactMe.astro'
 // Scripts
-import Scriprs from '../components/scripts/ThemeScripts.astro'
+import Scripts from '../components/scripts/ThemeScripts.astro'
 import GoogleTagManager from '../components/scripts/googleTagManagerBody.astro'
 // Styles
 import '../styles/global.css'
 // Fonts
 import '@fontsource-variable/nunito-sans'
 import '@fontsource-variable/playfair-display'
-import '@fontsource-variable/roboto-mono'
-import '@fontsource/ubuntu'
 
 // Data
 import { configData } from '../config/config'
@@ -42,20 +40,15 @@ const { title, description, ogImage, noindex, navigation = 'sticky', classes } =
 ---
 
 <!doctype html>
-<html lang="en" class={`scroll-animation mode-auto ${classes}`}>
+<html lang="en" class={`scroll-animation mode-light ${classes}`}>
 	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
-	<body
-		class:list={[
-			{ ['mode-' + `${configData.mode}`]: configData.mode },
-			{ ['scroll-animation']: configData.scrollAnimations }
-		]}
-	>
+	<body class:list={[`mode-light`, configData.scrollAnimations ? 'scroll-animation' : '']}>
 		<GoogleTagManager />
 		{navigation !== 'none' && <NavigationBar type={navigation} />}
 		<Main>
 			<slot />
 			<ContactMe />
 		</Main>
-		<Scriprs />
+		<Scripts />
 	</body>
 </html>
