@@ -47,13 +47,13 @@ images:
   - /caseStudies/assets/case-study-image-08.jpg
   - /caseStudies/assets/case-study-image-11.jpg
 clientFeedback:
-  - blockquote: 'The new website helped us connect better with potential clients.'
+  - blockquote: 'The new website helped us connect better with potential clients, improving communication and trust through its clear messaging and professional design.'
     figcaption: Marketing Director
     cite: Nexa Health
-  - blockquote: 'Our mobile users are now more engaged and navigate the site more easily.'
+  - blockquote: 'Our mobile users are now more engaged and navigate the site more easily, thanks to the responsive layout and streamlined user experience.'
     figcaption: UX Researcher
     cite: Nexa Health
-  - blockquote: 'The redesign exceeded our expectations and helped generate more leads.'
+  - blockquote: 'The redesign exceeded our expectations and helped generate more leads by attracting the right audience and simplifying the conversion process.'
     figcaption: CEO
     cite: Nexa Health
 ---

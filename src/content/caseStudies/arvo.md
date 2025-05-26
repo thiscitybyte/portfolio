@@ -47,13 +47,13 @@ images:
   - /caseStudies/assets/case-study-image-08.jpg
   - /caseStudies/assets/case-study-image-12.jpg
 clientFeedback:
-  - blockquote: 'The dashboard is clean, efficient, and exactly what we needed.'
+  - blockquote: 'The dashboard is clean, efficient, and exactly what we needed. It streamlined our workflow, increased team productivity, and allowed us to focus more on strategic tasks.'
     figcaption: Head of Sales
     cite: Arvo CRM
-  - blockquote: 'Our internal team was able to onboard 2x faster.'
+  - blockquote: 'Our internal team was able to onboard 2x faster. The interface is intuitive, the setup was seamless, and the support materials helped us hit the ground running.'
     figcaption: Product Manager
     cite: Arvo CRM
-  - blockquote: 'A robust and scalable UI that will grow with our product.'
+  - blockquote: 'A robust and scalable UI that will grow with our product. The flexible components and thoughtful design ensure long-term maintainability and expansion.'
     figcaption: CTO
     cite: Arvo CRM
 ---

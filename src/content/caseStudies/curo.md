@@ -47,13 +47,13 @@ images:
   - /caseStudies/assets/case-study-image-04.jpg
   - /caseStudies/assets/case-study-image-10.jpg
 clientFeedback:
-  - blockquote: 'We saw an immediate increase in conversions with the new landing page.'
+  - blockquote: 'We saw an immediate increase in conversions with the new landing page. The modern layout and focused messaging captured user attention and drove measurable results.'
     figcaption: Marketing Director
     cite: Curo
-  - blockquote: 'The responsiveness of the template is excellent across all devices.'
+  - blockquote: 'The responsiveness of the template is excellent across all devices. Whether on mobile or desktop, the experience is smooth, fast, and visually consistent.'
     figcaption: Product Lead
     cite: Curo
-  - blockquote: 'Our users engage more with the site thanks to the clean design and structure.'
+  - blockquote: 'Our users engage more with the site thanks to the clean design and structure. The improved navigation and visual hierarchy make it easier to explore our content.'
     figcaption: CTO
     cite: Curo
 ---

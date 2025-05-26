@@ -47,13 +47,13 @@ images:
   - /caseStudies/assets/case-study-image-09.jpg
   - /caseStudies/assets/case-study-image-12.jpg
 clientFeedback:
-  - blockquote: 'The design elevated our brand and the shopping experience was seamless.'
+  - blockquote: 'The design elevated our brand and the shopping experience was seamless. It helped us build trust with customers and increased overall engagement and repeat visits.'
     figcaption: CEO
     cite: Kindora
-  - blockquote: 'Our customers love the calm and engaging design.'
+  - blockquote: 'Our customers love the calm and engaging design. The intuitive layout and soothing colors create a pleasant shopping environment that keeps them coming back.'
     figcaption: Head of Marketing
     cite: Kindora
-  - blockquote: 'The e-commerce platform is easy to navigate and drives sales.'
+  - blockquote: 'The e-commerce platform is easy to navigate and drives sales. Streamlined checkout and clear product displays have significantly boosted our conversion rates.'
     figcaption: Product Manager
     cite: Kindora
 ---

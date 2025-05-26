@@ -47,13 +47,13 @@ images:
   - /caseStudies/assets/case-study-image-08.jpg
   - /caseStudies/assets/case-study-image-11.jpg
 clientFeedback:
-  - blockquote: "Wavely has transformed how we discover music. It's user-friendly and visually appealing."
+  - blockquote: "Wavely has transformed how we discover music. It's intuitive, user-friendly, and visually appealing, making music discovery a joy."
     figcaption: Product Manager
     cite: Wavely
-  - blockquote: 'Our users are more engaged, and they love sharing playlists with their friends.'
+  - blockquote: 'Our users are more engaged than ever, enjoying the seamless experience and actively sharing playlists with their friends daily.'
     figcaption: UX Designer
     cite: Wavely
-  - blockquote: 'We’ve seen a sharp increase in user retention thanks to the clean design and social features.'
+  - blockquote: 'We’ve seen a sharp increase in user retention thanks to the clean design, engaging features, and smooth navigation.'
     figcaption: CTO
     cite: Wavely
 ---

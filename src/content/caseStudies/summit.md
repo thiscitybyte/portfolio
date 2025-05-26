@@ -47,13 +47,13 @@ images:
   - /caseStudies/assets/case-study-image-09.jpg
   - /caseStudies/assets/case-study-image-12.jpg
 clientFeedback:
-  - blockquote: 'Our online presence has never been stronger. The site is professional and easy to navigate.'
+  - blockquote: 'Our online presence has never been stronger. The site is professional, easy to navigate, and reflects our company values clearly to clients and partners.'
     figcaption: CEO
     cite: Summit HR
-  - blockquote: 'The website helped us gain more leads and provided real-time updates to our clients.'
+  - blockquote: 'The website helped us gain more leads and provided real-time updates to our clients, improving communication and overall satisfaction.'
     figcaption: Marketing Manager
     cite: Summit HR
-  - blockquote: 'Thanks to the website redesign, we’ve seen increased trust and engagement.'
+  - blockquote: 'Thanks to the website redesign, we’ve seen increased trust and engagement, with more visitors interacting and returning to our platform regularly.'
     figcaption: HR Specialist
     cite: Summit HR
 ---
