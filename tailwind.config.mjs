@@ -93,12 +93,8 @@ export default {
           "100%": { marginTop: "0", opacity: 1 },
         },
         growLine: {
-          "0%": {
-            transform: "scaleX(0)",
-          },
-          "100%": {
-            transform: "scaleX(1)",
-          },
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
         },
         fadeIn: {
           "0%": { opacity: 0, transform: "translateY(10px)" },
@@ -107,7 +103,7 @@ export default {
       },
       animation: {
         dropdown: "dropdown 300ms ease-in-out forwards",
-        growLine: "growLine 300ms ease forwards",
+        growLine: "growLine var(--grow-duration, 5000ms) linear forwards",
         fadeIn: "fadeIn 300ms ease forwards",
       },
     },

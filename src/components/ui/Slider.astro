@@ -19,7 +19,8 @@
 // - UI
 import '../../styles/swiper.css'
 
-// Props
+// Content
+// - Props
 type Props = {
 	delay?: number
 	effect?: string
@@ -32,6 +33,7 @@ type Props = {
 	id?: string
 	classes?: string
 }
+
 const {
 	delay,
 	effect = 'slide',
@@ -72,7 +74,7 @@ const {
 
 		swiperScript.onload = () => {
 			const slidesID = id
-			const swiperDelay = delay
+			const swiperDelay = delay || 5000
 			const swiperSlidesPerView = slidesPerView
 			const swiperEffect = effect
 			const swiperSpaceBetween = spaceBetween
@@ -82,32 +84,55 @@ const {
 			const next = document.querySelector(`.swiper-${slidesID} .swiper-button-next`)
 			const prev = document.querySelector(`.swiper-${slidesID} .swiper-button-prev`)
 
-			const swiperConfig = {
+			const swiper = new Swiper(`.swiper-${slidesID}`, {
 				loop: true,
 				pagination: {
 					el: pagination,
 					clickable: true,
 					renderBullet: function (index, className) {
-						return `<span class="${className} custom-pagination-bullet">${String(index + 1).padStart(2, '0')}</span>`
+						return `
+							<span class="${className} custom-pagination-bullet" data-index="${index}">
+								<span class="custom-pagination-number">${String(index + 1).padStart(2, '0')}</span>
+							</span>`
 					}
 				},
 				navigation: {
 					nextEl: next,
 					prevEl: prev
 				},
-				autoplay: swiperDelay
-					? {
-							delay: swiperDelay
-						}
-					: false,
+				autoplay: delay ? { delay: swiperDelay } : false,
 				effect: swiperEffect,
 				slidesPerView: swiperSlidesPerView,
 				centeredSlides: swiperCenteredSlides,
 				initialSlide: swiperInitialSlide,
 				spaceBetween: parseInt(swiperSpaceBetween)
-			}
+			})
 
-			new Swiper(`.swiper-${slidesID}`, swiperConfig)
+			// Listen for slide change event
+			swiper.on('slideChange', () => {
+				// Select all custom pagination bullets for this slider instance
+				const bullets = document.querySelectorAll(`.swiper-${slidesID} .custom-pagination-bullet`)
+
+				bullets.forEach((bullet, i) => {
+					// Remove any existing animation duration and animation class
+					bullet.style.removeProperty('--grow-duration')
+					bullet.classList.remove('bullet-animate')
+
+					// Force a reflow to reset animation state
+					void bullet.offsetWidth
+
+					// Apply animation only to the currently active bullet
+					if (i === swiper.realIndex) {
+						// Set the CSS variable to match the slide delay
+						bullet.style.setProperty('--grow-duration', `${swiperDelay}ms`)
+						// Trigger the smooth scaleX transition
+						bullet.classList.add('bullet-animate')
+					}
+				})
+			})
+
+			// Manually trigger the animation for the initial slide after swiper is initialized
+			setTimeout(() => swiper.emit('slideChange'), 50)
 		}
 	})
 </script>

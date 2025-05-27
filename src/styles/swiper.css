@@ -683,6 +683,9 @@ button.swiper-pagination-bullet {
 }
 
 /* Theme */
+.custom-pagination-bullet {
+	@apply relative;
+}
 .swiper-button-prev,
 .swiper-button-next {
 	@apply flex !size-14 rounded-full bg-neutral-900/10 backdrop-blur-sm [&:after]:!text-2xl [&:after]:text-neutral-900 dark:[&:after]:text-white;
@@ -691,18 +694,23 @@ button.swiper-pagination-bullet {
 	@apply !opacity-20;
 }
 .swiper-pagination-bullet {
-	@apply !mx-3 !size-3 !bg-primary-50 !opacity-100 dark:!bg-secondary-50 [&.swiper-pagination-bullet-active]:!bg-primary-500 dark:[&.swiper-pagination-bullet-active]:!bg-secondary-500;
+	@apply !mx-0 !h-3 !w-14 !bg-primary-50 !opacity-100 dark:!bg-secondary-50 [&.swiper-pagination-bullet-active]:!bg-primary-500 dark:[&.swiper-pagination-bullet-active]:!bg-secondary-500;
 }
 
 /* Custom Pagination */
 .custom-pagination-bullet.swiper-pagination-bullet {
-	@apply font-headingsPrimary relative !h-4 !bg-transparent text-sm text-neutral-600;
+	@apply relative !h-full !bg-transparent font-headingsPrimary text-sm text-neutral-600;
 }
 
 .custom-pagination-bullet.swiper-pagination-bullet-active {
-	@apply !w-12 text-primary-500 opacity-100 transition-colors duration-300 dark:text-secondary-500;
+	@apply !w-14 text-primary-500 opacity-100 transition-colors duration-300 dark:text-secondary-500;
 }
 
 .custom-pagination-bullet.swiper-pagination-bullet-active::after {
-	@apply absolute left-4 top-[60%] mx-2 inline-block h-px w-8 origin-left translate-y-1/2 animate-growLine bg-primary-500 content-[''] last:hidden dark:bg-secondary-500;
+	@apply absolute left-4 top-[60%] mx-2 inline-block h-px w-8 origin-left translate-y-1/2 bg-primary-500 content-[''] last:hidden dark:bg-secondary-500;
+	transform: scaleX(0);
+	transform-origin: left;
+}
+.custom-pagination-bullet.bullet-animate::after {
+	@apply animate-growLine;
 }
