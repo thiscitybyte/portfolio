@@ -174,7 +174,9 @@
 			})
 		})
 
-		const elements = document.querySelectorAll('.scroll-animation .col')
+		const elements = document.querySelectorAll(
+			'.scroll-animation .col:not(.noanimation), .scroll-animation .animate:not(.noanimation)'
+		)
 
 		elements.forEach((element) => {
 			observer.observe(element)

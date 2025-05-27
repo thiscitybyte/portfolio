@@ -83,7 +83,7 @@ const feedbackData = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<HomeVideoCTA videoSource={videoSource} />
+	<HomeVideoCTA videoSource={videoSource} headingClasses="font-normal" linksClasses="italic" />
 	<TitleText title={aboutMeData.title} id={aboutMeData.id}>
 		<p slot="firstColumn">
 			{aboutMeData.firstColumn[0].text}
@@ -92,7 +92,7 @@ const feedbackData = {
 			{aboutMeData.secondColumn[0].text}
 		</p>
 	</TitleText>
-	<Experience data={experienceData} />
+	<Experience data={experienceData} hesdingClasses="font-normal" />
 	<TitleText title={skillsData.title} id={skillsData.id}>
 		<div slot="firstColumn">
 			<p>

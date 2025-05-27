@@ -26,14 +26,15 @@ type Props = {
 		text?: string
 	}>
 	classes?: string
+	headingClasses?: string
 }
-const { data, classes } = Astro.props
+const { data, classes, headingClasses } = Astro.props
 ---
 
 <Section id="experience">
 	<Row>
 		<Col span="2">
-			<h2 class="text-3xl leading-8">Experience</h2>
+			<h2 classes={headingClasses}>Experience</h2>
 		</Col>
 		<Col span="10">
 			<Feed data={data} classes={classes} />

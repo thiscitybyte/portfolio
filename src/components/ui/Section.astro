@@ -44,17 +44,9 @@ const { id, fullWidth, stickyCol = false, padding = 'both', vAlign, classes } = 
 
 <style>
 	.section {
-		@apply relative text-neutral-600 dark:text-neutral-400 [&.section--sticky-col_.container]:h-full [&:not(.section--sticky-col)]:overflow-hidden;
+		@apply relative py-12 text-neutral-600 lg:py-20 dark:text-neutral-400 [&.section--sticky-col_.container]:h-full [&:not(.section--sticky-col)]:overflow-hidden;
 	}
-	.section--padded {
-		@apply py-12 lg:py-24;
-	}
-	.section--padded-t {
-		@apply pt-12 lg:pt-24;
-	}
-	.section--padded-b {
-		@apply pb-12 lg:pb-24;
-	}
+
 	.section--v-allign-top {
 		@apply flex flex-col justify-start;
 	}
