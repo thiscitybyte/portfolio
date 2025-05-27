@@ -20,15 +20,6 @@ const SEO = {
 	title: `${frontmatter.title} | Milo`,
 	description: `${frontmatter.description}`
 }
-
-// Const function to format author name
-const formatRoleName = (role: string): string => {
-	return role
-		.split('-')
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join(' ')
-}
-console.log(frontmatter.id)
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
