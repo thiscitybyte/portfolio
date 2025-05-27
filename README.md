@@ -1,6 +1,6 @@
 # Milo Astro Theme
 
-Modern Astro website theme with fully responsive, customizable TailwindCSS components and Keystatic CMS integration.
+Clean and modern resume template for Astro, built with Tailwind CSS and perfect for showcasing your professional profile online.
 
 ![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo-theme.png)
 
@@ -10,12 +10,13 @@ Modern Astro website theme with fully responsive, customizable TailwindCSS compo
 
 ### About
 
-Milo is a modern, feature-rich Astro theme designed for developers and content creators. Built with TailwindCSS and integrated with Keystatic CMS, it provides a perfect balance of performance, flexibility, and ease of use.
+Milo is a free, elegant, and production-ready resume template built with Astro and Tailwind CSS. Designed for developers, designers, and creatives, Milo offers a clean, modern way to showcase your skills, experience, and projects — all in a beautifully structured, single-page layout. It’s fully responsive, developer-friendly, and optimized, making it ideal for digital portfolios
 
 ![just-the-basics](https://oxygenna-themes.b-cdn.net/milo-astro/pagespeedscore.svg)
 
 ### Features
 
+- **Integrated with Keystatic CMS:** Leverage a powerful, headless CMS for easy content management and updates.
 - **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
 - **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for desktop performance.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
@@ -133,9 +134,9 @@ You can add your own fonts by following [this guide](https://docs.astro.build/en
 
 ### Dark/Light Mode
 
-By default, the site uses an automatic mode switcher, allowing it users to switch between light and dark modes based on the user's system settings or by using the mode switcher in the navigation bar. This is achioeved by setting the `mode-auto` class in the `Layout.astro` file.
+By default, the site uses forced modes, which can be either light or dark, depending on the chosen layout. The light layout sets the class to **`mode-light`** and the dark layout sets it to **`mode-dark`**. This setting allows you to maintain a fixed appearance across the site regardless of user preferences or system settings.
 
-If you need to enforce a specific theme, you can set the class above as **`mode-light`** or **`mode-dark`**. When **`mode-light`** is applied, the site will consistently display in light mode, and the switcher will not be functional. Similarly, **`mode-dark`** will force the site to dark mode, with the switcher rendered non-functional. These settings allow you to maintain a fixed appearance across the site regardless of user preferences or system settings.
+However, if you want to give users the ability to switch between themes, you can configure the theme to use the **`mode-auto`** class. You can easily do this by adding the **`mode-auto`** class to the **`src/layouts/Layout.astro`** file instead of using **`mode-light`** or **`mode-dark`**. This will add a theme switcher to the navigation bar, allowing users to toggle the theme between light and dark depending on their preferences or system settings.
 
 ## Content Management
 
