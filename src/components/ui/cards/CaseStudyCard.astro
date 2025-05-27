@@ -48,7 +48,7 @@ const formatRoleName = (role: string): string => {
 <Card classes={classes + ' [&_.grey-image]:hover:opacity-0'}>
 	{
 		image && (
-			<div class="relative">
+			<a href={link} class="relative">
 				<Image src={image} alt={title} width={600} height={400} class="w-full" />
 				<Image
 					src={greyImage}
@@ -57,7 +57,7 @@ const formatRoleName = (role: string): string => {
 					height={400}
 					class="grey-image absolute left-0 top-0 w-full opacity-100 transition-opacity duration-300"
 				/>
-			</div>
+			</a>
 		)
 	}
 	<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 text-base">
