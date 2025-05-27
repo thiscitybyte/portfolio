@@ -699,7 +699,7 @@ button.swiper-pagination-bullet {
 
 /* Custom Pagination */
 .custom-pagination-bullet.swiper-pagination-bullet {
-	@apply relative !h-4 !bg-transparent font-headingsPrimary text-sm text-neutral-600;
+	@apply relative !h-full !bg-transparent font-headingsPrimary text-sm text-neutral-600;
 }
 
 .custom-pagination-bullet.swiper-pagination-bullet-active {
