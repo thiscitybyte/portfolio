@@ -6,10 +6,12 @@ import Section from '../components/ui/Section.astro'
 import Row from '../components/ui/Row.astro'
 import Col from '../components/ui/Col.astro'
 
-// - Blocks
+// - UI
+import Feed from '../components/blocks/feed/Experience.astro'
 
 // Content
 // - Data
+import experienceData from '../data/json-files/experienceData.json'
 
 // - Collection
 import { getCollection } from 'astro:content'
@@ -80,6 +82,18 @@ const videoSource = '/videos/hero-video-primary.mp4'
 					browsing Dribbble and Behance for inspiration. I believe in thoughtful design, continuous
 					learning, and sharing what I know through side projects and creative collaborations.
 				</p>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Experience -->
+	<Section id="experience">
+		<Row>
+			<Col span="2">
+				<h2 class="lg:text-right">Experience</h2>
+			</Col>
+			<Col span="10">
+				<Feed data={experienceData} />
 			</Col>
 		</Row>
 	</Section>
