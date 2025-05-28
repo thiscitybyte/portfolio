@@ -10,5 +10,5 @@ h4,
 h5,
 h6,
 .font-headings {
-	@apply font-playfair text-neutral-900 last:mb-0 dark:text-white [&>strong]:text-primary-500;
+	@apply font-playfair font-normal;
 }

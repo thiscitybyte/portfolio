@@ -14,7 +14,7 @@ body:where(.dark, .dark *) {
 
 /* Main typography */
 p {
-	@apply mb-6 last:mb-0;
+	@apply mb-6 text-lg leading-8 last:mb-0;
 }
 h1,
 h2,
