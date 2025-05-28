@@ -2,9 +2,9 @@
 title: Summit HR
 description: >-
   Built a marketing-focused website for an HR consulting firm, emphasizing trust, authority, and lead generation.
-cardImage: /caseStudies/case-study-01.jpg
-greyImage: /caseStudies/case-study-01-grey.jpg
-heroImage: /caseStudies/case-study-01-image.jpg
+cardImage: /caseStudies/design/case-study-design-01.jpg
+greyImage: /caseStudies/design/case-study-design-01-grey.jpg
+heroImage: /caseStudies/design/case-study-design-01-hero-image.jpg
 roles:
   - brand-strategy
 introduction: >
@@ -42,10 +42,10 @@ whatWeDid:
       <li>Achieved a high Lighthouse performance score</li>
     </ul>
 images:
-  - /caseStudies/assets/case-study-image-03.jpg
-  - /caseStudies/assets/case-study-image-05.jpg
-  - /caseStudies/assets/case-study-image-09.jpg
-  - /caseStudies/assets/case-study-image-12.jpg
+  - /caseStudies/design/case-study-design-image-03.jpg
+  - /caseStudies/design/case-study-design-image-05.jpg
+  - /caseStudies/design/case-study-design-image-09.jpg
+  - /caseStudies/design/case-study-design-image-12.jpg
 clientFeedback:
   - blockquote: 'Our online presence has never been stronger. The site is professional, easy to navigate, and reflects our company values clearly to clients and partners.'
     figcaption: CEO

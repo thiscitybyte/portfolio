@@ -22,7 +22,7 @@ import testimonialData from '../data/json-files/testimonialData.json'
 
 // - Collection
 import { getCollection } from 'astro:content'
-const allCaseStudies = await getCollection('caseStudies', ({ id }) => {
+const allCaseStudies = await getCollection('caseStudiesCode', ({ id }) => {
 	return id
 })
 // Function to sort case studies by date
@@ -200,7 +200,7 @@ const videoSource = '/videos/hero-video-secondary.mp4'
 			</Col>
 			<Col span="5" spanMobile="4" classes="lg:self-end lg:justify-self-end">
 				<Button
-					link="/case-studies"
+					link="/case-studies-code"
 					type="link"
 					variation="link"
 					classes="lg:self-end lg:!justify-end  w-full"
@@ -217,7 +217,7 @@ const videoSource = '/videos/hero-video-secondary.mp4'
 					{
 						sortedCaseStudies.slice(0, 3).map((caseStudy: any) => (
 							<CaseStudyCard
-								link={`/case-studies/${caseStudy.id}`}
+								link={`/case-studies-code/${caseStudy.id}`}
 								title={caseStudy.data.title}
 								image={caseStudy.data.cardImage}
 								greyImage={caseStudy.data.greyImage}

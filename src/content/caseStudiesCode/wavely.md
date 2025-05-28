@@ -2,9 +2,9 @@
 title: Wavely - Music
 description: >-
   A clean, user-focused platform for discovering new music, combining modern design with seamless user experience.
-cardImage: /caseStudies/case-study-06.jpg
-greyImage: /caseStudies/case-study-06-grey.jpg
-heroImage: /caseStudies/case-study-06-image.jpg
+cardImage: /caseStudies/code/case-study-code-06.jpg
+greyImage: /caseStudies/code/case-study-code-06-grey.jpg
+heroImage: /caseStudies/code/case-study-code-06-hero-image.jpg
 roles:
   - full-stack-development
 introduction: >
@@ -42,10 +42,10 @@ whatWeDid:
       <li>Added playlist sharing and playlist collaborations</li>
     </ul>
 images:
-  - /caseStudies/assets/case-study-image-01.jpg
-  - /caseStudies/assets/case-study-image-04.jpg
-  - /caseStudies/assets/case-study-image-08.jpg
-  - /caseStudies/assets/case-study-image-11.jpg
+  - /caseStudies/code/case-study-code-image-01.jpg
+  - /caseStudies/code/case-study-code-image-04.jpg
+  - /caseStudies/code/case-study-code-image-08.jpg
+  - /caseStudies/code/case-study-code-image-11.jpg
 clientFeedback:
   - blockquote: "Wavely has transformed how we discover music. It's intuitive, user-friendly, and visually appealing, making music discovery a joy."
     figcaption: Product Manager
