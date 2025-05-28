@@ -8,11 +8,10 @@ import Layout from './LayoutDesign.astro'
 import Col from '../components/ui/Col.astro'
 import Row from '../components/ui/Row.astro'
 import Section from '../components/ui/Section.astro'
-// - Blocks
-import TitleText from '../components/blocks/titleText/TitleText.astro'
-import Feedback from '../components/blocks/testimonials/Feedback.astro'
 // - UI
 import { Image } from 'astro:assets'
+import Slider from '../components/ui/Slider.astro'
+import Testimonial from '../components/ui/Testimonial.astro'
 
 // Content
 // - SEO
@@ -23,18 +22,21 @@ const SEO = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Section id="intro" classes="!overflow-visible">
+	<!-- Intro -->
+	<Section id="intro" classes="!pt-0">
 		<Row>
-			<Col span="12">
+			<Col span="12" spanMobile="4">
 				<div>
-					<h1 class="text-center lg:text-9xl">
+					<h1 class="text-center">
 						{frontmatter.title}
 					</h1>
 				</div>
 			</Col>
 		</Row>
 	</Section>
-	<Section padding="none">
+
+	<!-- Image -->
+	<Section classes="!p-0">
 		<Row>
 			<Col span="12">
 				<Image
@@ -47,44 +49,91 @@ const SEO = {
 			</Col>
 		</Row>
 	</Section>
-	<TitleText
-		title="About the project"
-		id="about-project"
-		classes="collection-body basic-text basic-text--lg"
-	>
-		<div slot="firstColumn" set:html={frontmatter.aboutProject.leftCol} />
-		<div slot="secondColumn" set:html={frontmatter.aboutProject.rightCol} />
-	</TitleText>
-	<TitleText
-		title="What we did"
-		id="what-we-did"
-		classes="collection-body basic-text basic-text--lg"
-	>
-		<div slot="firstColumn" set:html={frontmatter.whatWeDid.leftCol} />
-		<div slot="secondColumn" set:html={frontmatter.whatWeDid.rightCol} />
-	</TitleText>
+
+	<!-- About the project -->
+	<Section id="about-project">
+		<Row classes="collection-body basic-text basic-text--lg">
+			<Col span="2" spanMobile="4">
+				<h2 class="lg:text-right">About the project</h2>
+			</Col>
+			<Col span="5" spanMobile="4">
+				<div set:html={frontmatter.aboutProject.leftCol} />
+			</Col>
+			<Col span="5" spanMobile="4">
+				<div set:html={frontmatter.aboutProject.rightCol} />
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- What we did -->
+	<Section id="what-we-did">
+		<Row classes="collection-body basic-text basic-text--lg">
+			<Col span="2" spanMobile="4">
+				<h2 class="lg:text-right">What we did</h2>
+			</Col>
+			<Col span="5" spanMobile="4">
+				<div set:html={frontmatter.whatWeDid.leftCol} />
+			</Col>
+			<Col span="5" spanMobile="4">
+				<div set:html={frontmatter.whatWeDid.rightCol} />
+			</Col>
+		</Row>
+	</Section>
+
 	{
 		frontmatter.images && (
-			<Section padding="bottom" id="images">
+			<Section classes="!pt-0" id="images">
 				<Row>
-					<Col span="2" classes="row-span-2" />
-
-					{frontmatter.images.map((image: string) => (
-						<Col span="5">
-							<Image
-								src={image}
-								alt={frontmatter.title}
-								width={600}
-								height={400}
-								class="w-full border border-neutral-50 dark:border-neutral-500"
-							/>
-						</Col>
-					))}
+					<Col span="2" />
+					<Col span="10" spanMobile="4">
+						<div class="grid grid-cols-1 gap-9 lg:grid-cols-2">
+							{frontmatter.images.map((image: string) => (
+								<Image
+									src={image}
+									alt={frontmatter.title}
+									width={600}
+									height={400}
+									class="w-full border border-neutral-50 dark:border-neutral-500"
+								/>
+							))}
+						</div>
+					</Col>
 				</Row>
 			</Section>
 		)
 	}
-	<Feedback title="Client feedback" id="client-feedback" data={frontmatter.clientFeedback} />
+
+	<!-- Client feedback -->
+	<Section id="feedback">
+		<Row>
+			<Col span="2" spanMobile="4">
+				<h2 class="lg:text-right">Feedback</h2>
+			</Col>
+			<Col span="10" spanMobile="4">
+				<Slider
+					slidesPerView={1}
+					id="feedbackSlider"
+					delay={3500}
+					showNavigation={false}
+					centeredSlides={true}
+					initialSlide={0}
+				>
+					{
+						frontmatter.clientFeedback.map((item: any) => (
+							<div class="swiper-slide">
+								<Testimonial
+									blockquote={item.blockquote}
+									figcaption={item.figcaption}
+									cite={item.cite}
+									align="left"
+								/>
+							</div>
+						))
+					}
+				</Slider>
+			</Col>
+		</Row>
+	</Section>
 </Layout>
 
 <style>
