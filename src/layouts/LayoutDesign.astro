@@ -41,11 +41,12 @@ const { title, description, ogImage, noindex, navigation = 'sticky', classes } =
 ---
 
 <!doctype html>
-<html lang="en" class={`scroll-animation mode-auto ${classes}`}>
+<html lang="en" class={`scroll-animation mode-light ${classes}`}>
 	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
 	<body
 		class:list={[
-			{ ['mode-' + `${configData.mode}`]: configData.mode },
+			'mode-light', // TODO: remove this when ModeSwitcher is implemented
+			// { ['mode-' + `${configData.mode}`]: configData.mode }, // TODO: Add this when ModeSwitcher is implemented
 			{ ['scroll-animation']: configData.scrollAnimations }
 		]}
 	>
