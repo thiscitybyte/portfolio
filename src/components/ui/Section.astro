@@ -16,11 +16,10 @@ type Props = {
 	id?: string
 	fullWidth?: boolean
 	stickyCol?: boolean
-	padding?: 'both' | 'top' | 'bottom' | 'none'
 	vAlign?: string
 	classes?: string
 }
-const { id, fullWidth, stickyCol = false, padding = 'both', vAlign, classes } = Astro.props
+const { id, fullWidth, stickyCol = false, vAlign, classes } = Astro.props
 ---
 
 <section
@@ -29,9 +28,6 @@ const { id, fullWidth, stickyCol = false, padding = 'both', vAlign, classes } = 
 		'section',
 		{ 'section--sticky-col': stickyCol },
 		{ 'section--fullwidth': fullWidth },
-		{ 'section--padded': padding === 'both' },
-		{ 'section--padded-t': padding === 'top' },
-		{ 'section--padded-b': padding === 'bottom' },
 		{ [`section--v-allign-${vAlign}`]: vAlign },
 		{ 'section--fullwidth': fullWidth },
 		{ [`${classes}`]: classes }
@@ -46,7 +42,6 @@ const { id, fullWidth, stickyCol = false, padding = 'both', vAlign, classes } = 
 	.section {
 		@apply relative py-12 text-neutral-600 lg:py-20 dark:text-neutral-400 [&.section--sticky-col_.container]:h-full [&:not(.section--sticky-col)]:overflow-hidden;
 	}
-
 	.section--v-allign-top {
 		@apply flex flex-col justify-start;
 	}
