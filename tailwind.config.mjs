@@ -20,8 +20,7 @@ export default {
     },
     // Font weights
     {
-      pattern:
-        /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
+      pattern: /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
     },
     // Alignments
     {
@@ -76,16 +75,10 @@ export default {
         fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },
       fontFamily: {
-        headingsPrimary: [
-          "Playfair Display Variable",
-          ...defaultTheme.fontFamily.serif,
-        ],
-        bodyPrimary: ["Nunito Sans Variable", ...defaultTheme.fontFamily.sans],
-        headingsSecondary: ["Ubuntu", ...defaultTheme.fontFamily.sans],
-        bodySecondary: [
-          "Roboto Mono Variable",
-          ...defaultTheme.fontFamily.mono,
-        ],
+        playfair: ["Playfair Display Variable", ...defaultTheme.fontFamily.serif],
+        nunito: ["Nunito Sans Variable", ...defaultTheme.fontFamily.sans],
+        ubuntu: ["Ubuntu", ...defaultTheme.fontFamily.sans],
+        robotoMono: ["Roboto Mono Variable", ...defaultTheme.fontFamily.mono],
       },
       keyframes: {
         dropdown: {

@@ -1,0 +1,14 @@
+body,
+.font-body {
+	@apply font-nunito;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-headings {
+	@apply font-playfair text-neutral-900 last:mb-0 dark:text-white [&>strong]:text-primary-500;
+}
