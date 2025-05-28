@@ -5,12 +5,12 @@
 
 // Components
 // - Layout
-import Layout from '../../layouts/CaseStudyLayout.astro'
+import Layout from '../../layouts/CaseStudyDesignLayout.astro'
 
 // Data
 import { getCollection, render } from 'astro:content'
 export async function getStaticPaths() {
-	const caseStudies = await getCollection('caseStudies')
+	const caseStudies = await getCollection('caseStudiesDesign')
 	return caseStudies.map((entry) => {
 		const caseStudiesId = entry.id
 		return {

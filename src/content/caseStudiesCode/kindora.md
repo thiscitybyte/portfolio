@@ -2,9 +2,9 @@
 title: Kindora
 description: >-
   Designed and built a Shopify-powered site for a boutique wellness brand, focusing on soft & strong visuals.
-cardImage: /caseStudies/case-study-03.jpg
-greyImage: /caseStudies/case-study-03-grey.jpg
-heroImage: /caseStudies/case-study-03-image.jpg
+cardImage: /caseStudies/code/case-study-code-03.jpg
+greyImage: /caseStudies/code/case-study-code-03-grey.jpg
+heroImage: /caseStudies/code/case-study-code-03-hero-image.jpg
 roles:
   - web-designer
 introduction: >
@@ -42,10 +42,10 @@ whatWeDid:
       <li>Ensured mobile-first optimization</li>
     </ul>
 images:
-  - /caseStudies/assets/case-study-image-03.jpg
-  - /caseStudies/assets/case-study-image-06.jpg
-  - /caseStudies/assets/case-study-image-09.jpg
-  - /caseStudies/assets/case-study-image-12.jpg
+  - /caseStudies/code/case-study-code-image-03.jpg
+  - /caseStudies/code/case-study-code-image-06.jpg
+  - /caseStudies/code/case-study-code-image-09.jpg
+  - /caseStudies/code/case-study-code-image-12.jpg
 clientFeedback:
   - blockquote: 'The design elevated our brand and the shopping experience was seamless. It helped us build trust with customers and increased overall engagement and repeat visits.'
     figcaption: CEO

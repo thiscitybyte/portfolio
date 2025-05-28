@@ -10,14 +10,13 @@ import Section from '../../components/ui/Section.astro'
 import Row from '../../components/ui/Row.astro'
 import Col from '../../components/ui/Col.astro'
 // - UI
-import CaseStudies from '../../components/blocks/caseStudies/CaseStudies.astro'
 import CaseStudyCard from '../../components/ui/cards/CaseStudyCard.astro'
 import Pagination from '../../components/ui/Pagination.astro'
 
 import { getCollection } from 'astro:content'
 
 export async function getStaticPaths({ paginate }: any) {
-	const allCaseStudies = await getCollection('caseStudies', ({ id }) => {
+	const allCaseStudies = await getCollection('caseStudiesCode', ({ id }) => {
 		return id
 	})
 	// Generate pages from our array of case studies, with 6 to a page
@@ -66,7 +65,7 @@ const sortedCaseStudies = page.data.sort((a: any, b: any) => {
 					{
 						sortedCaseStudies.map((caseStudy: any) => (
 							<CaseStudyCard
-								link={`/case-studies/${caseStudy.id}`}
+								link={`/case-studies-code/${caseStudy.id}`}
 								title={caseStudy.data.title}
 								image={caseStudy.data.cardImage}
 								greyImage={caseStudy.data.greyImage}

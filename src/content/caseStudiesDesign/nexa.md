@@ -2,9 +2,9 @@
 title: Nexa Health
 description: >-
   Led the redesign of a healthcare tech company's website to improve UX, responsiveness, and lead generation.
-cardImage: /caseStudies/case-study-05.jpg
-greyImage: /caseStudies/case-study-05-grey.jpg
-heroImage: /caseStudies/case-study-05-image.jpg
+cardImage: /caseStudies/design/case-study-design-05.jpg
+greyImage: /caseStudies/design/case-study-design-05-grey.jpg
+heroImage: /caseStudies/design/case-study-design-05-hero-image.jpg
 roles:
   - ux-design
 introduction: >
@@ -42,10 +42,10 @@ whatWeDid:
       <li>Boosted user engagement on mobile devices</li>
     </ul>
 images:
-  - /caseStudies/assets/case-study-image-02.jpg
-  - /caseStudies/assets/case-study-image-06.jpg
-  - /caseStudies/assets/case-study-image-08.jpg
-  - /caseStudies/assets/case-study-image-11.jpg
+  - /caseStudies/design/case-study-design-image-02.jpg
+  - /caseStudies/design/case-study-design-image-06.jpg
+  - /caseStudies/design/case-study-design-image-08.jpg
+  - /caseStudies/design/case-study-design-image-11.jpg
 clientFeedback:
   - blockquote: 'The new website helped us connect better with potential clients, improving communication and trust through its clear messaging and professional design.'
     figcaption: Marketing Director

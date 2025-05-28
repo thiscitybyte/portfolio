@@ -2,9 +2,9 @@
 title: Arvo CRM
 description: >-
   Designed and developed a clean, responsive SaaS dashboard for a CRM platform, enhancing usability and visual clarity.
-cardImage: /caseStudies/case-study-04.jpg
-greyImage: /caseStudies/case-study-04-grey.jpg
-heroImage: /caseStudies/case-study-04-image.jpg
+cardImage: /caseStudies/code/case-study-code-04.jpg
+greyImage: /caseStudies/code/case-study-code-04-grey.jpg
+heroImage: /caseStudies/code/case-study-code-04-hero-image.jpg
 roles:
   - system-architecture
 introduction: >
@@ -42,10 +42,10 @@ whatWeDid:
       <li>Improved task completion by 27%</li>
     </ul>
 images:
-  - /caseStudies/assets/case-study-image-01.jpg
-  - /caseStudies/assets/case-study-image-05.jpg
-  - /caseStudies/assets/case-study-image-08.jpg
-  - /caseStudies/assets/case-study-image-12.jpg
+  - /caseStudies/code/case-study-code-image-01.jpg
+  - /caseStudies/code/case-study-code-image-05.jpg
+  - /caseStudies/code/case-study-code-image-08.jpg
+  - /caseStudies/code/case-study-code-image-12.jpg
 clientFeedback:
   - blockquote: 'The dashboard is clean, efficient, and exactly what we needed. It streamlined our workflow, increased team productivity, and allowed us to focus more on strategic tasks.'
     figcaption: Head of Sales

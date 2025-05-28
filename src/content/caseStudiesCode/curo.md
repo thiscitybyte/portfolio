@@ -2,9 +2,9 @@
 title: Curo
 description: >-
   Created a conversion-focused landing page template for a B2B SaaS startup, including responsive components.
-cardImage: /caseStudies/case-study-02.jpg
-greyImage: /caseStudies/case-study-02-grey.jpg
-heroImage: /caseStudies/case-study-02-image.jpg
+cardImage: /caseStudies/code/case-study-code-02.jpg
+greyImage: /caseStudies/code/case-study-code-02-grey.jpg
+heroImage: /caseStudies/code/case-study-code-02-hero-image.jpg
 roles:
   - design-and-front-end
 introduction: >
@@ -42,10 +42,10 @@ whatWeDid:
       <li>Used analytics to refine design</li>
     </ul>
 images:
-  - /caseStudies/assets/case-study-image-07.jpg
-  - /caseStudies/assets/case-study-image-02.jpg
-  - /caseStudies/assets/case-study-image-04.jpg
-  - /caseStudies/assets/case-study-image-10.jpg
+  - /caseStudies/code/case-study-code-image-07.jpg
+  - /caseStudies/code/case-study-code-image-02.jpg
+  - /caseStudies/code/case-study-code-image-04.jpg
+  - /caseStudies/code/case-study-code-image-10.jpg
 clientFeedback:
   - blockquote: 'We saw an immediate increase in conversions with the new landing page. The modern layout and focused messaging captured user attention and drove measurable results.'
     figcaption: Marketing Director
