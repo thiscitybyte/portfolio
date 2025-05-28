@@ -11,6 +11,9 @@ import Feed from '../components/ui/Feeds/ExperienceFeed.astro'
 import List from '../components/ui/List.astro'
 import Slider from '../components/ui/Slider.astro'
 import Testimonial from '../components/ui/Testimonial.astro'
+import Button from '../components/ui/Button.astro'
+import CaseStudyCard from '../components/ui/cards/CaseStudyCard.astro'
+import { Icon } from 'astro-icon/components'
 
 // Content
 // - Data
@@ -21,6 +24,10 @@ import testimonialData from '../data/json-files/testimonialData.json'
 import { getCollection } from 'astro:content'
 const allCaseStudies = await getCollection('caseStudies', ({ id }) => {
 	return id
+})
+// Function to sort case studies by date
+const sortedCaseStudies = allCaseStudies.sort((a: any, b: any) => {
+	return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 })
 
 // - SEO
@@ -108,7 +115,7 @@ const videoSource = '/videos/hero-video-primary.mp4'
 			<Col span="2">
 				<h2 class="lg:text-right">Skills & Tools</h2>
 			</Col>
-			<Col span="10" classes="lg:columns-2 gap-8">
+			<Col span="10" classes="flex flex-col lg:flex-row gap-8">
 				<div>
 					<p>
 						I'm a designer who loves crafting clean, modern, and user-friendly digital experiences.
@@ -122,7 +129,8 @@ const videoSource = '/videos/hero-video-primary.mp4'
 							{ listItem: 'UI/UX Design' },
 							{ listItem: 'Design Systems' },
 							{ listItem: 'Motion & Microinteractions' },
-							{ listItem: 'Accessibility (WCAG)' }
+							{ listItem: 'Accessibility (WCAG)' },
+							{ listItem: 'Performance Optimization' }
 						]}
 						classes="ml-4"
 					/>
@@ -177,6 +185,50 @@ const videoSource = '/videos/hero-video-primary.mp4'
 						))
 					}
 				</Slider>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Case Studies -->
+	<Section id="case-studies">
+		<Row classes="pb-6">
+			<Col span="2">
+				<h2 class="lg:text-right">Case Studies</h2>
+			</Col>
+			<Col span="10" classes="flex flex-col lg:flex-row gap-8">
+				<p class="m-0 w-full">
+					From SaaS landing pages to eCommerce stores and interactive web apps. Each one reflects my
+					focus on clean design, thoughtful UX, and modern front-end development.
+				</p>
+				<Button
+					link="/case-studies"
+					type="link"
+					variation="link"
+					classes="lg:self-end lg:!justify-end  w-full"
+				>
+					<span class="sr-only">View more case studies</span>
+					more <Icon name="long-arrow-right" />
+				</Button>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="2" />
+			<Col span="10">
+				<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+					{
+						sortedCaseStudies.slice(0, 3).map((caseStudy: any) => (
+							<CaseStudyCard
+								link={`/case-studies/${caseStudy.id}`}
+								title={caseStudy.data.title}
+								image={caseStudy.data.cardImage}
+								greyImage={caseStudy.data.greyImage}
+								roles={caseStudy.data.roles}
+							>
+								{caseStudy.data.description}
+							</CaseStudyCard>
+						))
+					}
+				</div>
 			</Col>
 		</Row>
 	</Section>
