@@ -4,11 +4,7 @@ html {
 }
 body {
 	--gradient-stop: 15%;
-	@apply bg-[url('bgs/milo-bg-light.png')] text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-[url('bgs/milo-bg-light.png')] dark:text-neutral-400 [&.mode-dark]:bg-[url('bgs/milo-bg-dark.png')] [&.mode-light]:bg-[url('bgs/milo-bg-light.png')];
-}
-
-body:where(.dark, .dark *) {
-	background: theme('colors.neutral.950');
+	@apply bg-[url('bgs/milo-bg-light.png')] text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('bgs/milo-bg-dark.png')] dark:text-neutral-400 [&.mode-dark]:bg-neutral-950 [&.mode-dark]:bg-[url('bgs/milo-bg-dark.png')] [&.mode-light]:bg-[url('bgs/milo-bg-light.png')];
 }
 
 /* Main typography */
