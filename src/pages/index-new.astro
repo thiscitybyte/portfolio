@@ -115,44 +115,41 @@ const videoSource = '/videos/hero-video-primary.mp4'
 			<Col span="2">
 				<h2 class="lg:text-right">Skills & Tools</h2>
 			</Col>
-			<Col span="10" classes="flex flex-col lg:flex-row gap-8">
-				<div>
-					<p>
-						I'm a designer who loves crafting clean, modern, and user-friendly digital experiences.
-						I care deeply about layout, typography, and interaction — and I always aim for that
-						sweet spot between form and function. I've worked with startups and agencies to design
-						websites and products that feel as good as they look.
-					</p>
-					<List
-						type="basic"
-						listItems={[
-							{ listItem: 'UI/UX Design' },
-							{ listItem: 'Design Systems' },
-							{ listItem: 'Motion & Microinteractions' },
-							{ listItem: 'Accessibility (WCAG)' },
-							{ listItem: 'Performance Optimization' }
-						]}
-						classes="ml-4"
-					/>
-				</div>
-				<div>
-					<p>
-						When I’m not designing, I’m usually sketching new ideas, testing fresh design tools, or
-						browsing Dribbble and Behance for inspiration. I believe in thoughtful design,
-						continuous learning, and sharing what I know through side projects and creative
-						collaborations.
-					</p>
-					<List
-						type="basic"
-						listItems={[
-							{ listItem: 'Figma & FigJam' },
-							{ listItem: 'Framer' },
-							{ listItem: 'Webflow' },
-							{ listItem: 'Astro / React / Tailwind CSS' }
-						]}
-						classes="ml-4"
-					/>
-				</div>
+			<Col span="5">
+				<p>
+					I'm a designer who loves crafting clean, modern, and user-friendly digital experiences. I
+					care deeply about layout, typography, and interaction — and I always aim for that sweet
+					spot between form and function. I've worked with startups and agencies to design websites
+					and products that feel as good as they look.
+				</p>
+				<List
+					type="basic"
+					listItems={[
+						{ listItem: 'UI/UX Design' },
+						{ listItem: 'Design Systems' },
+						{ listItem: 'Motion & Microinteractions' },
+						{ listItem: 'Accessibility (WCAG)' },
+						{ listItem: 'Performance Optimization' }
+					]}
+					classes="ml-4"
+				/>
+			</Col>
+			<Col span="5">
+				<p>
+					When I’m not designing, I’m usually sketching new ideas, testing fresh design tools, or
+					browsing Dribbble and Behance for inspiration. I believe in thoughtful design, continuous
+					learning, and sharing what I know through side projects and creative collaborations.
+				</p>
+				<List
+					type="basic"
+					listItems={[
+						{ listItem: 'Figma & FigJam' },
+						{ listItem: 'Framer' },
+						{ listItem: 'Webflow' },
+						{ listItem: 'Astro / React / Tailwind CSS' }
+					]}
+					classes="ml-4"
+				/>
 			</Col>
 		</Row>
 	</Section>
@@ -195,11 +192,13 @@ const videoSource = '/videos/hero-video-primary.mp4'
 			<Col span="2">
 				<h2 class="lg:text-right">Case Studies</h2>
 			</Col>
-			<Col span="10" classes="flex flex-col lg:flex-row gap-8">
+			<Col span="5">
 				<p class="m-0 w-full">
 					From SaaS landing pages to eCommerce stores and interactive web apps. Each one reflects my
 					focus on clean design, thoughtful UX, and modern front-end development.
 				</p>
+			</Col>
+			<Col span="5" classes="lg:self-end lg:justify-self-end">
 				<Button
 					link="/case-studies"
 					type="link"
