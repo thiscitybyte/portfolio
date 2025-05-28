@@ -9,10 +9,13 @@ import Col from '../components/ui/Col.astro'
 // - UI
 import Feed from '../components/ui/Feeds/ExperienceFeed.astro'
 import List from '../components/ui/List.astro'
+import Slider from '../components/ui/Slider.astro'
+import Testimonial from '../components/ui/Testimonial.astro'
 
 // Content
 // - Data
 import experienceData from '../data/json-files/experienceData.json'
+import testimonialData from '../data/json-files/testimonialData.json'
 
 // - Collection
 import { getCollection } from 'astro:content'
@@ -142,6 +145,38 @@ const videoSource = '/videos/hero-video-primary.mp4'
 						classes="ml-4"
 					/>
 				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Feedback -->
+	<Section id="feedback">
+		<Row>
+			<Col span="2">
+				<h2 class="lg:text-right">Feedback</h2>
+			</Col>
+			<Col span="10">
+				<Slider
+					slidesPerView={1}
+					id="feedbackSlider"
+					delay={3500}
+					showNavigation={false}
+					centeredSlides={true}
+					initialSlide={0}
+				>
+					{
+						testimonialData.map((item: any) => (
+							<div class="swiper-slide">
+								<Testimonial
+									blockquote={item.blockquote}
+									figcaption={item.figcaption}
+									cite={item.cite}
+									align="left"
+								/>
+							</div>
+						))
+					}
+				</Slider>
 			</Col>
 		</Row>
 	</Section>

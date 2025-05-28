@@ -707,7 +707,7 @@ button.swiper-pagination-bullet {
 }
 
 .custom-pagination-bullet.swiper-pagination-bullet-active::after {
-	@apply absolute left-4 top-[60%] mx-2 inline-block h-px w-8 origin-left translate-y-1/2 bg-primary-500 content-[''] last:hidden dark:bg-secondary-500;
+	@apply absolute left-4 top-1/2 mx-2 inline-block h-px w-8 origin-left translate-y-1/2 bg-primary-500 content-[''] last:hidden dark:bg-secondary-500;
 	transform: scaleX(0);
 	transform-origin: left;
 }
