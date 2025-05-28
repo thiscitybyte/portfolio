@@ -30,10 +30,10 @@ const { data, title, id, classes } = Astro.props
 
 <Section id && id={id} classes={classes}>
 	<Row>
-		<Col span="2">
+		<Col span="2" spanMobile="4">
 			<h2 class="text-3xl leading-8">{title}</h2>
 		</Col>
-		<Col span="10">
+		<Col span="10" spanMobile="4">
 			<Slider
 				slidesPerView={1}
 				id="feedback"

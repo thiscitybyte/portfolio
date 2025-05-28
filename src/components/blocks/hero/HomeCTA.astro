@@ -25,7 +25,7 @@ const { imageSource } = Astro.props
 <Section id="intro" classes="!overflow-visible !pt-[240px]">
 	<Row>
 		<Col span="2" />
-		<Col span="10">
+		<Col span="10" spanMobile="4">
 			<Image
 				src={imageSource}
 				alt="Milo Astro Theme"
@@ -40,7 +40,7 @@ const { imageSource } = Astro.props
 				</h1>
 
 				<div
-					class="flex flex-row flex-wrap gap-6 font-headingsPrimary text-base text-neutral-600 lg:flex-nowrap dark:text-neutral-300 [&_a]:text-neutral-600 [&_a]:transition-colors [&_a]:duration-300 dark:[&_a]:text-neutral-300"
+					class="font-headingsPrimary flex flex-row flex-wrap gap-6 text-base text-neutral-600 lg:flex-nowrap dark:text-neutral-300 [&_a]:text-neutral-600 [&_a]:transition-colors [&_a]:duration-300 dark:[&_a]:text-neutral-300"
 				>
 					<a href="mailto:milo@studio.com">milo@studio.com</a>
 					<a href="tel:+13235550198">+1 (323) 555-0198</a>

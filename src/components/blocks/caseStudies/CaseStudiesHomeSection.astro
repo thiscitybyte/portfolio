@@ -32,7 +32,7 @@ const sortedCaseStudies = allCaseStudies.sort((a: any, b: any) => {
 <>
 	<Section id="caseStudies">
 		<Row classes="pb-6">
-			<Col span="2">
+			<Col span="2" spanMobile="4">
 				<h2 class="text-2xl">Case Studies</h2>
 			</Col>
 			<Col span="5">
@@ -50,7 +50,7 @@ const sortedCaseStudies = allCaseStudies.sort((a: any, b: any) => {
 		</Row>
 		<Row>
 			<Col span="2" />
-			<Col span="10">
+			<Col span="10" spanMobile="4">
 				<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
 					{
 						sortedCaseStudies.slice(0, 3).map((caseStudy: any) => (
