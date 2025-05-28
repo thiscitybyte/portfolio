@@ -1,20 +1,12 @@
 {
 	"navItems": [
 		{
-			"name": "Home Video Light",
+			"name": "Home Design",
 			"link": "/"
 		},
 		{
-			"name": "Home Video Dark",
-			"link": "/home-video-dark"
-		},
-		{
-			"name": "Home Image Light",
-			"link": "/home-img-light"
-		},
-		{
-			"name": "Home Image Dark",
-			"link": "/home-img-dark"
+			"name": "Home Code",
+			"link": "/index-code"
 		},
 		{
 			"name": "About me",
