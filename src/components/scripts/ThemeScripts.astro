@@ -195,35 +195,3 @@
 		initializeObserver()
 	})
 </script>
-
-<!-- Body gradient -->
-<script>
-	/**
-	 * Dynamically adjusts the radial gradient stop point
-	 * based on the current viewport height and body content height.
-	 *
-	 * This ensures a consistent background appearance across pages
-	 * with different content lengths in an Astro site using view transitions
-	 * (which do not trigger full page reloads).
-	 */
-	function updateGradientStop() {
-		const bodyHeight = document.body.scrollHeight
-		const viewportHeight = window.innerHeight
-
-		// Calculate a ratio (as a percentage) of viewport to body height
-		// Clamp between 15% and 100% for visual consistency
-		const ratio = Math.min(100, Math.max(15, (viewportHeight / bodyHeight) * 100))
-
-		// Set the CSS variable used in the radial gradient
-		document.body.style.setProperty('--gradient-stop', `${ratio}%`)
-	}
-
-	// Run once when the DOM is fully loaded
-	document.addEventListener('DOMContentLoaded', updateGradientStop)
-
-	// Re-run after client-side navigation in Astro
-	document.addEventListener('astro:page-load', updateGradientStop)
-
-	// Re-run after Astro view transitions complete (astro:after-swap)
-	document.addEventListener('astro:after-swap', updateGradientStop)
-</script>
