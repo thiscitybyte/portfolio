@@ -71,39 +71,28 @@ function isActivePath(currentPath: string): boolean {
 						))
 					}
 				</ul>
-				<div
-					class="flex flex-col items-center justify-center divide-x-0 divide-y divide-solid divide-neutral-200 border-t border-neutral-200 md:flex-row md:divide-x md:divide-y-0 dark:divide-neutral-700 dark:border-neutral-700"
-				>
-					<div class="flex w-full flex-col items-center justify-center gap-6 px-5 py-8">
+				<div class="flex flex-col items-center justify-center gap-4 md:flex-row">
+					<div class="flex flex-col items-center justify-center gap-4 px-4 py-8">
 						<span class="text-xs"> For Designers</span>
 						<div class="flex items-center justify-center gap-6">
-							<a
-								href="/index-image"
-								class="header__menu-link flex flex-col items-center justify-center gap-4"
-							>
+							<a href="/index-image" class="flex flex-col items-center justify-center gap-4">
 								<Icon name="yellow-circle" class="size-12" />
 								<span class="text-xs"> Hero Image</span>
 							</a>
-							<a href="/" class="header__menu-link flex flex-col items-center justify-center gap-4">
+							<a href="/" class="flex flex-col items-center justify-center gap-4">
 								<Icon name="yellow-circle-play" class="size-12" />
 								<span class="text-xs"> Hero Video</span>
 							</a>
 						</div>
 					</div>
-					<div class="flex w-full flex-col items-center justify-center gap-6 px-5 py-8">
+					<div class="flex flex-col items-center justify-center gap-4 px-4">
 						<span class="text-xs"> For Developers</span>
 						<div class="flex items-center justify-center gap-6">
-							<a
-								href="/index-code-image"
-								class="header__menu-link flex flex-col items-center justify-center gap-4"
-							>
+							<a href="/index-code-image" class="flex flex-col items-center justify-center gap-4">
 								<Icon name="purple-circle" class="size-12" />
 								<span class="text-xs"> Hero Image</span>
 							</a>
-							<a
-								href="/index-code"
-								class="header__menu-link flex flex-col items-center justify-center gap-4"
-							>
+							<a href="/index-code" class="flex flex-col items-center justify-center gap-4">
 								<Icon name="purple-circle-play" class="size-12" />
 								<span class="text-xs"> Hero Video</span>
 							</a>
@@ -131,7 +120,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-700 dark:text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible fixed left-0 top-0 ml-auto h-dvh w-dvw justify-center overflow-hidden overscroll-contain pt-24 font-medium opacity-0 transition-[opacity,visibility] duration-300 [&_ul]:pb-12 [&_ul]:lg:pb-24;
+		@apply invisible fixed left-0 top-0 ml-auto h-dvh w-dvw justify-center overflow-hidden overscroll-contain pt-24 font-medium opacity-0 transition-[opacity,visibility] duration-300 [&_ul]:pb-6 [&_ul]:lg:pb-24;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 [&_.header\_\_menu-link]:animate-fadeIn;
