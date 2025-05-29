@@ -29,6 +29,7 @@ type Props = {
 	align?: 'left' | 'center'
 	quoteSize?: number
 	classes?: string
+	quoteClasses?: string
 }
 const {
 	blockquote,
@@ -39,7 +40,8 @@ const {
 	align = 'left',
 	link,
 	classes,
-	quoteSize = 64
+	quoteSize = 64,
+	quoteClasses
 } = Astro.props
 ---
 
@@ -56,7 +58,8 @@ const {
 				class:list={[
 					'testimonial__blockquote',
 					{ ['text-' + `${mobileSize}`]: mobileSize },
-					{ ['lg:text-' + `${size}`]: size }
+					{ ['lg:text-' + `${size}`]: size },
+					{ [`${quoteClasses}`]: quoteClasses }
 				]}
 			>
 				<p>
