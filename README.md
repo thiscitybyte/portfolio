@@ -91,7 +91,7 @@ Inside Milo Astro project, you'll see the following folders and files:
 | `src/config/`            | Contains configuration files for the project in typescript format.                                                                 |
 | `src/content/`           | Holds collection data, such as case studies.                                                                                       |
 | `src/data/`              | Contains JSON files with content data (like features, testimonials etc).                                                           |
-| `src/icons/`             | Contains all icons used in the project, sourced from [Heroicons](https://heroicons.com/).                                          |
+| `src/icons/`             | Contains all icons used in the project, most are sourced from [Heroicons](https://heroicons.com/).                                 |
 | `src/layouts/`           | Contains layout components that define the overall structure of your pages.                                                        |
 | `src/pages/`             | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                                |
 | `package.json`           | Lists dependencies and scripts for your project, including metadata and various package requirements.                              |
