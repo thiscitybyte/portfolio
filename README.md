@@ -2,7 +2,7 @@
 
 Clean and modern resume template for Astro, built with Tailwind CSS and perfect for showcasing your professional profile online.
 
-![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo-theme.png)
+![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo-theme-promo.png)
 
 [![View live Demo](https://oxygenna-themes.b-cdn.net/milo-astro/button-demo.svg)](https://milo-theme.netlify.app/) [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/milo-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-milo-theme-netlify-app/wutz5rlznj?form_factor=desktop)
 
@@ -12,7 +12,7 @@ Clean and modern resume template for Astro, built with Tailwind CSS and perfect 
 
 Milo is an elegant, and production-ready resume template built with Astro and Tailwind CSS. Designed for developers, designers, and creatives, Milo offers a clean, modern way to showcase your skills, experience, and projects — all in a beautifully structured, single-page layout. It’s fully responsive, developer-friendly, and optimized, making it ideal for digital portfolios
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/milo-astro/pagespeedscore.svg)
+![just-the-basics](https://oxygenna-themes.b-cdn.net/milo-astro/pagespeed-score.svg)
 
 ### Features
 
