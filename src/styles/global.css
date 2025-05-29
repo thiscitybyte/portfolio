@@ -17,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply text-neutral-900 last:mb-0 dark:text-white [&>strong]:text-primary-500 [.mode-dark_&]:text-white;
+	@apply text-neutral-900 last:mb-0 dark:text-white [&>strong]:text-primary-500 [.mode-dark_&]:text-white [.mode-light_&]:text-neutral-900;
 }
 h1 strong,
 h2 strong,
