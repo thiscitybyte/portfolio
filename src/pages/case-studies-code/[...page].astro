@@ -39,7 +39,7 @@ const sortedCaseStudies = page.data.sort((a: any, b: any) => {
 })
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} navigation="sticky">
 	<Section id="intro">
 		<Row>
 			<Col span="2" />
@@ -55,10 +55,10 @@ const sortedCaseStudies = page.data.sort((a: any, b: any) => {
 			</Col>
 		</Row>
 	</Section>
-	<Section id="case-studies">
+	<Section id="case-studies" classes="!overflow-visible">
 		<Row>
-			<Col span="2" spanMobile="4">
-				<h2 class="lg:text-right">Case Studies</h2>
+			<Col span="2" spanMobile="4" classes="h-full">
+				<h2 class="sticky top-4 lg:text-right">Case Studies</h2>
 			</Col>
 			<Col span="10" spanMobile="4">
 				<div class="grid grid-cols-1 gap-x-6 gap-y-12 lg:grid-cols-3">
