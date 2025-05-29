@@ -703,11 +703,11 @@ button.swiper-pagination-bullet {
 }
 
 .custom-pagination-bullet.swiper-pagination-bullet-active {
-	@apply !w-14 text-primary-500 opacity-100 transition-colors duration-300 dark:text-secondary-500;
+	@apply !w-14 text-primary-500 opacity-100 transition-colors duration-300 dark:text-secondary-500 [.mode-dark_&]:text-secondary-500;
 }
 
 .custom-pagination-bullet.swiper-pagination-bullet-active::after {
-	@apply absolute left-4 top-1/2 mx-2 inline-block h-px w-8 origin-left translate-y-1/2 bg-primary-500 content-[''] last:hidden dark:bg-secondary-500;
+	@apply absolute left-4 top-1/2 mx-2 inline-block h-px w-8 origin-left translate-y-1/2 bg-primary-500 content-[''] last:hidden dark:bg-secondary-500 [.mode-dark_&]:bg-secondary-500;
 	transform: scaleX(0);
 	transform-origin: left;
 }

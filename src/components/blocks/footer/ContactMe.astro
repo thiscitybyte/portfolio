@@ -8,7 +8,7 @@
 import { Icon } from 'astro-icon/components'
 ---
 
-<footer class="footer">
+<footer class="footer [.mode-dark_&]:!text-neutral-400">
 	<div class="footer__container">
 		<div class="footer__row">
 			<div class="footer__col col-span-4 lg:col-span-2">
@@ -19,8 +19,9 @@ import { Icon } from 'astro-icon/components'
 					Got a project in mind, a question, or just want to say hello? I’m always open to new
 					collaborations and interesting ideas. Feel free to reach out — I’d love to hear from you.
 				</p>
-				<div class="footer__links font-headings">
-					<a href="mailto:milo@studio.com" class="footer__link">
+				<div class="footer__links font-headings [.mode-dark_&]:!text-neutral-300">
+					<a href="
+					mailto:milo@studio.com" class="footer__link">
 						<Icon name="at-sign" /> milo@studio.com
 					</a>
 					<a href="tel:+13235550198" class="footer__link">
@@ -36,22 +37,22 @@ import { Icon } from 'astro-icon/components'
 			</div>
 		</div>
 	</div>
-</footer>
 
-<style>
-	.footer {
-		@apply relative py-12 text-neutral-600 lg:py-20 dark:text-neutral-400;
-	}
-	.footer__container {
-		@apply container relative z-[1] mx-auto px-6;
-	}
-	.footer__row {
-		@apply grid grid-cols-4 gap-6 lg:grid-cols-12 lg:gap-8;
-	}
-	.footer__links {
-		@apply flex flex-col gap-1 text-lg leading-8 text-neutral-600 dark:text-neutral-300 [&_a]:text-neutral-600 [&_a]:transition-colors [&_a]:duration-300 dark:[&_a]:text-neutral-300;
-	}
-	.footer__link {
-		@apply flex items-center gap-2;
-	}
-</style>
+	<style>
+		.footer {
+			@apply relative py-12 text-neutral-600 lg:py-20 dark:text-neutral-400;
+		}
+		.footer__container {
+			@apply container relative z-[1] mx-auto px-6;
+		}
+		.footer__row {
+			@apply grid grid-cols-4 gap-6 lg:grid-cols-12 lg:gap-8;
+		}
+		.footer__links {
+			@apply flex flex-col gap-1 text-lg leading-8 text-neutral-600 dark:text-neutral-300 [&_a]:text-neutral-600 [&_a]:transition-colors [&_a]:duration-300 dark:[&_a]:text-neutral-300;
+		}
+		.footer__link {
+			@apply flex items-center gap-2;
+		}
+	</style>
+</footer>

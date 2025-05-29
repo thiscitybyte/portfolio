@@ -27,7 +27,13 @@ const { type = 'basic', listColor = 'neutral', listItems, classes } = Astro.prop
 		{ [`${classes}`]: classes }
 	]}
 >
-	{listItems.map((item) => <li>{item.listItem}</li>)}
+	{
+		listItems.map((item) => (
+			<li class="[.mode-dark_&]:!text-neutral-400 [.mode-dark_&]:marker:!text-white">
+				{item.listItem}
+			</li>
+		))
+	}
 </ul>
 
 <style>
