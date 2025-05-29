@@ -15,6 +15,7 @@
 // - Components
 // - UI
 import ModeSwitcher from './ModeSwitcher.astro'
+import { Icon } from 'astro-icon/components'
 
 // - Props
 type Props = {
@@ -52,25 +53,66 @@ function isActivePath(currentPath: string): boolean {
 				</div>
 			</button>
 			{/* Navigation links */}
-			<ul role="menubar" aria-label="Select page" class="header__menu">
-				{
-					navItems.map((item, index) => (
-						<li role="none" class="header__menu-item">
+			<div class="header__menu">
+				<ul role="menubar" aria-label="Select page">
+					{
+						navItems.map((item, index) => (
+							<li role="none" class="header__menu-item">
+								<a
+									href={item.link}
+									role="menuitem"
+									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
+									style={{ '--index': index }}
+								>
+									{item.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+				<div
+					class="flex flex-col items-center justify-center divide-x-0 divide-y divide-solid divide-neutral-200 border-t border-neutral-200 md:flex-row md:divide-x md:divide-y-0 dark:divide-neutral-700 dark:border-neutral-700"
+				>
+					<div class="flex w-full flex-col items-center justify-center gap-6 px-5 py-8">
+						<span class="text-xs"> For Designers</span>
+						<div class="flex items-center justify-center gap-6">
 							<a
-								href={item.link}
-								role="menuitem"
-								class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
-								style={{ '--index': index }}
+								href="/index-image"
+								class="header__menu-link flex flex-col items-center justify-center gap-4"
 							>
-								{item.name}
+								<Icon name="yellow-circle" class="size-12" />
+								<span class="text-xs"> Hero Image</span>
 							</a>
-						</li>
-					))
-				}
-			</ul>
-			{/* Theme Switcher */}
-			<!-- <ModeSwitcher /> -->
+							<a href="/" class="header__menu-link flex flex-col items-center justify-center gap-4">
+								<Icon name="yellow-circle-play" class="size-12" />
+								<span class="text-xs"> Hero Video</span>
+							</a>
+						</div>
+					</div>
+					<div class="flex w-full flex-col items-center justify-center gap-6 px-5 py-8">
+						<span class="text-xs"> For Developers</span>
+						<div class="flex items-center justify-center gap-6">
+							<a
+								href="/index-code-image"
+								class="header__menu-link flex flex-col items-center justify-center gap-4"
+							>
+								<Icon name="purple-circle" class="size-12" />
+								<span class="text-xs"> Hero Image</span>
+							</a>
+							<a
+								href="/index-code"
+								class="header__menu-link flex flex-col items-center justify-center gap-4"
+							>
+								<Icon name="purple-circle-play" class="size-12" />
+								<span class="text-xs"> Hero Video</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</nav>
+		{/* Theme Switcher */}
+		<!-- <ModeSwitcher /> -->
 	</div>
 </header>
 
@@ -88,7 +130,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-700 dark:text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 px-8 py-[6rem] font-medium opacity-0 transition-[opacity,visibility] duration-300 dark:bg-neutral-950/90;
+		@apply invisible absolute left-0 top-0 z-[-1] ml-auto h-dvh w-full justify-center overflow-hidden overflow-y-auto overscroll-contain bg-white/90 pt-24 font-medium opacity-0 transition-[opacity,visibility] duration-300 dark:bg-neutral-950/90 [&_ul]:pb-12 [&_ul]:lg:pb-24;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 backdrop-blur-sm [&_.header\_\_menu-link]:animate-fadeIn;
@@ -100,7 +142,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply relative flex cursor-pointer flex-col items-stretch;
 	}
 	.header__menu-link {
-		@apply relative flex translate-y-[0.625rem] items-center gap-1 py-4 opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:justify-center lg:text-4xl lg:leading-[60px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-500 dark:[&.active]:text-secondary-500;
+		@apply relative flex translate-y-[0.625rem] items-center justify-center gap-1 py-4 text-center text-4xl opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:leading-[60px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-500 dark:[&.active]:text-secondary-500;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-10 w-10 self-center [&--open]:visible [&--open]:opacity-100;

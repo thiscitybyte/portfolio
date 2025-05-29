@@ -1,14 +1,6 @@
 {
 	"navItems": [
 		{
-			"name": "Home Design",
-			"link": "/"
-		},
-		{
-			"name": "Home Code",
-			"link": "/index-code"
-		},
-		{
 			"name": "About me",
 			"link": "#about"
 		},
@@ -26,7 +18,7 @@
 		},
 		{
 			"name": "Case Studies",
-			"link": "/case-studies"
+			"link": "#case-studies"
 		},
 		{
 			"name": "Contact",
