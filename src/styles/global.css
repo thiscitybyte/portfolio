@@ -4,7 +4,7 @@ html {
 }
 body {
 	--gradient-stop: 15%;
-	@apply bg-[url('bgs/milo-bg-light.png')] text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('bgs/milo-bg-dark.png')] dark:text-neutral-400 [&.mode-dark]:bg-neutral-950 [&.mode-dark]:bg-[linear-gradient(90deg,rgba(34,0,77,.3)_0%,rgba(34,0,77,0)_100%),url('bgs/milo-bg-dark.png')] [&.mode-dark_p]:text-neutral-400 [&.mode-light]:bg-[url('bgs/milo-bg-light.png')];
+	@apply bg-[url('/bgs/milo-bg-light.png')] text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/milo-bg-dark.png')] dark:text-neutral-400 [&.mode-dark]:bg-neutral-950 [&.mode-dark]:bg-[linear-gradient(90deg,rgba(34,0,77,.3)_0%,rgba(34,0,77,0)_100%),url('/bgs/milo-bg-dark.png')] [&.mode-dark_p]:text-neutral-400 [&.mode-light]:bg-[url('/bgs/milo-bg-light.png')];
 }
 
 /* Main typography */
