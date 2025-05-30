@@ -19,5 +19,5 @@ export interface NavData {
 
 export async function getNavigationBarData() {
 	const { default: data } = await import('../data/json-files/navigationBarData.json')
-	return data as NavData
+	return data as unknown as NavData
 }
