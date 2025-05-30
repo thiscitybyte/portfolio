@@ -1,9 +1,8 @@
 <!-- Theme Scripts -->
 <script>
-	// Handle automatic theme switching based on system preferences
-	if (document.documentElement.classList.contains('mode-auto')) {
-		// Applies theme based on localStorage or system preference
-		const applyTheme = () => {
+	const initTheme = () => {
+		if (document.documentElement.classList.contains('mode-auto')) {
+			// Apply based on localStorage or system preference
 			if (
 				localStorage.theme === 'dark' ||
 				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -12,46 +11,35 @@
 			} else {
 				document.documentElement.classList.remove('dark')
 			}
+			setupThemeSwitcher()
+		} else if (document.documentElement.classList.contains('mode-dark')) {
+			document.documentElement.classList.add('dark')
+		} else if (document.documentElement.classList.contains('mode-light')) {
+			document.documentElement.classList.remove('dark')
 		}
-		// Sets up theme toggle button functionality
-		const setupThemeSwitcher = () => {
-			const themeSwitcher = document.getElementById('theme-selector')
-			if (themeSwitcher) {
-				themeSwitcher.addEventListener('click', () => {
-					if (localStorage.theme === 'dark') {
-						localStorage.theme = 'light'
-						document.documentElement.classList.remove('dark')
-					} else {
-						localStorage.theme = 'dark'
-						document.documentElement.classList.add('dark')
-					}
-				})
-			}
+	}
+
+	const setupThemeSwitcher = () => {
+		const themeSwitcher = document.getElementById('theme-selector')
+		if (themeSwitcher) {
+			themeSwitcher.addEventListener('click', () => {
+				if (localStorage.theme === 'dark') {
+					localStorage.theme = 'light'
+					document.documentElement.classList.remove('dark')
+				} else {
+					localStorage.theme = 'dark'
+					document.documentElement.classList.add('dark')
+				}
+			})
 		}
-		// Initialize theme on page load
-		document.addEventListener('DOMContentLoaded', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
-		// Re-apply theme after Astro page transitions
-		document.addEventListener('astro:page-loaded', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
-		// Re-apply theme after Astro view transitions
-		document.addEventListener('astro:after-swap', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
 	}
-	// Handle forced dark mode
-	else if (document.documentElement.classList.contains('mode-dark')) {
-		document.documentElement.classList.add('dark')
-	}
-	// Handle forced light mode
-	else if (document.documentElement.classList.contains('mode-light')) {
-		document.documentElement.classList.remove('dark')
-	}
+
+	// Run once at page load
+	initTheme()
+
+	// Also re-run after Astro transitions
+	document.addEventListener('astro:page-loaded', initTheme)
+	document.addEventListener('astro:after-swap', initTheme)
 </script>
 
 <!-- Menu Dropdown -->
