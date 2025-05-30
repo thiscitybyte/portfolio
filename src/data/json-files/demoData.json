@@ -1,0 +1,42 @@
+{
+	"homepage": [
+		{
+			"title": "Home Image For Designers",
+			"image": "/caseStudies/design/case-study-design-01.jpg",
+			"link": "/index-image",
+			"description": "A homepage for designers with an image background"
+		},
+		{
+			"title": "Home Video For Designers",
+			"image": "/caseStudies/design/case-study-design-01.jpg",
+			"link": "/",
+			"description": "A homepage for designers with a video background"
+		},
+		{
+			"title": "Home Image For Developers",
+			"image": "/caseStudies/code/case-study-code-01.jpg",
+			"link": "/index-code-image",
+			"description": "A homepage for developers with an image background"
+		},
+		{
+			"title": "Home Video For Developers",
+			"image": "/caseStudies/code/case-study-code-01.jpg",
+			"link": "/index-code",
+			"description": "A homepage for developers with a video background"
+		}
+	],
+	"caseStudies": [
+		{
+			"title": "Case Studies For Designers",
+			"image": "/caseStudies/design/case-study-design-01.jpg",
+			"link": "/case-studies-design",
+			"description": "Case Studies For Designers"
+		},
+		{
+			"title": "Case Studies For Developers",
+			"image": "/caseStudies/code/case-study-code-01.jpg",
+			"link": "/case-studies-code",
+			"description": "Case Studies For Developers"
+		}
+	]
+}

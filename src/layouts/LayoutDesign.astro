@@ -35,9 +35,18 @@ type Props = {
 	noindex?: boolean
 	navigation?: 'none' | 'sticky'
 	classes?: string
+	footer?: boolean
 }
 // Page Metadata
-const { title, description, ogImage, noindex, navigation = 'sticky', classes } = Astro.props
+const {
+	title,
+	description,
+	ogImage,
+	noindex,
+	navigation = 'sticky',
+	classes,
+	footer = true
+} = Astro.props
 ---
 
 <!doctype html>
@@ -54,7 +63,7 @@ const { title, description, ogImage, noindex, navigation = 'sticky', classes } =
 		{navigation !== 'none' && <NavigationBar type={navigation} />}
 		<Main>
 			<slot />
-			<ContactMe />
+			{footer && <ContactMe />}
 		</Main>
 		<Scripts />
 	</body>
