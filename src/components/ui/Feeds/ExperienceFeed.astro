@@ -31,15 +31,15 @@ const { data, classes } = Astro.props
 		data.map((item) => (
 			<li class="feed__item animate">
 				<div class="feed__item-date_info">
-					<h4 class="mb-2">{item.date}</h4>
+					<h3 class="h4 mb-2">{item.date}</h3>
 					<span class="feed__item-date_info-company">{item.company}</span>
 					<span class="feed__item-date_info-location">{item.location}</span>
 				</div>
 				<div class="feed__item-container">
-					<h3 class="feed__item-header">
+					<h4 class="feed__item-header h3">
 						{item.title}
 						<span> - {item.date}</span>
-					</h3>
+					</h4>
 					<div class="feed__item-text basic-text" set:html={item.text} />
 				</div>
 			</li>
