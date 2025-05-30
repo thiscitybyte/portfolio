@@ -34,12 +34,7 @@ type NavType = 'home' | 'caseStudies' | 'singleCaseStudy' | 'demos'
 // Initialize default navigation type
 let navType: NavType = 'home'
 // Determine the appropriate navigation type based on the current path
-if (
-	path === '/' ||
-	path.startsWith('/index-image') ||
-	path.startsWith('/index-code') ||
-	path.startsWith('/index-code-image')
-) {
+if (path === '/' || path.startsWith('/index')) {
 	navType = 'home'
 } else if (/^\/case-studies-(design|code)(\/)?$/.test(path)) {
 	navType = 'caseStudies'
