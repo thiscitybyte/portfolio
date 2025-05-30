@@ -62,16 +62,14 @@ const {
 					{ [`${quoteClasses}`]: quoteClasses }
 				]}
 			>
-				<p class="[.mode-dark_&]:!text-neutral-300">
+				<p>
 					{blockquote}
 				</p>
 			</blockquote>
 			<figcaption class="testimonial__figcaption">
 				<div class="testimonial__figcaption-container">
 					<div class="testimonial__figcaption-cite-container">
-						<span class="testimonial__figcaption--credit [.mode-dark_&]:!text-neutral-300"
-							>{figcaption}</span
-						>
+						<span class="testimonial__figcaption--credit">{figcaption}</span>
 						{
 							cite && (
 								<cite class="testimonial__figcaption--cite">
@@ -85,7 +83,7 @@ const {
 		</figure>
 		<Icon
 			name="quotes"
-			class="testimonial--quote [.mode-dark_&]:!text-secondary-400"
+			class="testimonial--quote"
 			size={quoteSize}
 			width={quoteSize}
 			height={quoteSize}
