@@ -138,7 +138,7 @@ You can add your own fonts by following [this guide](https://docs.astro.build/en
 
 By default, the site uses forced modes, which can be either light or dark, depending on the chosen layout. The light layout sets the class to **`mode-light`** and the dark layout sets it to **`mode-dark`**. This setting allows you to maintain a fixed appearance across the site regardless of user preferences or system settings.
 
-However, if you want to give users the ability to switch between themes, you can configure the theme to use the **`mode-auto`** class. You can easily do this by adding the **`mode-auto`** class to the **`src/layouts/Layout.astro`** file instead of using **`mode-light`** or **`mode-dark`**.
+However, if you want to give users the ability to switch between themes, you can configure the theme to use the **`mode-auto`** class. You can easily do this by adding the **`mode-auto`** class to the **`src/layouts/LayoutDesign.astro`** and **`src/layouts/LayoutCode.astro`** files instead of using **`mode-light`** or **`mode-dark`**.
 
 ## Content Management
 
