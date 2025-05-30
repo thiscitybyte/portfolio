@@ -25,12 +25,32 @@ type Props = {
 const { type = 'sticky' } = Astro.props
 
 // - Data
-import { getNavigationBarData } from '../../config/navigationBar'
-const navigationBarData = await getNavigationBarData()
-const { navItems } = navigationBarData
-
-// - Determine current path
+// Import navigation data from JSON file
+import navigationData from '../../data/json-files/navigationBarData.json'
+// Get the current page path
 const path = new URL(Astro.request.url).pathname
+// Define types for navigation items and categories
+type NavType = 'home' | 'caseStudies' | 'singleCaseStudy' | 'demos'
+// Initialize default navigation type
+let navType: NavType = 'home'
+// Determine the appropriate navigation type based on the current path
+if (
+	path === '/' ||
+	path.startsWith('/index-image') ||
+	path.startsWith('/index-code') ||
+	path.startsWith('/index-code-image')
+) {
+	navType = 'home'
+} else if (/^\/case-studies-(design|code)(\/)?$/.test(path)) {
+	navType = 'caseStudies'
+} else if (/^\/case-studies-(design|code)\/.+/.test(path)) {
+	navType = 'singleCaseStudy'
+} else if (path.startsWith('/demos')) {
+	navType = 'demos'
+}
+// Get the navigation items for the current category
+const navItems = navigationData[navType]
+// Helper function to determine if a navigation item is active
 function isActivePath(currentPath: string): boolean {
 	return path === currentPath || path === `${currentPath}/`
 }
