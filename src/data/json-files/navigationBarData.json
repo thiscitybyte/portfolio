@@ -9,11 +9,13 @@
 		{ "name": "Demos", "link": "/demos" }
 	],
 	"caseStudies": [
+		{ "name": "Home", "link": "/" },
 		{ "name": "Case Studies", "link": "#case-studies" },
 		{ "name": "Contact", "link": "#contact" },
 		{ "name": "Demos", "link": "/demos" }
 	],
 	"singleCaseStudy": [
+		{ "name": "Home", "link": "/" },
 		{ "name": "About the project", "link": "#about-the-project" },
 		{ "name": "What we did", "link": "#what-we-did" },
 		{ "name": "Client feedback", "link": "#client-feedback" },
