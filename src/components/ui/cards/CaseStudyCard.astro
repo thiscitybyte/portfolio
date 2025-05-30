@@ -60,13 +60,9 @@ const formatRoleName = (role: string): string => {
 			</a>
 		)
 	}
-	<CardBody
-		classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 [.mode-dark_&]:text-neutral-400 text-base"
-	>
+	<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400  text-base">
 		<h3 class="caseStudy-title">
-			<a href={link} class="[.mode-dark_&]:!text-white [.mode-dark_&]:hover:!text-secondary-500"
-				>{title}</a
-			>
+			<a href={link}>{title}</a>
 		</h3>
 		<slot />
 	</CardBody>

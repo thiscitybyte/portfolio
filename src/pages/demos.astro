@@ -69,11 +69,9 @@ import demoData from '../data/json-files/demoData.json'
 										/>
 									</a>
 								)}
-								<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 [.mode-dark_&]:text-neutral-400 text-base">
+								<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400  text-base">
 									<h3 class="mb-4 font-playfair text-lg font-normal italic text-neutral-900 transition-colors duration-300 hover:text-primary-500 dark:text-white [&_a]:text-inherit">
-										<a href={item.link} class="[.mode-dark_&]:!text-white">
-											{item.title}
-										</a>
+										<a href={item.link}>{item.title}</a>
 									</h3>
 									<p class="font-nunito">{item.description}</p>
 								</CardBody>
@@ -113,9 +111,9 @@ import demoData from '../data/json-files/demoData.json'
 										/>
 									</a>
 								)}
-								<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 [.mode-dark_&]:text-neutral-400 text-base">
+								<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 text-base">
 									<h3 class="mb-4 font-ubuntu text-lg font-bold not-italic text-neutral-900 transition-colors duration-300 hover:text-secondary-500 dark:text-white [&_a]:text-inherit">
-										<a href={item.link} class="hover:text-secondary-500 [.mode-dark_&]:!text-white">
+										<a href={item.link} class="hover:text-secondary-500">
 											{item.title}
 										</a>
 									</h3>
