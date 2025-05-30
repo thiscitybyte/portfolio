@@ -62,7 +62,7 @@ function isActivePath(currentPath: string): boolean {
 								<a
 									href={item.link}
 									role="menuitem"
-									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
+									class={`header__menu-link font-headings ${isActivePath(item.link) ? 'active' : ''}`}
 									style={{ '--index': index }}
 								>
 									{item.name}
@@ -120,7 +120,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply flex h-[5.5rem] items-stretch justify-end gap-6 font-medium text-neutral-700 dark:text-neutral-50;
 	}
 	.header__menu {
-		@apply invisible fixed left-0 top-0 ml-auto h-dvh w-dvw justify-center overflow-hidden overscroll-contain pt-24 font-medium opacity-0 transition-[opacity,visibility] duration-300 [&_ul]:pb-6 [&_ul]:lg:pb-24;
+		@apply invisible fixed left-0 top-0 ml-auto h-dvh w-dvw justify-center overflow-hidden overscroll-contain pt-20 font-medium opacity-0 transition-[opacity,visibility] duration-300 [&_ul]:pb-6 [&_ul]:lg:pb-24;
 	}
 	.header__menu--open {
 		@apply visible opacity-100 [&_.header\_\_menu-link]:animate-fadeIn;
@@ -132,7 +132,7 @@ function isActivePath(currentPath: string): boolean {
 		@apply relative flex cursor-pointer flex-col items-stretch;
 	}
 	.header__menu-link {
-		@apply relative flex translate-y-[0.625rem] items-center justify-center gap-1 py-4 text-center text-4xl opacity-0 transition-colors duration-300 hover:text-primary-500 focus:text-primary-600 focus:outline-none focus-visible:outline-none lg:leading-[60px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-500 dark:[&.active]:text-secondary-500;
+		@apply relative flex translate-y-[0.625rem] items-center justify-center gap-1 py-4 text-left text-2xl opacity-0 transition-colors duration-300 hover:text-primary-400 focus:text-primary-500 focus:outline-none focus-visible:outline-none lg:text-4xl lg:leading-[60px] dark:hover:text-secondary-500 dark:focus:text-secondary-600 [&.active]:text-primary-400 dark:[&.active]:text-secondary-500;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-16 w-16 origin-center self-center;
