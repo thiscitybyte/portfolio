@@ -1,21 +1,28 @@
 <!-- Theme Scripts -->
 <script>
-	const initTheme = () => {
-		if (document.documentElement.classList.contains('mode-auto')) {
-			// Apply based on localStorage or system preference
-			if (
-				localStorage.theme === 'dark' ||
-				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
+	const applyTheme = () => {
+		const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+		const storedTheme = localStorage.getItem('theme')
+
+		if (storedTheme === 'dark') {
+			document.documentElement.classList.add('dark')
+		} else if (storedTheme === 'light') {
+			document.documentElement.classList.remove('dark')
+		} else {
+			// auto mode (either explicitly "auto" or no value)
+			if (systemPrefersDark) {
 				document.documentElement.classList.add('dark')
 			} else {
 				document.documentElement.classList.remove('dark')
 			}
-			setupThemeSwitcher()
-		} else if (document.documentElement.classList.contains('mode-dark')) {
-			document.documentElement.classList.add('dark')
-		} else if (document.documentElement.classList.contains('mode-light')) {
-			document.documentElement.classList.remove('dark')
+		}
+	}
+
+	const setupAutoThemeListener = () => {
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		const storedTheme = localStorage.getItem('theme')
+		if (!storedTheme || storedTheme === 'auto') {
+			mediaQuery.addEventListener('change', applyTheme)
 		}
 	}
 
@@ -23,21 +30,39 @@
 		const themeSwitcher = document.getElementById('theme-selector')
 		if (themeSwitcher) {
 			themeSwitcher.addEventListener('click', () => {
-				if (localStorage.theme === 'dark') {
-					localStorage.theme = 'light'
-					document.documentElement.classList.remove('dark')
-				} else {
-					localStorage.theme = 'dark'
-					document.documentElement.classList.add('dark')
-				}
+				const current = localStorage.getItem('theme') || 'auto'
+				let next
+				if (current === 'dark') next = 'light'
+				else if (current === 'light') next = 'auto'
+				else next = 'dark' // from auto → dark
+
+				localStorage.setItem('theme', next)
+				applyTheme()
 			})
 		}
 	}
 
-	// Run once at page load
+	const initTheme = () => {
+		// Forced modes (optional fallback classes for HTML)
+		if (document.documentElement.classList.contains('mode-dark')) {
+			document.documentElement.classList.add('dark')
+			return
+		}
+		if (document.documentElement.classList.contains('mode-light')) {
+			document.documentElement.classList.remove('dark')
+			return
+		}
+
+		// Auto or stored theme
+		applyTheme()
+		setupAutoThemeListener()
+		setupThemeSwitcher()
+	}
+
+	// Run once
 	initTheme()
 
-	// Also re-run after Astro transitions
+	// Re-run on Astro transitions
 	document.addEventListener('astro:page-loaded', initTheme)
 	document.addEventListener('astro:after-swap', initTheme)
 </script>
