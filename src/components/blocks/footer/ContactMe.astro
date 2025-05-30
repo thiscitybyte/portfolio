@@ -11,42 +11,56 @@ import { Icon } from 'astro-icon/components'
 <footer id="contact" class="footer [.mode-dark_&]:!text-neutral-400">
 	<div class="footer__container">
 		<div class="footer__row">
-			<div class="footer__col col-span-4 lg:col-span-2">
-				<h2 class="lg:text-right">Contact me</h2>
+			<div class="footer__col col-span-2 hidden lg:block"></div>
+			<div class="footer__col col-span-4 lg:col-span-5">
+				<span
+					class="animate absolute -left-40 -top-56 -z-10 block size-80 rounded-full bg-primary-400 md:-left-48 md:-top-80 md:size-[31.25rem] dark:bg-secondary-400 [.mode-dark_&]:bg-secondary-400"
+				></span>
+				<h2 class="z-10 text-6xl font-normal lg:text-9xl">
+					Let's <br />Connect
+				</h2>
 			</div>
-			<div class="footer__col col-span-4 gap-8 lg:col-span-10 lg:columns-2">
-				<p>
-					Got a project in mind, a question, or just want to say hello? I’m always open to new
-					collaborations and interesting ideas. Feel free to reach out — I’d love to hear from you.
+			<div class="footer__col col-span-4 lg:col-span-5">
+				<p class="text-lg text-neutral-500">
+					I'm remote-friendly and always open to new opportunities. Feel free to email me at
+					<a
+						class="text-neutral-800 dark:text-white [.mode-dark_&]:text-white"
+						href="mailto:milo@studio.com"
+					>
+						milo@studio.com
+					</a>
+					or call me at
+					<a
+						class="text-neutral-800 dark:text-white [.mode-dark_&]:text-white"
+						href="tel:+13235550198"
+					>
+						+1 (323) 555-0198</a
+					>. You can also find me on Instagram at <a
+						class="text-neutral-800 dark:text-white [.mode-dark_&]:text-white"
+						href="#"
+					>
+						@milo.design
+					</a> or view my <a
+						class="text-neutral-800 dark:text-white [.mode-dark_&]:text-white"
+						href="#">resume</a
+					> for more details.
 				</p>
-				<div class="footer__links font-headings">
-					<a href="
-					mailto:milo@studio.com" class="footer__link [.mode-dark_&]:!text-neutral-300">
-						<Icon name="at-sign" /> milo@studio.com
-					</a>
-					<a href="tel:+13235550198" class="footer__link [.mode-dark_&]:!text-neutral-300">
-						<Icon name="phone" /> +1 (323) 555-0198
-					</a>
-					<span class="footer__link [.mode-dark_&]:!text-neutral-300">
-						<Icon name="check-circle" /> Remote Friendly
-					</span>
-					<a href="#" class="footer__link [.mode-dark_&]:!text-neutral-300">
-						<Icon name="dribbble" /> @milo.design
-					</a>
-				</div>
 			</div>
 		</div>
 	</div>
 
 	<style>
 		.footer {
-			@apply relative py-12 text-neutral-600 lg:py-20 dark:text-neutral-400;
+			@apply relative flex min-h-[800px] items-end py-12 text-neutral-600 lg:py-40 dark:text-neutral-400;
 		}
 		.footer__container {
 			@apply container relative z-[1] mx-auto px-6;
 		}
 		.footer__row {
-			@apply grid grid-cols-4 gap-6 lg:grid-cols-12 lg:gap-8;
+			@apply grid grid-cols-4 justify-end gap-6 lg:grid-cols-12 lg:gap-8;
+		}
+		.footer__col {
+			@apply relative self-end;
 		}
 		.footer__links {
 			@apply flex flex-col gap-1 text-lg leading-8 text-neutral-600 dark:text-neutral-300 [&_a]:text-neutral-600 [&_a]:transition-colors [&_a]:duration-300 dark:[&_a]:text-neutral-300;
