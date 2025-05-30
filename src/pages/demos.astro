@@ -10,7 +10,6 @@ import Col from '../components/ui/Col.astro'
 import { Image } from 'astro:assets'
 import Card from '../components/ui/cards/partials/Card.astro'
 import CardBody from '../components/ui/cards/partials/CardBody.astro'
-import CaseStudyCard from '../components/ui/cards/CaseStudyCard.astro'
 
 // Content
 // - SEO
@@ -34,23 +33,30 @@ import demoData from '../data/json-files/demoData.json'
 					<h1 class="mt-0">Demos</h1>
 					<p>
 						Explore our collection of demos to see how our theme can be used to create a modern and
-						professional portfolio or resume website.
+						professional portfolio or resume website. Each demo is built with different features and
+						styles to help you find the perfect template for your needs.
 					</p>
 				</div>
 			</Col>
 		</Row>
 	</Section>
 
-	<!-- Home Demos-->
-	<Section id="home" classes="!overflow-visible">
+	<!-- Designer Demos-->
+	<Section id="designer" classes="!overflow-visible">
 		<Row>
 			<Col span="2" spanMobile="4" classes="h-full">
-				<h2 class="sticky top-4 lg:text-right">Home</h2>
+				<div class="sticky top-4">
+					<h2>Designers</h2>
+					<p>
+						Light color palette, elegant calligraphy-style fonts, soft animations, and a refined
+						aesthetic for visual storytelling.
+					</p>
+				</div>
 			</Col>
 			<Col span="10" spanMobile="4">
 				<div class="grid grid-cols-1 gap-9 lg:grid-cols-3">
 					{
-						demoData.homepage.map((item: any) => (
+						demoData.designer.map((item: any) => (
 							<Card>
 								{item.image && (
 									<a href={item.link} class="relative">
@@ -59,16 +65,13 @@ import demoData from '../data/json-files/demoData.json'
 											alt={item.title}
 											width={600}
 											height={400}
-											class="w-full"
+											class="w-full border border-neutral-200 dark:border-neutral-50"
 										/>
 									</a>
 								)}
 								<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 [.mode-dark_&]:text-neutral-400 text-base">
-									<h3 class="mb-4 text-lg text-neutral-900 transition-colors duration-300 hover:text-primary-500 dark:text-white dark:hover:text-secondary-500 [&_a]:text-inherit">
-										<a
-											href={item.link}
-											class="[.mode-dark_&]:!text-white [.mode-dark_&]:hover:!text-secondary-500"
-										>
+									<h3 class="mb-4 text-lg text-neutral-900 transition-colors duration-300 hover:text-primary-500 dark:text-white [&_a]:text-inherit">
+										<a href={item.link} class="[.mode-dark_&]:!text-white">
 											{item.title}
 										</a>
 									</h3>
@@ -82,15 +85,22 @@ import demoData from '../data/json-files/demoData.json'
 		</Row>
 	</Section>
 
-	<Section id="case-studies" classes="!overflow-visible">
+	<!-- Developer Demos-->
+	<Section id="developer" classes="!overflow-visible">
 		<Row>
 			<Col span="2" spanMobile="4" classes="h-full">
-				<h2 class="sticky top-4 lg:text-right">Case Studies</h2>
+				<div class="sticky top-4">
+					<h2 class="font-ubuntu not-italic">Developers</h2>
+					<p class="font-robotoMono">
+						Dark UI theme, bold sans-serif fonts, snappy transitions, and a clean layout focused on
+						performance and clarity.
+					</p>
+				</div>
 			</Col>
 			<Col span="10" spanMobile="4">
 				<div class="grid grid-cols-1 gap-9 lg:grid-cols-3">
 					{
-						demoData.caseStudies.map((item: any) => (
+						demoData.developer.map((item: any) => (
 							<Card>
 								{item.image && (
 									<a href={item.link} class="relative">
@@ -99,20 +109,17 @@ import demoData from '../data/json-files/demoData.json'
 											alt={item.title}
 											width={600}
 											height={400}
-											class="w-full"
+											class="w-full border border-neutral-200 dark:border-neutral-50"
 										/>
 									</a>
 								)}
 								<CardBody classes="!px-0 !pb-4 text-neutral-600 dark:text-neutral-400 [.mode-dark_&]:text-neutral-400 text-base">
-									<h3 class="mb-4 text-lg text-neutral-900 transition-colors duration-300 hover:text-primary-500 dark:text-white dark:hover:text-secondary-500 [&_a]:text-inherit">
-										<a
-											href={item.link}
-											class="[.mode-dark_&]:!text-white [.mode-dark_&]:hover:!text-secondary-500"
-										>
+									<h3 class="mb-4 font-ubuntu text-lg font-bold not-italic text-neutral-900 transition-colors duration-300 hover:text-secondary-500 dark:text-white [&_a]:text-inherit">
+										<a href={item.link} class="hover:text-secondary-500 [.mode-dark_&]:!text-white">
 											{item.title}
 										</a>
 									</h3>
-									<p>{item.description}</p>
+									<p class="font-robotoMono">{item.description}</p>
 								</CardBody>
 							</Card>
 						))
