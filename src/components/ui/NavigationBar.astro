@@ -54,6 +54,8 @@ function isActivePath(currentPath: string): boolean {
 <header class:list={['header', { [`header--${type}`]: type }]}>
 	<div class="header__container">
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
+			{/* Theme Switcher */}
+			<ModeSwitcher />
 			{/* Menu toggle */}
 			<button
 				id="header-toggle"
@@ -88,8 +90,6 @@ function isActivePath(currentPath: string): boolean {
 				</ul>
 			</div>
 		</nav>
-		{/* Theme Switcher */}
-		<ModeSwitcher />
 	</div>
 </header>
 

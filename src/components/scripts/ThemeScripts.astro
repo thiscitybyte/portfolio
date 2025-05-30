@@ -28,6 +28,7 @@
 
 	const setupThemeSwitcher = () => {
 		const themeSwitcher = document.getElementById('theme-selector')
+
 		if (themeSwitcher) {
 			themeSwitcher.addEventListener('click', () => {
 				const current = localStorage.getItem('theme') || 'auto'
@@ -54,6 +55,7 @@
 		}
 
 		// Auto or stored theme
+
 		applyTheme()
 		setupAutoThemeListener()
 		setupThemeSwitcher()
@@ -61,7 +63,6 @@
 
 	// Run once
 	initTheme()
-
 	// Re-run on Astro transitions
 	document.addEventListener('astro:page-loaded', initTheme)
 	document.addEventListener('astro:after-swap', initTheme)
