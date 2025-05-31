@@ -12,7 +12,7 @@ export default config({
     caseStudies: collection({
       label: "Case Studies",
       slugField: "title",
-      path: "src/content/caseStudies/**",
+      path: "src/content/caseStudiesDesign/**",
       format: { contentField: "body" },
       schema: {
         title: fields.slug({
@@ -23,8 +23,7 @@ export default config({
           },
           slug: {
             label: "SEO-friendly slug",
-            description:
-              "This will define the file/folder slug for this case study",
+            description: "This will define the file/folder slug for this case study",
           },
         }),
         description: fields.text({

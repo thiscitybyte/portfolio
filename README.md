@@ -12,8 +12,6 @@ Clean and modern resume template for Astro, built with Tailwind CSS and perfect 
 
 Milo is an elegant, and production-ready resume template built with Astro and Tailwind CSS. Designed for developers, designers, and creatives, Milo offers a clean, modern way to showcase your skills, experience, and projects — all in a beautifully structured, single-page layout. It’s fully responsive, developer-friendly, and optimized, making it ideal for digital portfolios
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/milo-astro/pagespeed-score.svg)
-
 ### Features
 
 - **Integrated with Keystatic CMS:** Leverage a powerful, headless CMS for easy content management and updates.
@@ -104,6 +102,7 @@ The configuration files are located in the `src/config` directory, written in Ty
 | -------------------------- | ------------------------------------------------------------------------ |
 | `src/config/config.ts`     | Basic configuration settings including SEO, mode, and scroll animations. |
 | `src/config/navigation.ts` | Menu TypeScript interface options and JSON files for navigation.         |
+| `src/config/analytics.ts`  | Analytics configuration file.                                            |
 
 ## Theme Customization
 
@@ -160,6 +159,8 @@ cloud: {
   project: '[TEAM_NAME]/[PROJECT_NAME]',
 },
 ```
+
+4. Set the folder for the content files in the `collections` property
 
 For more details, see [Keystatic's documentation](https://keystatic.com/docs/introduction).
 
