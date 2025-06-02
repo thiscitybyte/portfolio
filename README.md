@@ -12,9 +12,8 @@ Milo is an elegant and production-ready resume template built with Astro and Tai
 
 ### Features
 
-- **Integrated with Keystatic CMS:** Leverage a powerful, headless CMS for easy content management and updates.
 - **Built with Tailwind CSS:** Powered by Tailwind CSS for fast UI development and fully responsive design.
-- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for desktop performance.
+- **Optimized for Performance:** Delivers excellent results in PageSpeed Insights for a fast, smooth experience.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
 - **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
 - **SEO-Friendly:** Optimized for search engines to improve visibility and organic traffic.
@@ -25,6 +24,7 @@ Milo is an elegant and production-ready resume template built with Astro and Tai
 - **Includes WindUI Components:** Integrates optional WindUI Tailwind CSS components.
 - **Modular Design:** Organized into reusable blocks and ui elements for easy customization and expansion.
 - **Integrated Analytics:** Includes Google Analytics and Google Tag Manager functionalities.
+- **Integrated with Keystatic CMS:** Leverage a powerful, headless CMS for easy content management and updates.
 - **Sitemap Included:** Enhances website navigation and search engine indexing.
 
 ## Getting Started
