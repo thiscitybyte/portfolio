@@ -28,8 +28,9 @@ type Props = {
 	length: number
 	size: number
 	total: number
+	collection?: string
 }
-const { first, prev, next, last, current, length, size, total } = Astro.props
+const { first, prev, next, last, current, length, size, total, collection } = Astro.props
 ---
 
 <nav class="pagination" role="navigation" aria-label="Pagination Navigation">
@@ -59,7 +60,10 @@ const { first, prev, next, last, current, length, size, total } = Astro.props
 		{
 			Array.from({ length: length }).map((_, index) => {
 				const pageNumber = index + 1
-				const pageUrl = pageNumber === 1 ? `/case-studies` : `/case-studies/${pageNumber}`
+				const pageUrl =
+					pageNumber === 1
+						? `/case-studies-${collection}`
+						: `/case-studies-${collection}/${pageNumber}`
 
 				return (
 					<li>
