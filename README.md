@@ -16,7 +16,7 @@ Milo is an elegant and production-ready resume template built with Astro and Tai
 - **Optimized for Performance:** Delivers excellent results in PageSpeed Insights for a fast, smooth experience.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
 - **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
-- **SEO-Friendly:** Optimized for search engines to improve visibility and organic traffic.
+- **SEO-Friendly:** Optimized for search engines with a perfect 100% score on Google PageSpeed Insights for performance, ensuring top-tier loading speed and visibility.
 - **Easy Updates with JSON Files:** Simplify content management and updates using structured JSON files.
 - **Page Loading & Transition Animations:** Enhance user experience with smooth loading and transition effects.
 - **Clean Code & Folder Structure:** Maintain a well-organized codebase that’s easy to navigate and extend.
