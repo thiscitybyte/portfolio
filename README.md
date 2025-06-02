@@ -164,10 +164,6 @@ cloud: {
 
 For more details, see [Keystatic's documentation](https://keystatic.com/docs/introduction).
 
-## License
-
-Copyright 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
-
 ## Want more themes?
 
 Check out Foxi Pro, our Astro website template with fully responsive, customizable TailwindCSS components
@@ -176,5 +172,9 @@ Check out Foxi Pro, our Astro website template with fully responsive, customizab
 
 [![Get Foxi Pro](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/primary-button-get-foxi-pro.svg)](https://astro.build/themes/details/foxi-pro/)
 [![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/secondary-button-foxi-pro-demo.svg)](https://foxi-pro.netlify.app)
+
+## License
+
+Copyright 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
 [![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
