@@ -36,10 +36,10 @@ const { data, classes } = Astro.props
 					<span class="feed__item-date_info-location">{item.location}</span>
 				</div>
 				<div class="feed__item-container">
-					<h4 class="feed__item-header h3">
+					<h3 class="feed__item-header">
 						{item.title}
 						<span> - {item.date}</span>
-					</h4>
+					</h3>
 					<div class="feed__item-text basic-text" set:html={item.text} />
 				</div>
 			</li>
