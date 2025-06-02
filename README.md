@@ -1,10 +1,8 @@
 # Milo Astro Theme
 
-Clean and modern resume template for Astro, built with Tailwind CSS and perfect for showcasing your professional profile online.
+Clean and modern resume template for Astro, built with Tailwind CSS, perfect for showcasing your professional profile online.
 
-![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo-theme-promo.png)
-
-[![View live Demo](https://oxygenna-themes.b-cdn.net/milo-astro/button-demo.svg)](https://milo-theme.netlify.app/) [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/milo-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-milo-theme-netlify-app/wutz5rlznj?form_factor=desktop)
+![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo.png)
 
 ## Introduction
 
@@ -149,6 +147,8 @@ Milo includes Keystatic CMS integration for Case Studies collection management. 
 
 To use Keystatic:
 
+Since Milo contains two Collections in order to showcase the different styles of Case Studies, Keystatic is connected with one of them (caseStudiesDesign). You will either have to select one of the Collections or connect both of them to use the Keystatic integration, and do the following:
+
 1. Run the development server
 2. Access the dashboard at `http://127.0.0.1:4321/keystatic`
 3. Configure cloud storage in production:
@@ -168,4 +168,4 @@ For more details, see [Keystatic's documentation](https://keystatic.com/docs/int
 
 Copyright 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
 
-[![Hire Us](https://oxygenna-themes.b-cdn.net/milo-astro/hireus.png)](mailto:info@oxygenna.com)
+[![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
