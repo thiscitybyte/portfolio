@@ -8,32 +8,32 @@ Clean and modern resume template for Astro, built with Tailwind CSS, perfect for
 
 ### About
 
-Milo is an elegant, and production-ready resume template built with Astro and Tailwind CSS. Designed for developers, designers, and creatives, Milo offers a clean, modern way to showcase your skills, experience, and projects — all in a beautifully structured, single-page layout. It’s fully responsive, developer-friendly, and optimized, making it ideal for digital portfolios
+Milo is an elegant and production-ready resume template built with Astro and Tailwind CSS. Designed for developers, designers, and creatives, Milo offers a clean, modern way to showcase your skills, experience, and projects — all in a beautifully structured, single-page layout. It’s fully responsive, developer-friendly, and optimized, making it ideal for digital portfolios.
 
 ### Features
 
 - **Integrated with Keystatic CMS:** Leverage a powerful, headless CMS for easy content management and updates.
-- **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
+- **Built with Tailwind CSS:** Powered by Tailwind CSS for fast UI development and fully responsive design.
 - **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for desktop performance.
 - **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
 - **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
-- **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
+- **SEO-Friendly:** Optimized for search engines to improve visibility and organic traffic.
 - **Easy Updates with JSON Files:** Simplify content management and updates using structured JSON files.
 - **Page Loading & Transition Animations:** Enhance user experience with smooth loading and transition effects.
 - **Clean Code & Folder Structure:** Maintain a well-organized codebase that’s easy to navigate and extend.
 - **Heroicons by Tailwind:** Access a wide range of high-quality icons to use across your site.
-- **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
-- **Modular Design:** The template is organized into reusable blocks enabling easy customization and expansion.
-- **Integrated Analytics:** Includes integrated Google Analytics and Google Tag Manager functionalities.
-- **Sitemap Included:** Includes a sitemap to enhance website navigation and search engine indexing.
+- **Includes WindUI Components:** Integrates optional WindUI Tailwind CSS components.
+- **Modular Design:** Organized into reusable blocks and ui elements for easy customization and expansion.
+- **Integrated Analytics:** Includes Google Analytics and Google Tag Manager functionalities.
+- **Sitemap Included:** Enhances website navigation and search engine indexing.
 
 ## Getting Started
 
 ### Commands
 
-After downloading the theme, install the dependencies and run it on your local server. Check the package.json file for available scripts.
+After downloading the theme, install the dependencies and run it on your local server. Check the `package.json` file for available scripts.
 
-You will need to use Node.js version 20.3.0 or later.
+> **Note**: Requires Node.js version 20.3.0 or later.
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
@@ -145,9 +145,9 @@ Milo includes Keystatic CMS integration for Case Studies collection management. 
 - Field configurations
 - Storage settings
 
-To use Keystatic:
+Keystatic is currently configured for the `caseStudiesDesign` collection. You can switch or configure both collections as needed.
 
-Since Milo contains two Collections in order to showcase the different styles of Case Studies, Keystatic is connected with one of them (caseStudiesDesign). You will either have to select one of the Collections or connect both of them to use the Keystatic integration, and do the following:
+To use Keystatic:
 
 1. Run the development server
 2. Access the dashboard at `http://127.0.0.1:4321/keystatic`
@@ -166,7 +166,7 @@ For more details, see [Keystatic's documentation](https://keystatic.com/docs/int
 
 ## Want more themes?
 
-Check out Foxi Pro, our Astro website template with fully responsive, customizable TailwindCSS components
+Check out **Foxi Pro**, our premium Astro website template with fully responsive, customizable Tailwind CSS components.
 
 ![foxi-pro](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/foxi-pro.png)
 
