@@ -11,7 +11,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://oxygenna.com/",
+  site: "https://milo-theme.netlify.app/",
   integrations: [
     tailwind(),
     icon(),
