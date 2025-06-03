@@ -77,7 +77,7 @@ These terms are governed by and construed in accordance with the laws of the jur
 
 If you have any questions about these Terms of Service, please contact us at:
 
-Email: support@oxygenna.com
+Email: info@oxygenna.com
 Address: 123 Milo Lane, Productivity City, PC 12345
 
 ## Miscellaneous
