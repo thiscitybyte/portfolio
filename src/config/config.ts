@@ -27,7 +27,7 @@ export const configData: Config = {
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/logo.svg',
-		alt: 'Milo. logo'
+		alt: 'Milo logo'
 	},
 	canonical: true,
 	noindex: false,
