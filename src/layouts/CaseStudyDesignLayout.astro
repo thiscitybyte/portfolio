@@ -106,7 +106,7 @@ const getVimeoId = (url: string) => {
       <Col span="2" />
       <Col span="10" spanMobile="4">
         <div class="grid grid-cols-1 gap-9 lg:grid-cols-12">
-          {frontmatter.images.map((item) => {
+          {frontmatter.images.map((item: string | { src: string; width?: number; alt?: string; caption?: string }) => {
             // Handle both string (legacy) and object formats
             const isObject = typeof item === 'object';
             const src = isObject ? item.src : item;
