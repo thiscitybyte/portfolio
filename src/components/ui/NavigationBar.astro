@@ -26,12 +26,26 @@ const { type = 'sticky' } = Astro.props
 // - Data
 // Import navigation data from JSON file
 import navigationData from '../../data/json-files/navigationBarData.json'
+
+// Define types for navigation items and categories
+interface NavItem {
+  name: string;
+  link: string;
+}
+
+interface NavigationData {
+  [key: string]: NavItem[];
+}
+
 // Get the current page path
 const path = new URL(Astro.request.url).pathname
+
 // Define types for navigation items and categories
 type NavType = 'home' | 'caseStudies' | 'singleCaseStudy' | 'demos'
+
 // Initialize default navigation type
 let navType: NavType = 'home'
+
 // Determine the appropriate navigation type based on the current path
 if (path === '/' || path.startsWith('/index')) {
 	navType = 'home'
@@ -42,12 +56,15 @@ if (path === '/' || path.startsWith('/index')) {
 } else if (path.startsWith('/demos')) {
 	navType = 'demos'
 }
-// Get the navigation items for the current category
-const navItems = navigationData[navType]
+
+// Get the navigation items for the current category with type assertion
+const navItems = (navigationData as NavigationData)[navType] || []
+
 // Helper function to determine if a navigation item is active
 function isActivePath(currentPath: string): boolean {
 	return path === currentPath || path === `${currentPath}/`
 }
+
 ---
 
 <header class:list={['header', { [`header--${type}`]: type }]}>
@@ -74,7 +91,7 @@ function isActivePath(currentPath: string): boolean {
 			<div class="header__menu">
 				<ul role="menubar" aria-label="Select page">
 					{
-						navItems.map((item, index) => (
+						navItems.map((item: NavItem, index: number) => (
 							<li role="none" class="header__menu-item">
 								<a
 									href={item.link}
