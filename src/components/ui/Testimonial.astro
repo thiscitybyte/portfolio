@@ -43,53 +43,47 @@ const {
 	quoteSize = 64,
 	quoteClasses
 } = Astro.props
+
+const alignmentClasses = {
+	left: '',
+	center: 'testimonial--center'
+}
 ---
 
-<div
-	class:list={[
-		'testimonial',
-		{ ['testimonial--' + `${align}`]: align },
-		{ [`${classes}`]: classes }
-	]}
->
+<figure role="figure" aria-label="Testimonial" class:list={['testimonial', alignmentClasses[align]]}>
 	<div class="testimonial__container">
-		<figure class="testimonial__figure">
-			<blockquote
-				class:list={[
-					'testimonial__blockquote',
-					{ ['text-' + `${mobileSize}`]: mobileSize },
-					{ ['lg:text-' + `${size}`]: size },
-					{ [`${quoteClasses}`]: quoteClasses }
-				]}
-			>
-				<p>
-					{blockquote}
-				</p>
-			</blockquote>
-			<figcaption class="testimonial__figcaption">
-				<div class="testimonial__figcaption-container">
-					<div class="testimonial__figcaption-cite-container">
-						<span class="testimonial__figcaption--credit">{figcaption}</span>
-						{
-							cite && (
-								<cite class="testimonial__figcaption--cite">
-									{link ? <a href={link}>{cite}</a> : <span>{cite}</span>}
-								</cite>
-							)
-						}
-					</div>
+		<blockquote class:list={['testimonial__blockquote', { ['text-' + `${mobileSize}`]: mobileSize }, { ['lg:text-' + `${size}`]: size }, { [`${quoteClasses}`]: quoteClasses }]} role="none">
+			<p>
+				{blockquote}
+			</p>
+		</blockquote>
+		<figcaption class="testimonial__figcaption">
+			<div class="testimonial__figcaption-container">
+				<div class="testimonial__figcaption-cite-container">
+					<span class="testimonial__figcaption--credit">{figcaption}</span>
+					{
+						cite && (
+							<cite class="testimonial__figcaption--cite">
+								{link ? <a href={link}>{cite}</a> : <span>{cite}</span>}
+							</cite>
+						)
+					}
 				</div>
-			</figcaption>
-		</figure>
+			</div>
+		</figcaption>
+	</div>
+	<div class="testimonial__quote-icon" aria-hidden="true">
 		<Icon
 			name="quotes"
 			class="testimonial--quote"
 			size={quoteSize}
 			width={quoteSize}
 			height={quoteSize}
+			role="img"
+			aria-label="Quotation mark"
 		/>
 	</div>
-</div>
+</figure>
 
 <style>
 	.testimonial {
@@ -97,9 +91,6 @@ const {
 	}
 	.testimonial--center {
 		@apply text-center [&_.testimonial\_\_figcaption]:justify-center;
-	}
-	.testimonial--quote {
-		@apply absolute -top-1 left-0 z-0 size-8 text-primary-400 md:top-0 md:size-12 dark:text-secondary-400;
 	}
 	.testimonial__container {
 		@apply relative px-6 pt-6 md:px-20 md:pt-0;
@@ -124,5 +115,11 @@ const {
 	}
 	.testimonial__figcaption--cite {
 		@apply font-semibold not-italic text-neutral-500;
+	}
+	.testimonial__quote-icon {
+		@apply absolute -top-1 left-0 z-0 size-8 text-primary-400 md:top-0 md:size-12 dark:text-secondary-400;
+	}
+	.testimonial--quote {
+		@apply absolute -top-1 left-0 z-0 size-8 text-primary-400 md:top-0 md:size-12 dark:text-secondary-400;
 	}
 </style>

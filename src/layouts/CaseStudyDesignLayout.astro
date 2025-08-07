@@ -10,6 +10,7 @@ import Row from '../components/ui/Row.astro'
 import Section from '../components/ui/Section.astro'
 // - UI
 import { Image } from 'astro:assets'
+import Vimeo from '../components/ui/Vimeo.astro';
 import Slider from '../components/ui/Slider.astro'
 import Testimonial from '../components/ui/Testimonial.astro'
 
@@ -19,6 +20,25 @@ const SEO = {
 	title: `${frontmatter.title} | Milo`,
 	description: `${frontmatter.description}`
 }
+// Helper function to check if URL is Vimeo
+const isVimeoUrl = (url: string) => {
+  try {
+    const vimeoRegex = /(?:vimeo\.com\/|player\.vimeo\.com\/video\/)(\d+)/i;
+    return vimeoRegex.test(url) || url.includes('vimeo.com/video/');
+  } catch {
+    return false;
+  }
+};
+
+// Helper function to extract Vimeo ID from URL
+const getVimeoId = (url: string) => {
+  try {
+    const match = url.match(/(?:vimeo\.com\/|player\.vimeo\.com\/video\/|\/)(\d+)/i);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+};
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
@@ -65,7 +85,7 @@ const SEO = {
 		</Row>
 	</Section>
 
-	<!-- What we did -->
+	<!-- What we did
 	<Section id="what-we-did">
 		<Row classes="collection-body basic-text basic-text--lg">
 			<Col span="2" spanMobile="4">
@@ -78,33 +98,63 @@ const SEO = {
 				<div set:html={frontmatter.whatWeDid.rightCol} />
 			</Col>
 		</Row>
-	</Section>
+	</Section> -->
 
-	<!-- Images -->
-	{
-		frontmatter.images && (
-			<Section classes="!pt-0" id="images">
-				<Row>
-					<Col span="2" />
-					<Col span="10" spanMobile="4">
-						<div class="grid grid-cols-1 gap-9 lg:grid-cols-2">
-							{frontmatter.images.map((image: string) => (
-								<Image
-									src={image}
-									alt={frontmatter.title}
-									width={600}
-									height={400}
-									class="w-full border border-neutral-50 dark:border-neutral-500"
-								/>
-							))}
-						</div>
-					</Col>
-				</Row>
-			</Section>
-		)
-	}
+{frontmatter.images && (
+  <Section classes="!pt-0" id="images">
+    <Row>
+      <Col span="2" />
+      <Col span="10" spanMobile="4">
+        <div class="grid grid-cols-1 gap-9 lg:grid-cols-12">
+          {frontmatter.images.map((item) => {
+            // Handle both string (legacy) and object formats
+            const isObject = typeof item === 'object';
+            const src = isObject ? item.src : item;
+            const width = isObject ? (item.width || 12) : 12; // Default to full width
+            const alt = isObject ? (item.alt || frontmatter.title) : frontmatter.title;
+            
+            // Determine column span class based on width (1-12)
+            const colSpanClass = `lg:col-span-${width} col-span-full`;
+            
+            if (isVimeoUrl(src)) {
+              const vimeoId = getVimeoId(src);
+              if (vimeoId) {
+                return (
+                  <div class={`${colSpanClass} mb-9`}>
+                    <div class="w-full border border-neutral-50 dark:border-neutral-500">
+                      <Vimeo id={vimeoId} title={alt} className="w-full" />
+                    </div>
+                    {isObject && item.caption && (
+                      <p class="mt-2 text-sm text-neutral-500">{item.caption}</p>
+                    )}
+                  </div>
+                );
+              }
+            }
+            
+            return (
+              <div class={`${colSpanClass} mb-9`}>
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={1200}
+                  height={800}
+                  class="w-full border border-neutral-50 dark:border-neutral-500"
+                />
+                {isObject && item.caption && (
+                  <p class="mt-2 text-sm text-neutral-500">{item.caption}</p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </Col>
+    </Row>
+  </Section>
+)}
 
 	<!-- Client feedback -->
+	{frontmatter.clientFeedback && frontmatter.clientFeedback.length > 0 && (
 	<Section id="client-feedback">
 		<Row>
 			<Col span="2" spanMobile="4">
@@ -136,6 +186,7 @@ const SEO = {
 			</Col>
 		</Row>
 	</Section>
+	)}
 </Layout>
 
 <style>

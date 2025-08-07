@@ -1,12 +1,14 @@
 ---
-title: Summit HR
+title: Sauza | Marry, Dump, Date
 description: >-
-  Built a marketing-focused website for an HR consulting firm, emphasizing trust, authority, and lead generation.
-cardImage: /caseStudies/design/case-study-design-01.jpg
-greyImage: /caseStudies/design/case-study-design-01-grey.jpg
-heroImage: /caseStudies/design/case-study-design-01-hero-image.jpg
+  I pitched the “Marry, Dump, Date” game and Lifeguard Cutout photo op—both became centerpieces of the experience. I also designed and coded the responsive tablet tool that brought it all to life.
+cardImage: https://s3.amazonaws.com/online-portfolio/tablet/sauza-home.jpg
+greyImage: https://s3.amazonaws.com/online-portfolio/tablet/sauza-home.jpg
+heroImage: https://s3.amazonaws.com/online-portfolio/tablet/sauza-home.jpg
+featured: false              
+featuredOrder: 6
 roles:
-  - brand-strategy
+  - Design | Front-End Development
 introduction: >
   <p>For Summit HR, a human resources consulting firm, I led the design and development of their new marketing website.
   The goal was to build trust with potential clients and generate leads through clear messaging and a professional online presence.</p>
@@ -17,7 +19,7 @@ introduction: >
   </ul>
 aboutProject:
   leftCol: >
-    <p>The website was designed to reflect Summit HR’s authoritative voice while maintaining a user-friendly experience.</p>
+    <p>Lead my team in brainstorming/ideation of the overall concept. Specifically I came up with the idea for the 'Marry, Dump, Date' game, as well as the 'Lifeguard Cutout' photo portion – both which were tentpoles to the experience. Lastly, I designed the tablet tool creative and did the front-end coding for the responsive tablet portion of the project.</p>
     <ul>
       <li>Worked on clear and effective calls-to-action</li>
       <li>Ensured accessibility and responsiveness</li>
@@ -42,10 +44,8 @@ whatWeDid:
       <li>Achieved a high Lighthouse performance score</li>
     </ul>
 images:
-  - /caseStudies/design/case-study-design-image-03.jpg
-  - /caseStudies/design/case-study-design-image-05.jpg
-  - /caseStudies/design/case-study-design-image-09.jpg
-  - /caseStudies/design/case-study-design-image-12.jpg
+  - https://s3.amazonaws.com/online-portfolio/sauza-tablet.jpg
+  - /caseStudies/design/sauza-microsite-wires.jpg
 clientFeedback:
   - blockquote: 'Our online presence has never been stronger. The site is professional, easy to navigate, and reflects our company values clearly to clients and partners.'
     figcaption: CEO
