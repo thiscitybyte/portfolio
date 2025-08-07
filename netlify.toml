@@ -3,10 +3,10 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18.17.0"
+  NODE_VERSION = "22.9.0"
 
 [context.production.environment]
-  NODE_VERSION = "18.17.0"
+  NODE_VERSION = "22.9.0"
 
 [context.deploy-preview]
   command = "npm run build"
