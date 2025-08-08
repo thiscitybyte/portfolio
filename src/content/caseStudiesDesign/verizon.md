@@ -43,7 +43,7 @@ whatWeDid:
       <li>Added playlist sharing and playlist collaborations</li>
     </ul>
 images:
-  - https://s3.amazonaws.com/online-portfolio/phone/vzw-nfl-team.png
+  - /caseStudies/design/verizon-smile.png
   - /caseStudies/design/vzw-indycar1.jpg
   - /caseStudies/design/vzw-indycar2.jpg
 clientFeedback:
