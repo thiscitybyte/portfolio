@@ -47,7 +47,7 @@ images:
   - /caseStudies/design/vzw-indycar1.jpg
   - /caseStudies/design/vzw-indycar2.jpg
 clientFeedback:
-  - blockquote: "Scott’s work elevated our mobile activations to a whole new level. From sleek, responsive designs to flawless execution, every detail felt intentional and on-brand. The interactive experiences he built didn’t just look great—they drove real engagement across our campaigns. He just gets how to make mobile work."
+  - blockquote: "Vibes’s work elevated our mobile activations to a whole new level. From sleek, responsive designs to flawless execution, every detail felt intentional and on-brand. The interactive experiences he built didn’t just look great—they drove real engagement across our campaigns. They just gets how to make mobile work."
     figcaption: Digital Activation Manager
     cite: Verizon
 ---

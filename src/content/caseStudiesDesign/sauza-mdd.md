@@ -19,16 +19,14 @@ introduction: >
   </ul>
 aboutProject:
   leftCol: >
-    <p>Lead my team in brainstorming/ideation of the overall concept. Specifically I came up with the idea for the 'Marry, Dump, Date' game, as well as the 'Lifeguard Cutout' photo portion – both which were tentpoles to the experience. Lastly, I designed the tablet tool creative and did the front-end coding for the responsive tablet portion of the project.</p>
-    <ul>
-      <li>Worked on clear and effective calls-to-action</li>
-      <li>Ensured accessibility and responsiveness</li>
-    </ul>
+    <p>I led my team through the full brainstorming and ideation process for the campaign’s interactive experiences, ensuring we landed on concepts that were fun, on-brand, and highly shareable. Two of the biggest crowd-pleasers—the cheeky “Marry, Dump, Date” game and the playful Lifeguard Cutout photo op—were ideas I developed as central pillars of the activation. In addition to creative direction, I designed the tablet interface that powered the on-site engagement and handled all the front-end coding for a fully responsive, polished experience. The end result was an activation that blended creativity, humor, and solid technical execution to keep participants entertained and engaged.</p>
   rightCol: >
-    <p>We delivered a CMS-backed website that allowed easy updates, helping reduce long-term maintenance costs.</p>
     <ul>
-      <li>Focused on performance and speed</li>
-      <li>Optimized content for easy user navigation</li>
+      <li>Led the team’s brainstorming and concept development for the campaign’s interactive experiences.</li>
+      <li>Created the idea for the “Marry, Dump, Date” game, one of the activation’s main attractions.</li>
+      <li>Developed the concept for the “Lifeguard Cutout” photo opportunity to boost participant engagement.</li>
+      <li>Designed the tablet tool’s creative interface for a polished, on-brand on-site experience.</li>
+      <li>Handled the front-end coding to ensure the tablet experience was fully responsive and smooth.</li>
     </ul>
 whatWeDid:
   leftCol: >
@@ -47,13 +45,7 @@ images:
   - https://s3.amazonaws.com/online-portfolio/sauza-tablet.jpg
   - /caseStudies/design/sauza-microsite-wires.jpg
 clientFeedback:
-  - blockquote: 'Our online presence has never been stronger. The site is professional, easy to navigate, and reflects our company values clearly to clients and partners.'
-    figcaption: CEO
-    cite: Summit HR
-  - blockquote: 'The website helped us gain more leads and provided real-time updates to our clients, improving communication and overall satisfaction.'
-    figcaption: Marketing Manager
-    cite: Summit HR
-  - blockquote: 'Thanks to the website redesign, we’ve seen increased trust and engagement, with more visitors interacting and returning to our platform regularly.'
-    figcaption: HR Specialist
-    cite: Summit HR
+  - blockquote: 'The interactive elements Scott’s team delivered, especially the ‘Marry, Dump, Date’ game and Lifeguard Cutout—were huge hits with our audience. The tablet experience was flawless, the creative was on-brand, and the engagement levels far exceeded what we’ve seen in past activations.'
+    figcaption: Suaza Digital Activation Manager
+    cite: Sauza
 ---

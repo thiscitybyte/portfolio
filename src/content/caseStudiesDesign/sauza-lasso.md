@@ -3,7 +3,7 @@ title: Sauza | Lasso Up A Cowboy
 description: >-
   “Lasso Up a Cowboy” was an award-winning dual-screen experience for Sauza. I led design and dev coordination, using WebSocket tech to let users flick lassos from their phones to an iPad for a chance to win prizes at tasting events.
 cardImage: /caseStudies/design/sauza-lasso-ipad.png
-greyImage: /caseStudies/design/sauza-lasso-ipad.pngsauza-lasso-ipad.jpg
+greyImage: /caseStudies/design/sauza-lasso-ipad.png
 heroImage: /caseStudies/design/sauza-lasso-ipad.png
 featured: true              
 featuredOrder: 2

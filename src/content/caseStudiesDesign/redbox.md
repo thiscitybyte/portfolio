@@ -46,13 +46,7 @@ images:
   - "http://online-portfolio.s3.amazonaws.com/gifs/redbox-spin.gif"
 
 clientFeedback:
-  - blockquote: 'The dashboard is clean, efficient, and exactly what we needed. It streamlined our workflow, increased team productivity, and allowed us to focus more on strategic tasks.'
-    figcaption: Head of Sales
-    cite: Arvo CRM
-  - blockquote: 'Our internal team was able to onboard 2x faster. The interface is intuitive, the setup was seamless, and the support materials helped us hit the ground running.'
-    figcaption: Product Manager
-    cite: Arvo CRM
-  - blockquote: 'A robust and scalable UI that will grow with our product. The flexible components and thoughtful design ensure long-term maintainability and expansion.'
-    figcaption: CTO
-    cite: Arvo CRM
+  - blockquote: 'The Days of Deals game was a huge hit with our customers. The interactive design brought a whole new level of excitement—and the spike in repeat visits spoke for itself.'
+    figcaption: Redbox Marketing Team
+    cite: Redbox
 ---
